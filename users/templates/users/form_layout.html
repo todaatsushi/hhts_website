@@ -1,0 +1,22 @@
+{% extends "hh2/layout.html" %}
+{% load crispy_forms_tags %}
+
+{% block main %}
+
+  <div class="container py-5">
+    {% block top %}{% endblock %}
+
+    <form method="post">
+      {% csrf_token %}
+      <fieldset>
+        <legend class="text-center">{% block legend %}{% endblock %}</legend>
+        {% block form_inputs %}{% endblock %}
+        <button type="submit" class="btn btn-custom-1 btn-block">{% block submit %}{% endblock %}</button>
+        <a href="{% url 'team' %}" class="btn btn-custom-2 btn-block">戻る</a>
+        {% block extra %}{% endblock %}
+      </fieldset>
+    </form>
+    {% block bottom %}{% endblock %}
+  </div>
+
+{% endblock %}

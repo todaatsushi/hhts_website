@@ -1,0 +1,15 @@
+.blast-title {
+  color: #4d783e;
+}
+
+/* SEND MENU ACTIVE */
+.list-group-item.active {
+  color: #f2f2f2;
+  background-color: #4d783e;
+  border-color: #4d783e;
+}
+
+/* RECIPIENTS */
+.blast-list {
+  font-size: 0.75em;
+}

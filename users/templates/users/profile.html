@@ -1,0 +1,69 @@
+{% extends "hh2/layout.html" %}
+{% load crispy_forms_tags %}
+
+{% block title %}
+  プロファイル - {{ person.profile.name }}
+{% endblock %}
+
+{% block main %}
+  <div class="container mt-5">
+    <div class="row align-items-center">
+
+      <div class="col-md-5">
+        <div class="card">
+          <img class="card-img-top rounded-circle img-thumbnail profile-pic mx-auto" src="{{ person.profile.image.url }}" alt="Member Photo: {{ person.profile.name }}">
+          <div class="card-body">
+            <h3 class="card-title text-center">{{ person.profile.name }} <small class="text-muted">@{{ person.username }}</small></h3>
+            <p class="card-body">
+              メールアドレス: <span class="text-muted">{{ person.email }}</span>  <br>
+              役割: <span class="text-muted">{{ person.profile.role }}</span>
+              {% if user_form and profile_form %}
+                <hr>
+                <div class="admin-btns">
+                  <button class="btn btn-custom-1 btn-sm mx-1" id="show-profile">プロファイル</button>
+                  <button class="btn btn-custom-1 btn-sm mx-1" id="show-update">更新する</button>
+                </div>
+              {% endif %}
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-7 px-5" id="profile-col">
+        <div>
+          <h3 class="text-center display-4">{{ person.profile.name }}について</h3>
+          <p>{{ person.profile.about | linebreaks }}</p>
+          <div class="row">
+            <div class="col-sm-6 mx-auto my-4">
+              <a href="{% url 'post-user' person.username %}" class="btn btn-custom-2 btn-block" >{{ person.profile.name }}のポスト</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-7 px-5 mb-5" id="update-col">
+        <div>
+          <form action="{% url 'user-about' person.username %}" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="row">
+              <div class="col-md-6">
+                <fieldset>
+                  <legend>個人情報の更新</legend>
+                  {{ user_form|crispy }}
+                  <a href="{% url 'password_reset' %}" class="btn btn-sm btn-custom-3">パスワードリセット</a>
+                </fieldset>
+              </div>
+              <div class="col-md-6">
+                <fieldset>
+                  {{ profile_form|crispy }}
+                  <button type="submit" class="btn btn-custom-1 btn-sm">更新する</button>
+                </fieldset>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </div>
+{% endblock %}

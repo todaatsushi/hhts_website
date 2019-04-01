@@ -1,0 +1,23 @@
+{% extends "hh2/layout.html" %}
+{% load crispy_forms_tags %}
+
+{% block main %}
+  <div class="container">
+    <form method="post">
+      {% csrf_token %}
+      <fieldset class="form-group my-4">
+        <legend class="display-4 text-center">{% block form_func %}{% endblock %}</legend>
+        {{ form|crispy }}
+      </fieldset>
+
+      {% block extra_options %}
+      {% endblock %}
+      <fieldset class="form-group">
+        <button type="submit" class="btn btn-sm btn-custom-3 btn-block">{% block button_text %}{% endblock %}</button>
+        {% block back %}
+        {% endblock %}
+      </fieldset>
+    </form>
+
+  </div>
+{% endblock %}

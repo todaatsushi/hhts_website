@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  {% load static %}
+  <head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>東広島ボランティアガイド: {% block title %}{% endblock %}</title>
+
+    <!-- BOOTSTRAP -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+    <!-- LAYOUT STYLING -->
+    <link rel="stylesheet" type="text/css" href="{% static 'hhts/css/hhts-general.css' %}">
+
+    <!-- MAIN SITE STYLING -->
+    <!-- HOME -->
+    <link rel="stylesheet" type="text/css" href="{% static 'hhts/css/home.css' %}">
+    <!-- ABOUT -->
+    <link rel="stylesheet" type="text/css" href="{% static 'hhts/css/about.css' %}">
+    <!-- GUIDE -->
+    <link rel="stylesheet" type="text/css" href="{% static 'hhts/css/guide.css' %}">
+    <!-- SAIJO -->
+    <link rel="stylesheet" type="text/css" href="{% static 'hhts/css/saijo.css' %}">
+
+    <!-- BLOG STYLING -->
+    <link rel="stylesheet" type="text/css" href="{% static 'blog/css/blog-list.css' %}">
+    <!-- DELETE POST -->
+    <link rel="stylesheet" type="text/css" href="{% static 'blog/css/blog-delete.css' %}">
+
+    <!-- USERS PROFILE-->
+    <link rel="stylesheet" type="text/css" href="{% static 'users/css/users-profile.css' %}">
+    <!-- USERS TEAM-->
+    <link rel="stylesheet" type="text/css" href="{% static 'users/css/users-team.css' %}">
+    <!-- USERS FORMS-->
+    <link rel="stylesheet" type="text/css" href="{% static 'users/css/users-forms.css' %}">
+
+    <!-- EMAIL LIST -->
+    <link rel="stylesheet" type="text/css" href="{% static 'email_blast/css/emails-all.css' %}">
+
+    <!-- BOOKING -->
+    <link rel="stylesheet" type="text/css" href="{% static 'booking/css/booking-all.css' %}">
+
+
+    <!-- JAVASCRIPT -->
+    <!-- BOOTSTRAP -->
+    <script
+			  src="https://code.jquery.com/jquery-3.3.1.min.js"
+			  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+			  crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <!-- XDSoft DateTimePicker -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.min.css" integrity="sha256-DOS9W6NR+NFe1fUhEE0PGKY/fubbUCnOfTje2JMDw3Y=" crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.full.min.js" integrity="sha256-FEqEelWI3WouFOo2VWP/uJfs1y8KJ++FLh2Lbqc8SJk=" crossorigin="anonymous"></script>
+
+    <!-- PROFILE PAGE JS -->
+    <script type="text/javascript" src="{% static 'users/js/users-js.js' %}"></script>
+
+  <body>
+    {% load static %}
+    {# #}<nav class="navbar navbar-expand-xl navbar-light" id="nav">
+      <div class="logo">
+        <a href="{% url 'home' %}" class="navbar-brand">
+          東広島<span style="color: #4d783e;">ボランティアガイド</span>
+        </a>
+        <span class="subline">
+          <p>ツア・案内・ボランティア</p>
+        </span>
+      </div>
+
+      <button class="navbar-toggler mx-auto" type="button" data-toggle="collapse" data-target="#hh-nav" aria-controls="hh-nav" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars"></i>
+      </button>
+
+      <div class="collapse navbar-collapse" id="hh-nav">
+        <ul class="navbar-nav ml-auto">
+        {% if user.is_authenticated %}
+          <li class="nav-item dropdown active my-1 ml-1">
+            <a class="nav-link dropdown-toggle" href="#" id="user-options" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <span class="greet">
+                <small>こんにちは <strong>{{ user.username }}</strong>。</small>
+              </span>
+            </a>
+            <div class="dropdown-menu" aria-labelledby="user-options">
+              <a href="{% url 'booking-index' %}" class="dropdown-item">ブッキングシステム</a>
+              <div class="dropdown-divider"></div>
+              <a href="{% url 'post-new' %}" class="dropdown-item">新しいポスト</a>
+              <a href="{% url 'post-admin' %}" class="dropdown-item">スタフ専用ポスト</a>
+              <a href="{% url 'post-all' %}" class="dropdown-item">全てのポスト</a>
+              <div class="dropdown-divider"></div>
+              <a href="{% url 'email-index' %}" class="dropdown-item">メールシステム</a>
+              <div class="dropdown-divider"></div>
+              <a href="{% url 'user-about' user.username %}" class="dropdown-item">プロファイル</a>
+              <div class="dropdown-divider"></div>
+              <a href="{% url 'user-logout' %}" class="dropdown-item"><button class="btn btn-outline-success">ロッグアウト</button></a>
+            </div>
+          </li>
+        {% else %}
+          <!-- <li class="nav-item my-1 ml-1">
+            <a href="{% url 'user-login' %}"  class="btn btn-custom-2">ロッグイン</a>
+          </li> -->
+        {% endif %}
+          <li class="nav-item my-1 ml-1">
+            <a href="/media/pdf/book_form.pdf" download class="btn btn-custom-1">ツアの申し込み</a>
+          </li>
+          <li class="nav-item my-1 ml-1">
+            <a href="{% url 'blog-home' %}" class="nav-link">会員のページ</a>
+          </li>
+          <li class="nav-item my-1 ml-1">
+            <a href="{% url 'home' %}" class="nav-link">トップページ</a>
+          </li>
+          <li class="nav-item my-1 ml-1">
+            <a href="{% url 'about' %}" class="nav-link">活動紹介</a>
+          </li>
+          <li class="nav-item my-1 ml-1">
+            <a href="{% url 'team' %}" class="nav-link">スタフ</a>
+          </li>
+          <li class="nav-item my-1 ml-1">
+            <a href="{% url 'guide' %}" class="nav-link">ガイド派遣</a>
+          </li>
+          <li class="nav-item my-1 ml-1">
+            <a href="{% url 'saijo' %}" class="nav-link">西条の観光</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    {% if messages %}
+      {% for message in messages %}
+      <div class="alert alert-info alert-dismissible fade show" role="alert">
+        {{ message }}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      {% endfor %}
+    {% endif %}
+
+    {% block main %}
+    {% endblock %}
+
+    <script>
+  $(function () {
+    $("#id_scheduled_at").datetimepicker({
+      format: 'd/m/Y H:i',
+    });
+  });
+</script>
+  </body>
+</html>

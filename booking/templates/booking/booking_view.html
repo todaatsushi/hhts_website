@@ -1,0 +1,66 @@
+{% extends 'hh2/layout.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}
+  ブッキング情報
+{% endblock %}
+
+{% block main %}
+  <div class="container">
+    <h1 class="display-4 text-center">{{ booking.contact_name }}: {{ booking.scheduled_at }}</h1>
+    <hr>
+    <div class="container">
+      <h3>連絡先</h3>
+      <ul>
+        <li>名前：{{ booking.contact_name }}</li>
+        <li>電話番号：{{ booking.contact_number }}</li>
+        <li>住所：{{ booking.contact_address }}</li>
+        <li>メールアドレス：{{ booking.contact_email }}</li>
+      </ul>
+    </div>
+    <div class="container">
+      <h3>グループの情報</h3>
+      <ul>
+        <li>グループ予約：{% if booking.is_group %}<i class="fas fa-check"></i>{% else %}<i class="fas fa-times"></i>{% endif %}</li>
+        <li>グループ名前：{{ booking.group_name }}</li>
+        <li>グループの数：{{ booking.group_number }}</li>
+        <li>期間：{{ booking.age_group }}</li>
+      </ul>
+    </div>
+    <div class="container">
+      <h3>基本情報</h3>
+      <ul>
+        <li>予定時間：{{ booking.scheduled_at }}</li>
+        <li>期間：{{ booking.duration }}</li>
+        <li>使う交通手段：{{ booking.transportation }}</li>
+        <li>訪問したい酒蔵：{{ booking.places_to_visit }}</li>
+      </ul>
+    </div>
+    <div class="container">
+      <h3>他に伝えたい情報</h3>
+      <p>{{ booking.extra_details }}</p>
+      <p>確認：{% if booking.confirmed %}<i class="fas fa-check"></i>{% else %}<i class="fas fa-times"></i>{% endif %}</p>
+      <p>完成：{% if booking.complete %}<i class="fas fa-check"></i>{% else %}<i class="fas fa-times"></i>{% endif %}</p>
+    </div>
+    <div class="container">
+      <a href="{% url 'booking-update' booking.id %}" class="btn btn-sm btn-primary">Update</a>
+      <a href="{% url 'booking-delete' booking.id %}" class="btn btn-sm btn-danger">Delete</a>
+      {% if booking.confirmed %}
+        <a href="{% url 'booking-unconfirm' booking.id %}" class="btn btn-sm btn-danger">Unconfirm</a>
+      {% else %}
+        <a href="{% url 'booking-confirm' booking.id %}" class="btn btn-sm btn-success">Confirm</a>
+      {% endif %}
+      {% if booking.complete %}
+        <a href="{% url 'booking-uncomplete' booking.id %}" class="btn btn-sm btn-danger">Mark Incompleted</a>
+      {% else %}
+        <a href="{% url 'booking-complete' booking.id %}" class="btn btn-sm btn-success">Mark Completed</a>
+      {% endif %}
+    </div>
+    <div class="container">
+      <form action="post">
+        {% csrf_token %}
+        {{ form|crispy }}
+      </form>
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,32 @@
+{% extends "users/form_layout.html" %}
+{% load widget_tweaks %}
+
+{% block title %}
+  ログイン
+{% endblock %}
+
+{% block legend %}
+  ログイン
+{% endblock %}
+
+{% block form_inputs %}
+  {{ form.non_field_errors }}
+  <div class="form-group">
+    {{ form.username.errors }}
+    <h5><label for="{{ form.username.username_label }}" class="login-label">ユーザーネーム</label></h5>
+    {% render_field form.username class+="login-field" %}
+  </div>
+  <div class="form-group">
+    {{ form.username.errors }}
+    <h5><label for="{{ form.username.password_label }}" class="login-label">パスワード</label></h5>
+    {% render_field form.password class+="login-field" %}
+  </div>
+{% endblock %}
+
+{% block submit %}
+  ログイン
+{% endblock %}
+
+{% block bottom %}
+  <a href="{% url 'password_reset' %}" class='btn btn-custom-3 btn-block mt-2'>パスワードを忘れた</a>
+{% endblock %}

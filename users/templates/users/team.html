@@ -1,0 +1,43 @@
+{% extends "hh2/layout.html" %}
+
+{% block title %}
+  メンバー情報
+{% endblock %}
+
+{% block main %}
+<div class="container team-div my-3">
+  {% for member in team %}
+    <div class="card member">
+      <div class="card-header">
+        <h5 class="text-center">{{ member.profile.name }}</h5>
+      </div>
+      <img class="card-img-top mx-auto my-2" src="{{ member.profile.image.url }}" alt="Member Photo: {{ member.profile.name }}" style="max-height: 200px; max-width:200px;">
+      <div class="card-body">
+        <h3 class="card-subtitle">
+          <h5 class="text-center">@<a href="{% url 'user-about' member.username%}">{{ member.username }}</a></h5>
+        </h3>
+      </div>
+      <div class="card-footer">
+        <p class="mt-2">
+          <h5 class="text-center">{{ member.profile.role }}</h5>
+        </p>
+      </div>
+    </div>
+  {% endfor %}
+  {% if is_paginated %}
+    <div>
+      {% if page_obj.has_previous %}
+        <a href="?page=1">1ページ目</a>
+        <a href="?page={{ page_obj.previous_page_number }}">前のページ</a>
+      {% endif %}
+
+      ページ #{{ page_obj.number }}/{{ page_obj.paginator.num_pages }}
+
+      {% if page_obj.has_next %}
+        <a href="?page={{ page_obj.next_page_number }}">次のページ</a>
+        <a href="?page={{ page_obj.paginator.num_pages }}">最後のページ</a>
+      {% endif %}
+    </div>
+  {% endif %}
+</div>
+{% endblock %}

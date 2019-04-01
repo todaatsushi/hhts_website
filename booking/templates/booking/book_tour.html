@@ -1,0 +1,16 @@
+{% extends 'hh2/layout.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}
+  ツアーを予約
+{% endblock %}
+
+{% block main %}
+  <div class="container my-4">
+    <form method="post">
+      {% csrf_token %}
+      <legend class="display-4 text-center">ツアーを予約</legend>
+      {% crispy form %}
+    </form>
+  </div>
+{% endblock %}

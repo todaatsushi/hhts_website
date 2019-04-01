@@ -1,0 +1,111 @@
+{% extends "hh2/layout.html" %}
+
+{% block main %}
+  {% block header %}
+  {% endblock %}
+
+  {% for post in posts %}
+    {% if not user.is_authenticated and post.admin_post %}
+    {% else %}
+      <div class="container">
+
+        <h2><a href="{% url 'post-detail' post.id %}" class="blog-title">{{ post.title }}</a>
+          {% if post.pinned %} <i class="fas fa-thumbtack ml-3 post-icon"></i> {% endif %}{% if post.admin_post %} <i class="fas fa-users ml-3 post-icon"></i> {% endif %}</h2>
+
+        <p class="blog-content">{{ post.content | linebreaks }}</p>
+
+        <p><small>By <a href="{% url 'user-about' post.author.username %}" class="blog-author">{{ post.author.profile.name }}</a></small></p>
+        <p><small>Posted at: {{ post.posted_at|date:"G:i - d M, Y"}}</small><br>
+        <small>Updated last at: {{ post.updated_at|date:"G:i - d M, Y"}}</small></p>
+        <div>
+          <a href="{% url 'post-comment' post.id %}" class="btn btn-sm btn-custom-1 my-1">コメントする</a>
+          {% if user.is_authenticated %}
+            {% if post.pinned %}
+              <a href="{% url 'post-unpin' post.id %}" class="btn btn-sm btn-custom-1 my-1"><i class="fas fa-times"></i> <i class="fas fa-thumbtack"></i></a>
+            {% else %}
+              <a href="{% url 'post-pin' post.id %}" class="btn btn-sm btn-custom-1 my-1"><i class="fas fa-thumbtack"></i></a>
+            {% endif %}
+            {% if post.admin_post %}
+              <a href="{% url 'post-unadmin' post.id %}" class="btn btn-sm btn-custom-1 my-1"><i class="fas fa-times"></i> <i class="fas fa-users"></i></a>
+            {% else %}
+              <a href="{% url 'post-admin' post.id %}" class="btn btn-sm btn-custom-1 my-1"><i class="fas fa-users"></i></a>
+            {% endif %}
+            {% if post.author == user %}
+              <a href="{% url 'post-update' post.id %}"><button class="btn btn-sm btn-custom-1 my-1">更新</button></a>
+              <a href="{% url 'post-delete' post.id %}"><button class="btn btn-sm btn-custom-danger my-1">削除する</button></a>
+            {% endif %}
+          {% endif %}
+
+          {% block select_posts %}
+          {% endblock %}
+        </div>
+        {% if post.comments.all.count != 0 %}
+          {% if post.comments.all.count > 2 %}
+            <div class="container">
+              {% for comment in post.comments.all|slice:"0:2" %}
+                <div class="my-2 comment">
+                  {{ comment.comment }} {% if comment.by_admin %}<i class="fas fa-check" style="color: #4d783e;"></i>{% endif %}
+                  <br>
+                  <small>By <strong>{{ comment.commenter }}</strong> at {{ comment.posted_at|date:"G:i, d/m/y" }}</small>
+                  {% if comment.posted_at|date:"G:i, d/m/y" != comment.last_updated_at|date:"G:i, d/m/y" %}
+                    <small>Last updated at: {{ comment.last_updated_at|date:"G:i, d/m/y" }}</small>
+                  {% endif %}
+                  <br>
+                  {% if user.is_authenticated %}
+                    <a href="{% url 'post-comment_delete' pk=post.pk pkc=comment.pk %}" class="btn btn-sm btn-custom-danger mt-1">削除する</a>
+                    {% if comment.by_admin %}
+                      <a href="{% url 'post-comment_unadmin' pk=post.pk pkc=comment.pk %}" class="btn btn-sm btn-custom-1 mt-1"><i class="fas fa-times"></i> <i class="fas fa-users"></i></a>
+                    {% else %}
+                      <a href="{% url 'post-comment_admin' pk=post.pk pkc=comment.pk %}"class="btn btn-sm btn-custom-1 mt-1"><i class="fas fa-users"></i></a>
+                    {% endif %}
+                  {% endif %}
+                </div>
+              {% endfor %}
+              <a href="{% url 'post-detail' post.id %}" class="btn btn-custom-1 btn-sm">View All Comments</a>
+            </div>
+          {% else %}
+            <div class="container">
+              {% for comment in post.comments.all %}
+                <div  class="my-2 comment">
+                  {{ comment.comment }} {% if comment.by_admin %} <i class="fas fa-check"></i>{% endif %}
+                  <br>
+                  <small>By {{ comment.commenter }} at {{ comment.posted_at|date:"G:i, d/m/y" }}</small>
+                  {% if comment.posted_at|date:"G:i, d/m/y" != comment.last_updated_at|date:"G:i, d/m/y" %}
+                    <small>Last updated at: {{ comment.last_updated_at|date:"G:i, d/m/y" }}</small>
+                  {% endif %}
+                  <br>
+                  {% if user.is_authenticated %}
+                    <a href="{% url 'post-comment_delete' pk=post.pk pkc=comment.pk %}" class="btn btn-sm btn-custom-danger mt-1">削除する</a>
+                    {% if comment.by_admin %}
+                      <a href="{% url 'post-comment_unadmin' pk=post.pk pkc=comment.pk %}" class="btn btn-sm btn-custom-1 mt-1"><i class="fas fa-times"></i> <i class="fas fa-users"></i></a>
+                    {% else %}
+                      <a href="{% url 'post-comment_admin' pk=post.pk pkc=comment.pk %}"class="btn btn-sm btn-custom-1 mt-1"><i class="fas fa-users"></i></a>
+                    {% endif %}
+                  {% endif %}
+                </div>
+              {% endfor %}
+            </div>
+          {% endif %}
+        {% endif %}
+      <hr>
+    </div>
+    {% endif %}
+  {% endfor %}
+
+  {% if is_paginated %}
+    <div>
+      {% if page_obj.has_previous %}
+        <a href="?page=1">1ページ目</a>
+        <a href="?page={{ page_obj.previous_page_number }}">前のページ</a>
+      {% endif %}
+
+      ページ #{{ page_obj.number }}/{{ page_obj.paginator.num_pages }}
+
+      {% if page_obj.has_next %}
+        <a href="?page={{ page_obj.next_page_number }}">次のページ</a>
+        <a href="?page={{ page_obj.paginator.num_pages }}">最後のページ</a>
+      {% endif %}
+    </div>
+  {% endif %}
+
+{% endblock %}

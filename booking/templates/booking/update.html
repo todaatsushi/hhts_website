@@ -1,0 +1,16 @@
+{% extends 'hh2/layout.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}
+  ツア更新
+{% endblock %}
+
+{% block main %}
+  <div class="container my-4">
+    <form method="post">
+      {% csrf_token %}
+      <legend class="display-4 text-center">ツア更新</legend>
+      {% crispy form %}
+    </form>
+  </div>
+{% endblock %}

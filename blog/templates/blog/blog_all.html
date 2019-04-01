@@ -1,0 +1,13 @@
+{% extends "blog/post_list_layout.html" %}
+
+{% block title %}
+  全ポスト
+{% endblock %}
+
+{% block header %}
+  <h1 class="display-4 text-center my-4 blog-header">ブロッグ <span class="text-muted">全ポスト</span></h1>
+{% endblock %}
+
+{% block select_posts %}
+  <a href="{% url 'post-user' post.author.username %}" class="btn btn-sm btn-custom-1">{{ post.author.profile.name }}のポストを全て見る</a>
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends "blog/post_list_layout.html" %}
+
+{% block title %}
+  Admin Posts
+{% endblock %}
+
+{% block header %}
+  <h1 class="display-4 text-center my-4">ポスト<span class="text-muted">スタフ専用</span></h1>
+{% endblock %}
+
+{% block select_posts %}
+  <a href="{% url 'post-user' post.author.username %}" class="btn btn-sm btn-outline-primary">{{ post.author.profile.name }}のポストを全て見る</a>
+{% endblock %}

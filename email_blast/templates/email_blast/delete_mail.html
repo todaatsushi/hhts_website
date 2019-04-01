@@ -1,0 +1,21 @@
+{% extends "hh2/layout.html" %}
+
+{% block title %}
+  メールを削除する
+{% endblock %}
+
+{% block main %}
+  <div class="container delete-form">
+    <form method="post">
+      {% csrf_token %}
+      <fieldset class="form-group del-fg">
+        <legend class="text-center">メールを削除する</legend>
+        <p class="lead text-center">このメールを削除してもよろしいですか？?</p>
+      </fieldset>
+      <div class="form-group del-fg">
+        <input type="submit" value="削除" class="btn btn-custom-danger submit-btn">
+        <a href="{% url 'email-index'%}" class="btn btn-custom-2 submit-btn">戻る</a>
+      </div>
+    </form>
+  </div>
+{% endblock %}

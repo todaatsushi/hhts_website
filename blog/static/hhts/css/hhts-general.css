@@ -1,0 +1,177 @@
+html {
+  height: 100%;
+  background-color: #f2f2f2;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: custom;
+  color: black;
+}
+
+@font-face {
+  font-family: custom;
+  src: url(fonts/AppliMincho.otf);
+}
+
+/* NAVBAR BG */
+.navbar {
+  background-color: #f2f2f2;
+  min-height: 100px;
+  padding: 2vh 4vw;
+}
+
+/* NAVBAR LOGO (TOP LEFT) */
+.navbar-brand {
+  font-size: 1.5em;
+  border-bottom: 1.5px solid #5b6c5d;
+}
+
+.logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.subline {
+  color: #5b6c5d;
+  font-size: 0.9em;
+  padding-top: 3px;
+}
+
+/* HOVER */
+.navbar-dark .navbar-brand:hover {
+  color: black;
+}
+
+/* NAV LINK SIZE */
+.navbar-collapse {
+  font-size: 0.9em;
+}
+
+/* TEXT */
+.navbar-dark .navbar-brand {
+    color: #000;
+}
+
+/* LINKS COLOR */
+.navbar-dark .navbar-nav .nav-link, .navbar-dark .navbar-nav .nav-link .greet {
+    color: #000;
+}
+
+.nav-link.btn {
+  color: red;
+}
+
+/* LINKS HOVER */
+.navbar-dark .navbar-nav .nav-link:hover {
+    color: #4d783e;
+}
+
+/* CUSTOM BUTTON */
+button.btn-custom-1 {
+  border: 0.15em solid #4d783e;
+  color: #4d783e;
+  font-size: 0.9em;
+}
+
+.btn-custom-1:link, .btn-custom-1:visited {
+  border: 0.15em solid #4d783e;
+  color: #4d783e;
+  font-size: 0.9em;
+}
+
+.btn-custom-1:hover {
+  border: 0.15em solid #4d783e;
+  background-color: #4d783e;
+  color: #f2f2f2;
+}
+
+/* CUSTOM BUTTON 2 */
+button.btn-custom-2 {
+  border: 0.15em solid #6f8f72;
+  background-color: #6f8f72;
+  color: #f2f2f2;
+  font-size: 0.9em;
+}
+
+.btn-custom-2:link, .btn-custom-2:visited {
+  border: 0.15em solid #6f8f72;
+  background-color: #6f8f72;
+  color: #f2f2f2;
+  font-size: 0.9em;
+}
+
+.btn-custom-2:hover {
+  border: 0.15em solid #6f8f72;
+  color: #6f8f72;
+  background-color: #f2f2f2;
+}
+
+/* CUSTOM BUTTON 3 */
+button.btn-custom-3 {
+  border: 0.15em solid #49a078;
+  background-color: #49a078;
+  color: #f2f2f2;
+  font-size: 0.9em;
+}
+
+.btn-custom-3:link, .btn-custom-3:visited {
+  border: 0.15em solid #49a078;
+  background-color: #49a078;
+  color: #f2f2f2;
+  font-size: 0.9em;
+}
+
+.btn-custom-3:hover {
+  border: 0.15em solid #49a078;
+  color: #49a078;
+  background-color: #f2f2f2;
+}
+
+/* CUSTOM BUTTON DANGER */
+button.btn-custom-danger {
+  border: 0.15em solid #af2e1e;
+  background-color: #af2e1e;
+  color: #f2f2f2;
+  font-size: 0.9em;
+}
+
+.btn-custom-danger:link, .btn-custom-danger:visited {
+  border: 0.15em solid #af2e1e;
+  background-color: #af2e1e;
+  color: #f2f2f2;
+  font-size: 0.9em;
+}
+
+.btn-custom-danger:hover {
+  border: 0.15em solid #af2e1e;
+  color: #af2e1e;
+  background-color: #f2f2f2;
+}
+
+
+/* USER OPTIONS */
+#user-options {
+  color: #4d783e;
+}
+
+#user-options:hover {
+  color: red;
+}
+
+/* THEME COLOR */
+.theme-green {
+  color: #4d783e;
+}
+
+.bg-off-white {
+  background-color: #f2f2f2;
+}
+
+/* FLOAT CENTER */
+.center {
+  margin: 0 33%;
+}

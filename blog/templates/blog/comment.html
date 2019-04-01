@@ -1,0 +1,17 @@
+{% extends "blog/post_form_layout.html" %}
+
+{% block title %}
+  コメント
+{% endblock %}
+
+{% block form_func %}
+  コメントを残す
+{% endblock %}
+
+{% block back %}
+  <a href="{% url 'post-detail' post.id %}" class="btn btn-sm btn-block btn-custom-2">戻る</a>
+{% endblock %}
+
+{% block button_text %}
+  コメントを残す
+{% endblock %}

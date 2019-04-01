@@ -1,0 +1,22 @@
+{% extends "users/form_layout.html" %}
+{% load crispy_forms_tags %}
+
+{% block title %}
+  ユーザー申し込み
+{% endblock %}
+
+{% block legend %}
+  ユーザー申し込み
+{% endblock %}
+
+{% block form_inputs %}
+  {{ form|crispy }}
+{% endblock %}
+
+{% block submit %}
+  確認
+{% endblock %}
+
+{% block extra %}
+  <a href="{% url 'user-login' %}" class="btn btn-custom-3 btn-block">ログイン</a>
+{% endblock %}

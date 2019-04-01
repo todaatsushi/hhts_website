@@ -1,0 +1,22 @@
+/* REMOVE BORER FROM LHS */
+.card {
+  border: 0px;
+}
+
+/* HIDE INITIAL FORM */
+#update-col {
+  display: none;
+}
+
+/* PROFILE PIC SIZING */
+.profile-pic {
+  max-height: 200px;
+  max-width: 200px;
+}
+
+/* ADMIN BUTTON POSITIONING */
+.admin-btns {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

@@ -1,0 +1,13 @@
+{% extends "blog/post_form_layout.html"%}
+
+{% block title %}
+  メールを書く
+{% endblock %}
+
+{% block button_text %}
+  ドラフト
+{% endblock %}
+
+{% block back %}
+  <a href="{% url 'email-index' %}" class="btn btn-sm btn-block btn-custom-2">戻る</a>
+{% endblock %}

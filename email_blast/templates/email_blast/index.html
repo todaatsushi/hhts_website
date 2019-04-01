@@ -1,0 +1,72 @@
+{% extends 'hh2/layout.html' %}
+{% load recipients %}
+
+{% block title %}
+  メール管理
+{% endblock %}
+
+{% block main %}
+  <div class="container">
+    <h1 class="display-4 text-center blast-title">全てのメール</h1>
+    <a href="{% url 'email-draft' %}" class="btn btn-custom-3 btn-block my-2">下書きのメールを書く<i class="fas fa-mail-bulk""></i></a>
+    <hr>
+
+    {% for email in emails %}
+      <div>
+        <h2 class="blast-title">
+          {{ email.subject }}
+          {% if email.is_admin %}
+            <small><i class="fas fa-users post-icon"></i></small>
+          {% endif %}
+          {% if email.sent %}
+            <small><i class="far fa-envelope post-icon"></i></small>
+          {% endif %}
+        </h2>
+        {% if not email.sent %}
+          <a href="{% url 'email-update' email.pk %}" class="btn btn-sm btn-custom-2">更新</a>
+          <a href="{% url 'email-view' email.pk %}" class="btn btn-sm btn-custom-3">確認する / 送る</a>
+          <a href="{% url 'email-delete' email.pk %}" class="btn btn-sm btn-custom-danger">削除する</a>
+        {% endif %}
+        <h5 class="my-2">
+          <ul class="list-group blast-list my-3">
+            <li class="list-group-item active disabled">{{ email.sender.profile.name }}から、受取人：</li>
+            {% for person in email.recipients|to_list %}
+              <li class="list-group-item">{{ person }}</li>
+            {% endfor %}
+          </ul>
+        </h5>
+
+        <p>
+          {{ email.content|linebreaks }}
+        </p>
+
+        <small>
+          Created: {{ email.created_at|date:'G:i - d/m/y' }}<br>
+          Updated: {{ email.last_updated_at|date:'G:i - d/m/y' }}<br>
+          Sent: {% if not email.sent %}
+              -
+           {% else %}
+             {{ email.sent_at|date:'G:i - d/m/y' }}
+           {% endif %}
+        </small>
+      </div>
+      <hr>
+    {% endfor %}
+
+    {% if is_paginated %}
+      <div>
+        {% if page_obj.has_previous %}
+          <a href="?page=1">1ページ目</a>
+          <a href="?page={{ page_obj.previous_page_number }}">前のページ</a>
+        {% endif %}
+
+        ページ #{{ page_obj.number }}/{{ page_obj.paginator.num_pages }}
+
+        {% if page_obj.has_next %}
+          <a href="?page={{ page_obj.next_page_number }}">次のページ</a>
+          <a href="?page={{ page_obj.paginator.num_pages }}">最後のページ</a>
+        {% endif %}
+      </div>
+    {% endif %}
+  </div>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends "blog/post_form_layout.html" %}
+
+{% block title %}
+  新しいポスト
+{% endblock %}
+
+{% block form_func %}
+  ポストを新しく作る
+{% endblock %}
+
+{% block back %}
+  <a href="{% url 'blog-home' %}" class="btn btn-sm btn-custom-1 btn-block">戻る</a>
+{% endblock %}
+
+{% block button_text %}
+  投稿
+{% endblock %}

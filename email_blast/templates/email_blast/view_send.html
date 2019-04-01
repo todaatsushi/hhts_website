@@ -1,0 +1,30 @@
+{% extends 'hh2/layout.html' %}
+{% load recipients %}
+
+{% block title %}
+  View Email
+{% endblock%}
+
+{% block main %}
+  <div class="container my-4">
+    <h1 class="text-center display-4">Review Email Before Sending:</h1>
+
+    <div class="my-3 py-1">
+      <h2>{{ email.subject }}</h2>
+      <p>
+        <ul class="list-group blast-list">
+          <li class="list-group-item active disabled"><h6>受取人：</h6></li>
+          {% for address in email.recipients|to_list %}
+            <li class="list-group-item">{{ address }}</li>
+          {% endfor %}
+        </ul>
+      </p>
+      <p class="lead">{{ email.content|linebreaks }}</p>
+    </div>
+    <div>
+      <a href="{% url 'email-send' email.pk %}" class="btn btn-sm btn-custom-3">送る</a>
+      <a href="{% url 'email-update' email.pk%}" class="btn btn-sm btn-custom-2">更新</a>
+      <a href="{% url 'email-index' %}" class="btn btn-sm btn-custom-danger">戻る</a>
+    </div>
+  </div>
+{% endblock %}
