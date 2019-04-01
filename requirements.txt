@@ -1,0 +1,14 @@
+certifi==2019.3.9
+chardet==3.0.4
+Django==2.2
+django-crispy-forms==1.7.2
+django-markdownx==2.0.28
+django-widget-tweaks==1.4.3
+idna==2.8
+Markdown==3.1
+Pillow==5.4.1
+python-dotenv==0.10.1
+pytz==2018.9
+requests==2.21.0
+sqlparse==0.3.0
+urllib3==1.24.1

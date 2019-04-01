@@ -1,0 +1,8 @@
+.env
+db.sqlite3
+blog/__pycache__
+booking/__pycache__
+users/__pycache__
+hhts_website/__pycache__
+email_blast/__pycache__
+password.txt
