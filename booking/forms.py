@@ -23,12 +23,12 @@ class BookTourForm(forms.ModelForm):
                         cf.HTML(
                             """
                             <select name="transportation" class="mr-3 form-control" required="" id="id_transportation">
-                              <option value="NA" selected disabled>使う交通手段</option>
-                              <option value="TR">電車</option>
-                              <option value="CO">コーチ</option>
-                              <option value="CA">自動車・バン</option>
-                              <option value="TA">タクシ</option>
-                              <option value="OT">他の交通手段（”他に伝えたい情報”で伝えてください。）</option>
+                              <option value="使う交通手段" selected disabled>使う交通手段</option>
+                              <option value="電車">電車</option>
+                              <option value="コーチ">コーチ</option>
+                              <option value="自動車・バン">自動車・バン</option>
+                              <option value="タクシ">タクシ</option>
+                              <option value="その他">他の交通手段（”他に伝えたい情報”で伝えてください。）</option>
                             </select>
                             """
                         ),
@@ -72,11 +72,11 @@ class BookTourForm(forms.ModelForm):
                         """
                         <select name="age_group" class="mr-3 select form-control" required="" id="id_age_group">
                             <option value="NA" selected disabled>年齢層</option>
-                            <option value="F">家族</option>
-                            <option value="A">大人</option>
-                            <option value="P">高齢者</option>
-                            <option value="C">子供・思春期</option>
-                            <option value="M">ミックス</option>
+                            <option value="家族">家族</option>
+                            <option value="大人">大人</option>
+                            <option value="高齢者">高齢者</option>
+                            <option value="子供・思春期">子供・思春期</option>
+                            <option value="ミックス">ミックス</option>
                         </select>
                         """
                     ),
@@ -93,11 +93,11 @@ class BookTourForm(forms.ModelForm):
                     cf.Div(
                         cf.HTML(
                             """
-                            <a href="{% url 'home' %}" class='btn btn-sm btn-block btn-outline-warning my-3'>戻る</a>
+                            <a href="{% url 'home' %}" class='btn btn-sm btn-block btn-custom-1 my-3'>戻る</a>
                             """
                         ),
                         cf.ButtonHolder(
-                            cf.Submit('submit', '送る', css_class='btn btn-sm btn-block btn-success my-4')
+                            cf.Submit('submit', '送る', css_class='btn btn-sm btn-block btn-success my-3')
                         ),
                         css_class='col-md-4 offset-1'
                     ),

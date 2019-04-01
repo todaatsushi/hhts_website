@@ -8,7 +8,6 @@ from django.http import HttpResponseRedirect
 from django.contrib.auth.decorators import login_required
 from django.core.mail import EmailMessage
 
-
 from .models import Booking
 from .forms import BookTourForm
 
@@ -46,12 +45,14 @@ class BookingUpdateView(LoginRequiredMixin, UpdateView):
         'is_group', 'group_name', 'group_number', 'age_group',
         'extra_details'
     ]
+    success_url = '/booking/'
 
     def form_valid(self, form):
         form.instance.completed = False
-        form.instnace.confirmed = False
+        form.instance.confirmed = False
         form.instance.booked_at = timezone.now()
         return super().form_valid(form)
+
 
 
 class BookingDeleteView(LoginRequiredMixin, DeleteView):

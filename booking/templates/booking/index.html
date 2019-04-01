@@ -7,6 +7,7 @@
 {% block main %}
   <div class="container booking-main my-3">
     <h1 class="display-4 text-center blast-title">全てのブッキング</h1>
+    <a href="{% url 'booking-book' %}" class="btn btn-sm btn-block btn-custom-2">ツアの申し込み</a>
     <hr>
     {% for booking in bookings %}
       <div class="container　myー５">
