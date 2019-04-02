@@ -102,16 +102,9 @@
               <a href="{% url 'user-logout' %}" class="dropdown-item"><button class="btn btn-outline-success">ロッグアウト</button></a>
             </div>
           </li>
-        {% else %}
-          <!-- <li class="nav-item my-1 ml-1">
-            <a href="{% url 'user-login' %}"  class="btn btn-custom-2">ロッグイン</a>
-          </li> -->
         {% endif %}
           <li class="nav-item my-1 ml-1">
             <a href="/media/pdf/book_form.pdf" download class="btn btn-custom-1">ツアの申し込み</a>
-          </li>
-          <li class="nav-item my-1 ml-1">
-            <a href="{% url 'blog-home' %}" class="nav-link">会員のページ</a>
           </li>
           <li class="nav-item my-1 ml-1">
             <a href="{% url 'home' %}" class="nav-link">トップページ</a>
@@ -127,6 +120,9 @@
           </li>
           <li class="nav-item my-1 ml-1">
             <a href="{% url 'saijo' %}" class="nav-link">西条の観光</a>
+          </li>
+          <li class="nav-item my-1 ml-1">
+            <a href="{% url 'blog-home' %}" class="nav-link">会員のページ</a>
           </li>
         </ul>
       </div>
