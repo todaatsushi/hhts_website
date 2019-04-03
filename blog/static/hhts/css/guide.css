@@ -19,3 +19,11 @@
 .guide-main {
   padding: 20px;
 }
+
+.guide-footer {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  justify-content: space-around;
+  align-items: center;
+}
