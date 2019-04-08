@@ -27,3 +27,15 @@
   justify-content: space-around;
   align-items: center;
 }
+
+.guide-prices {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.guide-prices ul, a {
+  width: 100%;
+  margin: 5px 0;
+  padding: 5px 0;
+}

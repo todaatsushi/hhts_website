@@ -104,16 +104,13 @@
           </li>
         {% endif %}
           <li class="nav-item my-1 ml-1">
-            <a href="/media/pdf/book_form.pdf" download class="btn btn-custom-1">ツアの申し込み</a>
-          </li>
-          <li class="nav-item my-1 ml-1">
             <a href="{% url 'home' %}" class="nav-link">トップページ</a>
           </li>
           <li class="nav-item my-1 ml-1">
-            <a href="{% url 'about' %}" class="nav-link">活動紹介</a>
+            <a href="{% url 'blog-home' %}" class="nav-link">ニュース</a>
           </li>
           <li class="nav-item my-1 ml-1">
-            <a href="{% url 'team' %}" class="nav-link">スタフ</a>
+            <a href="{% url 'about' %}" class="nav-link">活動紹介</a>
           </li>
           <li class="nav-item my-1 ml-1">
             <a href="{% url 'guide' %}" class="nav-link">ガイド派遣</a>
@@ -122,7 +119,7 @@
             <a href="{% url 'saijo' %}" class="nav-link">西条の観光</a>
           </li>
           <li class="nav-item my-1 ml-1">
-            <a href="{% url 'blog-home' %}" class="nav-link">会員のページ</a>
+            <a href="{% url 'team' %}" class="nav-link">スタフ</a>
           </li>
         </ul>
       </div>
