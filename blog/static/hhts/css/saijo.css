@@ -1,8 +1,10 @@
 .saijo-link:link, .saijo-link:visited {
-  color: #324d28;
+  color: #6f8f72;
+  font-size: 1.4em;
+  text-decoration: underline;
 }
 
 .saijo-link:active, .saijo-link:hover {
-  color: #6f8f72;
+  color: #2c423f;
   text-decoration: none;
 }
