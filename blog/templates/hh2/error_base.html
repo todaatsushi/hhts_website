@@ -1,0 +1,10 @@
+{% extends 'hh2/layout.html' %}
+
+{% block title %}
+  エラー：#{% block error_number %}{% endblock %}
+{% endblock %}
+
+{% block main %}
+    {% block error_content %}
+    {% endblock %}
+{% endblock %}
