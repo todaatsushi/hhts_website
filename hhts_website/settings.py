@@ -29,7 +29,7 @@ load_dotenv(os.path.join(project_folder, '.env'))
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['localhost', 'saijosakaguradouri.pythonanywhere.com']
 
