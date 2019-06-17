@@ -4,15 +4,10 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 
-import hhts_website.views as v
-from users import views as uv
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', v.home, name='home'),
-    path('about/', v.about, name='about'),
-    path('guide/', v.guide_info, name='guide'),
-    path('saijo-tours/', v.saijo_info, name='saijo'),
+    path('', include('home.urls')),
 
     # User views
     path('users/', include('users.urls')),
