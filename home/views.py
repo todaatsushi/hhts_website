@@ -1,3 +1,17 @@
 from django.shortcuts import render
 
-# Create your views here.
+
+def home(request):
+    return render(request, 'home/home.html')
+
+
+def about(request):
+    return render(request, 'home/about.html')
+
+
+def guide_info(request):
+    return render(request, 'home/guide.html')
+
+
+def saijo_info(request):
+    return render(request, 'home/saijo.html')
