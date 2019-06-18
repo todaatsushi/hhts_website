@@ -2,14 +2,15 @@ import os
 from dotenv import load_dotenv
 
 # Language settings
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+SITE_ROOT = os.path.dirname(os.path.realpath(__name__))
 
 # Env Variables
-project_folder = os.path.expanduser(os.path.join(BASE_DIR, 'hhts_website'))
-load_dotenv(os.path.join(project_folder, '.env'))
+# project_folder = os.path.expanduser(os.path.join(BASE_DIR, 'hhts_website'))
+# load_dotenv(os.path.join(project_folder, '.env'))
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.environ.get('SECRET_KEY')
@@ -106,12 +107,15 @@ AUTH_PASSWORD_VALIDATORS = [
 
 # All langs
 LANGUAGES = (
+    # ('en-gb', _('英語')),
+    # ('ja', _('日本語')),
     ('en', _('English')),
     ('ja', _('Japanese')),
 )
 
 # Default lang
 LANGUAGE_CODE = 'ja'
+# LANGUAGE_CODE = 'en'
 
 TIME_ZONE = 'UTC'
 
@@ -121,16 +125,16 @@ USE_L10N = True
 
 USE_TZ = True
 
-LOCALE_PATHS = [
-    os.path.join(BASE_DIR, 'locale'),
-]
+LOCALE_PATHS = (
+    os.path.join(SITE_ROOT, 'locale'),
+)
 
 
 # Media Files
 # PUBLIC URL OF DIRECTORY
 MEDIA_URL = '/media/'
 # DJANGO STORES UPLOADED FILES HERE
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_ROOT = os.path.join(SITE_ROOT, 'media')
 
 # FORM TEMPLATE
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
@@ -139,11 +143,8 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-STATIC_FILES_DIRS = [
-    os.path.join(BASE_DIR, 'static'),
-    '/var/www/static/',
-]
+STATIC_ROOT = os.path.join(SITE_ROOT, 'static')
+
 
 # DATE FORMAT
 DATETIME_FORMAT = '%d/%m/%y %H:%M'
