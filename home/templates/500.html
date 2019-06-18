@@ -1,4 +1,5 @@
 {% extends 'home/error_base.html' %}
+{% load i18n %}
 
 
 {% block error_number %}
@@ -7,6 +8,6 @@
 
 
 {% block error_content %}
-    <h2>他のページを使ってください。</h2>
+    <h2>{% trans '他のページを使ってください。'%}</h2>
 {% endblock %}
 

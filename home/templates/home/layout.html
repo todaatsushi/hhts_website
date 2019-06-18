@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
   {% load static %}
+  {% load i18n %}
   <head>
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>東広島ボランティアガイド: {% block title %}{% endblock %}</title>
+    <title>{% trans '東広島ボランティアガイド' %}: {% block title %}{% endblock %} - {% get_current_language as LANGUAGE_CODE %} {{ LANGUAGE_CODE }}</title>
 
     <!-- BOOTSTRAP -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -65,7 +66,7 @@
 
   <body>
     {% load static %}
-    {# #}<nav class="navbar navbar-expand-xl navbar-light" id="nav">
+    <nav class="navbar navbar-expand-xl navbar-light" id="nav">
       <div class="logo">
         <a href="{% url 'home' %}" class="navbar-brand">
           東広島<span style="color: #4d783e;">ボランティアガイド</span>
@@ -85,41 +86,41 @@
           <li class="nav-item dropdown active my-1 ml-1">
             <a class="nav-link dropdown-toggle" href="#" id="user-options" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <span class="greet">
-                <small>こんにちは <strong>{{ user.username }}</strong>。</small>
+                <small>{% trans 'こんにちは' %} <strong>{{ user.username }}</strong>。</small>
               </span>
             </a>
             <div class="dropdown-menu" aria-labelledby="user-options">
-              <a href="{% url 'booking-index' %}" class="dropdown-item">ブッキングシステム</a>
+              <a href="{% url 'booking-index' %}" class="dropdown-item">{% trans 'ブッキングシステム' %}</a>
               <div class="dropdown-divider"></div>
-              <a href="{% url 'post-new' %}" class="dropdown-item">新しいポスト</a>
-              <a href="{% url 'post-admin' %}" class="dropdown-item">スタフ専用ポスト</a>
-              <a href="{% url 'post-all' %}" class="dropdown-item">全てのポスト</a>
+              <a href="{% url 'post-new' %}" class="dropdown-item">{% trans '新しいポスト' %}%</a>
+              <a href="{% url 'post-admin' %}" class="dropdown-item">{% trans 'スタフ専用ポスト' %}</a>
+              <a href="{% url 'post-all' %}" class="dropdown-item">{% trans '全てのポスト' %}</a>
               <div class="dropdown-divider"></div>
-              <a href="{% url 'email-index' %}" class="dropdown-item">メールシステム</a>
+              <a href="{% url 'email-index' %}" class="dropdown-item">{% trans 'メールシステム' %}</a>
               <div class="dropdown-divider"></div>
-              <a href="{% url 'user-about' user.username %}" class="dropdown-item">プロファイル</a>
+              <a href="{% url 'user-about' user.username %}" class="dropdown-item">{% trans 'プロファイル' %}</a>
               <div class="dropdown-divider"></div>
-              <a href="{% url 'user-logout' %}" class="dropdown-item"><button class="btn btn-outline-success">ロッグアウト</button></a>
+              <a href="{% url 'user-logout' %}" class="dropdown-item"><button class="btn btn-outline-success">{% trans 'ロッグアウト' %}</button></a>
             </div>
           </li>
         {% endif %}
           <li class="nav-item my-1 ml-1">
-            <a href="{% url 'home' %}" class="nav-link">トップページ</a>
+            <a href="{% url 'home' %}" class="nav-link">{% trans 'トップページ' %}</a>
           </li>
           <li class="nav-item my-1 ml-1">
-            <a href="{% url 'blog-home' %}" class="nav-link">ニュース</a>
+            <a href="{% url 'blog-home' %}" class="nav-link">{% trans 'ニュース' %}</a>
           </li>
           <li class="nav-item my-1 ml-1">
-            <a href="{% url 'about' %}" class="nav-link">活動紹介</a>
+            <a href="{% url 'about' %}" class="nav-link">{% trans '活動紹介' %}</a>
           </li>
           <li class="nav-item my-1 ml-1">
-            <a href="{% url 'guide' %}" class="nav-link">ガイド派遣</a>
+            <a href="{% url 'guide' %}" class="nav-link">{% trans 'ガイド派遣' %}</a>
           </li>
           <li class="nav-item my-1 ml-1">
-            <a href="{% url 'saijo' %}" class="nav-link">西条の観光</a>
+            <a href="{% url 'saijo' %}" class="nav-link">{% trans '西条の観光' %}</a>
           </li>
           <li class="nav-item my-1 ml-1">
-            <a href="{% url 'team' %}" class="nav-link">スタフ</a>
+            <a href="{% url 'team' %}" class="nav-link">{% trans 'スタフ' %}</a>
           </li>
         </ul>
       </div>

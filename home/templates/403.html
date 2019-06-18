@@ -1,4 +1,5 @@
 {% extends 'home/error_base.html' %}
+{% load i18n %}
 
 
 {% block error_number %}
@@ -7,8 +8,6 @@
 
 
 {% block error_content %}
-    <h1>このページはログインしないと見えません。</h1>
-
-    <h2>他のページを使ってください。</h2>
+    <h1>{% trans 'このページはログインしないと見えません。' %}</h1>
 {% endblock %}
 

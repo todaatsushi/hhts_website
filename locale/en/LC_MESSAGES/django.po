@@ -3,20 +3,20 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-06-18 18:46+0100\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"POT-Creation-Date: 2019-06-18 20:12+0100\n"
+"PO-Revision-Date: 2019-06-18 21:45+0100\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: en\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 2.2.3\n"
 
 #: blog/templates/blog/base_site.html:3
 msgid "Django site admin"
@@ -26,18 +26,422 @@ msgstr "Site Admin"
 msgid "Django administration"
 msgstr "Admin"
 
-#: hhts_website/settings/base.py:111
-msgid "English"
-msgstr "English"
+#: home/templates/400.html:10 home/templates/404.html:10
+msgid "そのページは存在いしていません。"
+msgstr "The page requested does not exist."
 
-#: hhts_website/settings/base.py:112
-msgid "Japanese"
-msgstr "Japanese"
+#: home/templates/403.html:10
+msgid "このページはログインしないと見えません。"
+msgstr "Without logging in as a staff member, you cannot see this page."
+
+#: home/templates/500.html:10 home/templates/home/error_base.html:11
+msgid "他のページを使ってください。"
+msgstr "Please use another page."
+
+#: home/templates/home/about.html:4
+#, fuzzy
+#| msgid "東広島ボランティアガイド"
+msgid "東広島ボランティアガイドについて"
+msgstr "Higashi Hiroshima Volunteer Guide"
+
+#: home/templates/home/about.html:14 home/templates/home/about.html:97
+#: home/templates/home/about.html:147
+msgid "酒蔵通り案内"
+msgstr "Sake Brewery Tours"
+
+#: home/templates/home/about.html:15
+msgid "JR西条駅前に広がる酒蔵通りのご案内をいたします。"
+msgstr "We give tours of the sake breweries in front of the JR station."
+
+#: home/templates/home/about.html:16
+msgid "さらに読む"
+msgstr "Read more"
+
+#: home/templates/home/about.html:23
+msgid "東広島探訪講座"
+msgstr "Higashi Hiroshima Exploration Course"
+
+#: home/templates/home/about.html:25
+msgid ""
+"\n"
+"                東広島市内の興味深い歴史と場所、東広島ゆかりの人物などを学び"
+"ましょう。\n"
+"                毎年実施しています。その都度市の広報等で募集します。\n"
+"              "
+msgstr ""
+"\n"
+"Learn about the rich history surrounding the area, its buildings and its "
+"people\n"
+"Our annual event which helps raise awareness every time."
+
+#: home/templates/home/about.html:36
+msgid "子供ガイド養成講座"
+msgstr "Junior Guide Training Course"
+
+#: home/templates/home/about.html:38
+msgid ""
+"\n"
+"                  自分の住む街を知り魅力を発見してもらいます。ガイドになって"
+"お客さんのご案内\n"
+"                  をしま せんか?\n"
+"                "
+msgstr ""
+"\n"
+"Become an expert resident and rediscover this town.\n"
+"Consider becoming a guide yourself."
+
+#: home/templates/home/about.html:52
+msgid "東広島を歩く"
+msgstr "Walk Higashi Hiroshima"
+
+#: home/templates/home/about.html:54
+msgid ""
+"\n"
+"                東広島市内の名所旧跡を巡る歴史散策ウォークです。\n"
+"                毎年1-3回実施しています。その都度市の広報等で募集します。\n"
+"              "
+msgstr ""
+"\n"
+"A historical walk around all the sites of the city carried out 1-3 times "
+"every year."
+
+#: home/templates/home/about.html:65
+msgid "春の西条・醸華町まつり"
+msgstr "Saijo Spring Festival"
+
+#: home/templates/home/about.html:67
+msgid ""
+"\n"
+"                毎年3月の第一土曜日に西条酒蔵通りにて開催しています。年々来場"
+"者が増え、春\n"
+"                を告げる楽しいお祭りになっています。普段見ることのできない酒"
+"蔵内の見学もできます\n"
+"                (要予約)。スタンプラリーに参加して、豪華景品をゲットしましょ"
+"う!\n"
+"              "
+msgstr ""
+"\n"
+"On the first Saturday of every March, our ever growing Spring Festival takes "
+"place! Take part in \n"
+"special brewery tours (reservation required) and a coupon hunt that yields "
+"luxurious prizes!"
+
+#: home/templates/home/about.html:79
+msgid "その他"
+msgstr "Other"
+
+#: home/templates/home/about.html:81
+msgid ""
+"\n"
+"                様々な大学講座秋や西条酒まつりに協力しています。特に熟年大学"
+"では「探検・我\n"
+"                が町めぐり」としてマイクロバスによる市内名所めぐりをしていま"
+"す。\n"
+"              "
+msgstr ""
+"\n"
+"We partner with various universities in the autumn and visit city sights in "
+"a special bus tour."
+
+#: home/templates/home/about.html:103
+msgid "てくてくガイド"
+msgstr "Guide Info"
+
+#: home/templates/home/about.html:105
+msgid ""
+"\n"
+"                  毎月10日 <br>\n"
+"                  受付・出発 10:00-11:00am 随時 <br>\n"
+"                  集合 駅2F観光案内所 <br>\n"
+"                  所要時間 約1時間半 <br>\n"
+"                  参加費 無料 <br>\n"
+"                "
+msgstr ""
+"\n"
+"10th of every month <br>\n"
+"Reception / Departure at 10am - 11am <br>\n"
+"Meeting station is 2nd floor of the tourist information center <br>\n"
+"Approx. 90mins long <br>\n"
+"Free! <br>"
+
+#: home/templates/home/about.html:113
+msgid "JRハイキング"
+msgstr "JR Hiking"
+
+#: home/templates/home/about.html:115
+msgid ""
+"\n"
+"                  毎週日曜 <br>\n"
+"                  受付・出発 10:30am <br>\n"
+"                  集合 駅2F観光案内所 <br>\n"
+"                  所要時間 約1時間半 <br>\n"
+"                  参加費 無料 <br>\n"
+"                "
+msgstr ""
+"\n"
+"Every Sunday <br>\n"
+"Reception / Departure at 10:30am <br>\n"
+"Meeting station is 2nd floor of the tourist information center <br>\n"
+"Approx. 90mins long <br>\n"
+"Free! <br>"
+
+#: home/templates/home/about.html:123 home/templates/home/guide.html:4
+#: home/templates/home/layout.html:117
+msgid "ガイド派遣"
+msgstr "Guide Service"
+
+#: home/templates/home/about.html:125
+msgid ""
+"\n"
+"                  東広島観光協会を通してガイド派遣を受け付けています。<br>\n"
+"                  参加費 5名様まで1000円 6-20名 2000円 <br>\n"
+"                  20名以上の場合はガイド1人につき2000円 <br>\n"
+"                  詳しくはガイド派遣のページをご覧ください <br>\n"
+"                "
+msgstr ""
+"\n"
+"We accept guide requests through the Higashi Hiroshima Tourism "
+"Association<br>\n"
+"1000¥ for parties up to 5,  parties of 6-20 2000¥<br>\n"
+"Parties exceeding that will be charged 2000¥ per guide required <br>\n"
+"Please visit the site for further information <br>"
+
+#: home/templates/home/about.html:134 home/templates/home/about.html:163
+msgid "戻る"
+msgstr "Go back"
+
+#: home/templates/home/about.html:154
+msgid ""
+"\n"
+"                  毎年6月から8月に開催、全5回の講座です。<br>\n"
+"                  対象は小学校4、5、6年生 <br>\n"
+"                  参加費 500円 (子供ガイド専用のTシャツ代金) <br>\n"
+"                  募集は市の広報にて行います。<br>\n"
+"                "
+msgstr ""
+"\n"
+"5 courses held from June through August every year<br>\n"
+"For children ages 4-6<br>\n"
+"500¥ per child (t-shirt fee) <br>\n"
+"Recruitment is done by the city’s information desk.<br>"
+
+#: home/templates/home/about.html:174
+msgid "お問い"
+msgstr "Contact"
+
+#: home/templates/home/about.html:174
+msgid "合わせ"
+msgstr "Information"
+
+#: home/templates/home/about.html:177
+msgid "西条酒蔵通り案内所"
+msgstr "Saijo Sake Brewery Street Information"
+
+#: home/templates/home/about.html:178
+msgid "〒739-0011 広島県東広島市西条本町17-1"
+msgstr ""
+"17-1 Nishijo Honcho, Higashihiroshima City, Hiroshima Prefecture 739-0011"
+
+#: home/templates/home/error_base.html:4
+msgid "エラー"
+msgstr "Error"
+
+#: home/templates/home/guide.html:10
+msgid "ガイド"
+msgstr "Guide "
+
+#: home/templates/home/guide.html:10
+msgid "派遣"
+msgstr "Dispatch"
+
+#: home/templates/home/guide.html:11
+msgid ""
+"酒蔵通りのガイドをご希望の方は申込書に記入の上、FAXにてお申し込みください。"
+msgstr ""
+"If you would like a guide, please fill out the application form and fax it "
+"over."
+
+#: home/templates/home/guide.html:19
+msgid "所要時間 ご案内する酒蔵の数により1時間から2時間かかります"
+msgstr "Depending on the number of breweries, the tour takes 1 -2 hours."
+
+#: home/templates/home/guide.html:20
+msgid "ガイド料 5名まで1000円"
+msgstr "Guide fee for up to 5 people - 1000¥"
+
+#: home/templates/home/guide.html:21
+msgid "6名以上20名まで2000円"
+msgstr "Guide fee for 6 - 20 people - 2000¥"
+
+#: home/templates/home/guide.html:22
+msgid "20名以上の場合は複数のガイドがご案内致します。"
+msgstr "Guide fee for over 20 people will require multiple guides."
+
+#: home/templates/home/guide.html:24
+msgid "ガイド派遣の申し込み書はこちら。"
+msgstr "Enquire about guides here"
+
+#: home/templates/home/guide.html:29
+msgid ""
+"酒蔵通り以外のガイドをご希望の方は案内所まで電話でお問い合わせください。"
+msgstr ""
+"For other guide services (not sake brewery related), contact the information "
+"center by phone."
 
 #: home/templates/home/home.html:12
 msgid "ようこそ西条へ"
-msgstr "Welcome to Higashi Hiroshima"
+msgstr "Welcome to Higashi Hiroshima!"
 
-#: home/templates/home/home.html:18
-msgid "こんにちは。"
+#: home/templates/home/home.html:14
+msgid ""
+"\n"
+"          東広島の中心地西条は江戸時代には広島藩最大の本陣を誇る宿場町でし"
+"た。 明治になり酒作りが盛んとなり、大正から昭和にかけての酒造りの黄金期には"
+"「酒都西条」\n"
+"          とて灘、伏見に続く三大銘醸地となりました。現在も多くの酒蔵が軒を連"
+"ねて銘酒を醸し\n"
+"          ております。\n"
+"        "
+msgstr ""
+"\n"
+"During the Edo period, Saijo was the post town that boasted the largest "
+"Honjin (Inn for government officials) for samurai.\n"
+"Sake brewing became popular during the Meiji era as well as during the "
+"‘golden era’, from the Taisho to the Showa eras for which \n"
+"Saijo became the sake capital.\n"
+"It has now become one of the 3 major confectionery places, following Fushimi "
+"and many sake breweries are still producing top quality\n"
+"produce."
+
+#: home/templates/home/home.html:21
+msgid ""
+"\n"
+"          また、古代の古墳、国分寺跡、中世の山城など見所もございます。\n"
+"          我々と共に西条探訪に出かけませんか。\n"
+"        "
+msgstr ""
+"\n"
+"There are many attractions including ancient tombs, medieval castles and the "
+"ruins of Kokubunji.\n"
+"Let’s explore Saijo together!"
+
+#: home/templates/home/layout.html:10
+msgid "東広島ボランティアガイド"
+msgstr "Higashi Hiroshima Volunteer Guide"
+
+#: home/templates/home/layout.html:89
+#, fuzzy
+#| msgid "こんにちは。"
+msgid "こんにちは"
 msgstr "Hello"
+
+#: home/templates/home/layout.html:93
+msgid "ブッキングシステム"
+msgstr "Booking System"
+
+#: home/templates/home/layout.html:95
+msgid "新しいポスト"
+msgstr "New Post"
+
+#: home/templates/home/layout.html:96
+msgid "スタフ専用ポスト"
+msgstr "Staff Only Posts"
+
+#: home/templates/home/layout.html:97
+msgid "全てのポスト"
+msgstr "All Posts"
+
+#: home/templates/home/layout.html:99
+msgid "メールシステム"
+msgstr "Mail Management System"
+
+#: home/templates/home/layout.html:101
+msgid "プロファイル"
+msgstr "Profile"
+
+#: home/templates/home/layout.html:103
+msgid "ロッグアウト"
+msgstr "Logout"
+
+#: home/templates/home/layout.html:108
+msgid "トップページ"
+msgstr "Home"
+
+#: home/templates/home/layout.html:111
+msgid "ニュース"
+msgstr "News"
+
+#: home/templates/home/layout.html:114
+msgid "活動紹介"
+msgstr "Activities"
+
+#: home/templates/home/layout.html:120 home/templates/home/saijo.html:4
+msgid "西条の観光"
+msgstr "Saijo Tours"
+
+#: home/templates/home/layout.html:123
+msgid "スタフ"
+msgstr "Staff"
+
+#: home/templates/home/saijo.html:9
+msgid "西条の"
+msgstr "Saijo "
+
+#: home/templates/home/saijo.html:9
+msgid "観光"
+msgstr "Sightseeing"
+
+#: home/templates/home/saijo.html:15
+msgid "三ツ城古墳"
+msgstr "Mitsujokofun"
+
+#: home/templates/home/saijo.html:17
+msgid "広島県最大の前方後円墳を含む3つの古墳群。史跡公園として整備されている。"
+msgstr "A historical park containing the largest ancient imperial grave."
+
+#: home/templates/home/saijo.html:25
+msgid "鏡山城"
+msgstr "Kagamiyama Castle"
+
+#: home/templates/home/saijo.html:27
+msgid ""
+"\n"
+"              大内氏の安芸国支配の中心となった山城跡。周囲は整備され鏡山公園"
+"となっている。\n"
+"              春には桜が美しい。\n"
+"            "
+msgstr ""
+"\n"
+"Yamashiro ruins, which has become the center of Aki country of the Ouchi "
+"clan.\n"
+"The surrounding area has been maintained, becoming Kayama Park.\n"
+"In the spring, the cherry blossoms are especially beautiful."
+
+#: home/templates/home/saijo.html:38
+msgid "安芸国分寺歴史公園(国史跡)"
+msgstr "Aki Kokubunji History Park (National Historic Site)"
+
+#: home/templates/home/saijo.html:40
+msgid ""
+"\n"
+"              奈良時代に建立された安芸国分寺跡が歴史公園となっている。現在"
+"建っている国分\n"
+"              寺の仁王門は県内唯一の中世の仁王門。\n"
+"            "
+msgstr ""
+"\n"
+"Built in the Nara period, Aki Kokubunji ruins have become a historical park. "
+"The temple\n"
+"gates are the only medieval gate in the prefecture."
+
+#: home/templates/home/saijo.html:52
+msgid ""
+"その他、東広島の観光については東広島観光協会のホームページをごらんください。"
+msgstr ""
+"For anything else, please visit the Higashi Hiroshima Tourism Association."
+
+#~ msgid "English"
+#~ msgstr "English"
+
+#~ msgid "Japanese"
+#~ msgstr "Japanese"

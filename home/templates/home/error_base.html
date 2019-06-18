@@ -1,10 +1,12 @@
 {% extends 'home/layout.html' %}
 
 {% block title %}
-  エラー：#{% block error_number %}{% endblock %}
+  {% trans 'エラー' %}：#{% block error_number %}{% endblock %}
 {% endblock %}
 
 {% block main %}
     {% block error_content %}
     {% endblock %}
+
+    <h2><a href="{% url 'home' %}">{% trans '他のページを使ってください。' %}</a></h2>
 {% endblock %}
