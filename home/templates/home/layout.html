@@ -17,15 +17,8 @@
     <!-- LAYOUT STYLING -->
     <link rel="stylesheet" type="text/css" href="{% static 'home/css/hhts-general.css' %}">
 
-    <!-- MAIN SITE STYLING -->
-    <!-- HOME -->
-    <link rel="stylesheet" type="text/css" href="{% static 'home/css/home.css' %}">
-    <!-- ABOUT -->
-    <link rel="stylesheet" type="text/css" href="{% static 'home/css/about.css' %}">
-    <!-- GUIDE -->
-    <link rel="stylesheet" type="text/css" href="{% static 'home/css/guide.css' %}">
-    <!-- SAIJO -->
-    <link rel="stylesheet" type="text/css" href="{% static 'home/css/saijo.css' %}">
+    {% block styling %}
+    {% endblock %}
 
     <!-- BLOG STYLING -->
     <link rel="stylesheet" type="text/css" href="{% static 'blog/css/blog-list.css' %}">

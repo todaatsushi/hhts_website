@@ -1,4 +1,9 @@
 {% extends 'home/layout.html' %}
+{% load static %}
+
+{% block styling %}
+  <link rel="stylesheet" type="text/css" href="{% static 'home/css/guide.css' %}">
+{% endblock %}
 
 {% block title %}
   ガイド派遣
