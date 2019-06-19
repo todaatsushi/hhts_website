@@ -30,7 +30,7 @@ def change_language(request, language):
         if l[0] == language:
             valid = True
     if not valid:
-        raise Http404(_('That language is not available'))
+        raise Http404(_('選択した言語は利用できません'))
 
     # Make language the setting for the session
     translation.activate(language)
