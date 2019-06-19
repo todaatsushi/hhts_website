@@ -1,35 +1,35 @@
 {% extends 'home/layout.html' %}
-{% load static %}
+{% load static i18n %}
 
 {% block styling %}
   <link rel="stylesheet" type="text/css" href="{% static 'booking/css/booking-all.css' %}">
 {% endblock %}
 
 {% block title %}
-  ブッキング
+  {% trans 'ブッキング' %}
 {% endblock %}
 
 {% block main %}
   <div class="container booking-main my-3">
-    <h1 class="display-4 text-center blast-title">全てのブッキング</h1>
-    <a href="{% url 'booking-book' %}" class="btn btn-sm btn-block btn-custom-2">ツアの申し込み</a>
+    <h1 class="display-4 text-center blast-title">{% trans '全てのブッキング' %}</h1>
+    <a href="{% url 'booking-book' %}" class="btn btn-sm btn-block btn-custom-2">{% trans 'ツアの申し込み' %}</a>
     <hr>
     {% for booking in bookings %}
       <div class="container　myー５">
         <h4><a href="{% url 'booking-detail' booking.id %}" class="blog-title">{{ booking.contact_name }}: {{ booking.scheduled_at }}</a></h4>
-        <h5>確認：{% if booking.confirmed %}<i class="fas fa-check" style="color: #4d783e;"></i>{% else %}<i class="fas fa-times" style="color: #af2e1e;"></i>{% endif %}</h5>
-        <h5>完成：{% if booking.complete %}<i class="fas fa-check" style="color: #4d783e;"></i>{% else %}<i class="fas fa-times" style="color: #af2e1e;"></i>{% endif %}</h5>
-        <a href="{% url 'booking-update' booking.id %}" class="btn btn-sm btn-custom-1">更新</a>
-        <a href="{% url 'booking-delete' booking.id %}" class="btn btn-sm btn-custom-danger">削除</a>
+        <h5>{% trans '確認：' %}{% if booking.confirmed %}<i class="fas fa-check" style="color: #4d783e;"></i>{% else %}<i class="fas fa-times" style="color: #af2e1e;"></i>{% endif %}</h5>
+        <h5>{% trans '完成：' %}{% if booking.complete %}<i class="fas fa-check" style="color: #4d783e;"></i>{% else %}<i class="fas fa-times" style="color: #af2e1e;"></i>{% endif %}</h5>
+        <a href="{% url 'booking-update' booking.id %}" class="btn btn-sm btn-custom-1">{% trans '更新' %}</a>
+        <a href="{% url 'booking-delete' booking.id %}" class="btn btn-sm btn-custom-danger">{% trans '削除' %}</a>
         {% if booking.confirmed %}
-          <a href="{% url 'booking-unconfirm' booking.id %}" class="btn btn-sm btn-custom-1">確認しない</a>
+          <a href="{% url 'booking-unconfirm' booking.id %}" class="btn btn-sm btn-custom-1">{% trans '確認しない' %}</a>
         {% else %}
-          <a href="{% url 'booking-confirm' booking.id %}" class="btn btn-sm btn-custom-2">確認</a>
+          <a href="{% url 'booking-confirm' booking.id %}" class="btn btn-sm btn-custom-2">{% trans '確認' %}</a>
         {% endif %}
         {% if booking.complete %}
-          <a href="{% url 'booking-uncomplete' booking.id %}" class="btn btn-sm btn-custom-1">不完全</a>
+          <a href="{% url 'booking-uncomplete' booking.id %}" class="btn btn-sm btn-custom-1">{% trans '不完全' %}</a>
         {% else %}
-          <a href="{% url 'booking-complete' booking.id %}" class="btn btn-sm btn-custom-3">終わり</a>
+          <a href="{% url 'booking-complete' booking.id %}" class="btn btn-sm btn-custom-3">{% trans '終わり' %}</a>
         {% endif %}
       </div>
       <hr class="my-4">
@@ -38,15 +38,17 @@
     {% if is_paginated %}
       <div>
         {% if page_obj.has_previous %}
-          <a href="?page=1">1ページ目</a>
-          <a href="?page={{ page_obj.previous_page_number }}">前のページ</a>
+          <a href="?page=1">{% trans '1ページ目' %}</a>
+          <a href="?page={{ page_obj.previous_page_number }}">{% trans '前のページ' %}</a>
         {% endif %}
 
-        ページ #{{ page_obj.number }}/{{ page_obj.paginator.num_pages }}
+        {% blocktrans with number=page_obj.number total=page_obj.paginator.num_pages %}
+          ページ #{{ number }}/{{ total }}
+        {% endblocktrans %}
 
         {% if page_obj.has_next %}
-          <a href="?page={{ page_obj.next_page_number }}">次のページ</a>
-          <a href="?page={{ page_obj.paginator.num_pages }}">最後のページ</a>
+          <a href="?page={{ page_obj.next_page_number }}">{% trans '次のページ' %}</a>
+          <a href="?page={{ page_obj.paginator.num_pages }}">{% trans '最後のページ' %}</a>
         {% endif %}
       </div>
     {% endif %}

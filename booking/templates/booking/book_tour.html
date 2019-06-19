@@ -1,12 +1,12 @@
 {% extends 'home/layout.html' %}
-{% load crispy_forms_tags static %}
+{% load crispy_forms_tags static i18n %}
 
 {% block styling %}
   <link rel="stylesheet" type="text/css" href="{% static 'booking/css/booking-all.css' %}">
 {% endblock %}
 
 {% block title %}
-  ツアーを予約
+  {% trans 'ツアーを予約' %}
 {% endblock %}
 
 {% block main %}
@@ -27,7 +27,7 @@
     {% endif %}
     <form method="post">
       {% csrf_token %}
-      <legend class="display-4 text-center">ツアーを予約</legend>
+      <legend class="display-4 text-center">{% trans 'ツアーを予約' %}</legend>
       {% crispy form %}
     </form>
   </div>

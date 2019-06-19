@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-06-19 21:00+0100\n"
-"PO-Revision-Date: 2019-06-19 21:00+0100\n"
+"POT-Creation-Date: 2019-06-19 21:13+0100\n"
+"PO-Revision-Date: 2019-06-19 21:19+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en\n"
@@ -26,6 +26,205 @@ msgstr "Site Admin"
 msgid "Django administration"
 msgstr "Admin"
 
+#: booking/templates/booking/book_tour.html:9
+#: booking/templates/booking/book_tour.html:30
+msgid "ツアーを予約"
+msgstr "Book a tour"
+
+#: booking/templates/booking/booking_view.html:9
+msgid "ブッキング情報"
+msgstr "Booking system"
+
+#: booking/templates/booking/booking_view.html:17
+msgid "連絡先"
+msgstr "Contact information"
+
+#: booking/templates/booking/booking_view.html:19
+msgid "名前："
+msgstr "Name:"
+
+#: booking/templates/booking/booking_view.html:20
+msgid "電話番号："
+msgstr "Telephone number:"
+
+#: booking/templates/booking/booking_view.html:21
+msgid "住所："
+msgstr "Address:"
+
+#: booking/templates/booking/booking_view.html:22
+msgid "メールアドレス："
+msgstr "Email address:"
+
+#: booking/templates/booking/booking_view.html:26
+msgid "グループの情報"
+msgstr "Group information"
+
+#: booking/templates/booking/booking_view.html:28
+msgid "グループ予約："
+msgstr "Group booking:"
+
+#: booking/templates/booking/booking_view.html:29
+msgid "グループ名前："
+msgstr "Group name:"
+
+#: booking/templates/booking/booking_view.html:30
+msgid "グループの数："
+msgstr "Group number:"
+
+#: booking/templates/booking/booking_view.html:31
+#: booking/templates/booking/booking_view.html:38
+msgid "期間："
+msgstr "Period:"
+
+#: booking/templates/booking/booking_view.html:35
+msgid "基本情報"
+msgstr "Basic information"
+
+#: booking/templates/booking/booking_view.html:37
+msgid "予定時間："
+msgstr "Booking time:"
+
+#: booking/templates/booking/booking_view.html:39
+msgid "使う交通手段："
+msgstr "Transportation method:"
+
+#: booking/templates/booking/booking_view.html:40
+msgid "訪問したい酒蔵："
+msgstr "Desired sake shops to visit:"
+
+#: booking/templates/booking/booking_view.html:44
+msgid "他に伝えたい情報"
+msgstr "Other information"
+
+#: booking/templates/booking/booking_view.html:46
+#: booking/templates/booking/index.html:20
+msgid "確認："
+msgstr "Confirm:"
+
+#: booking/templates/booking/booking_view.html:47
+#: booking/templates/booking/index.html:21
+msgid "完成："
+msgstr "Completed:"
+
+#: booking/templates/booking/booking_view.html:50
+#: booking/templates/booking/index.html:22
+#: email_blast/templates/email_blast/index.html:30
+#: email_blast/templates/email_blast/view_send.html:30
+msgid "更新"
+msgstr "Update"
+
+#: booking/templates/booking/booking_view.html:51
+#: booking/templates/booking/index.html:23
+#: email_blast/templates/email_blast/delete_mail.html:23
+msgid "削除"
+msgstr "Confirm Delete"
+
+#: booking/templates/booking/booking_view.html:53
+#, fuzzy
+#| msgid "確認"
+msgid "未確認"
+msgstr "Confirm"
+
+#: booking/templates/booking/booking_view.html:55
+#, fuzzy
+#| msgid "確認する / 送る"
+msgid "確認する"
+msgstr "Confirm / Send"
+
+#: booking/templates/booking/booking_view.html:58
+#: booking/templates/booking/index.html:30
+msgid "不完全"
+msgstr "Incomplete"
+
+#: booking/templates/booking/booking_view.html:60
+#: booking/templates/booking/index.html:32
+msgid "終わり"
+msgstr "Booking complete"
+
+#: booking/templates/booking/confirm_delete.html:9
+#: booking/templates/booking/confirm_delete.html:17
+msgid "ツアのカンセル"
+msgstr "Cancel tour"
+
+#: booking/templates/booking/confirm_delete.html:18
+#, fuzzy
+#| msgid "このメールを削除してもよろしいですか？"
+msgid "ブッキングを削除しますけどよろしいですか？"
+msgstr "Are you sure you want to delete this email?"
+
+#: booking/templates/booking/confirm_delete.html:22
+#: email_blast/templates/email_blast/delete_mail.html:24
+#: email_blast/templates/email_blast/draft_email.html:17
+#: email_blast/templates/email_blast/update_email.html:13
+#: email_blast/templates/email_blast/view_send.html:31
+#: home/templates/home/about.html:163 home/templates/home/about.html:192
+msgid "戻る"
+msgstr "Go back"
+
+#: booking/templates/booking/index.html:9
+#, fuzzy
+#| msgid "ブッキングシステム"
+msgid "ブッキング"
+msgstr "Booking System"
+
+#: booking/templates/booking/index.html:14
+msgid "全てのブッキング"
+msgstr "All bookings"
+
+#: booking/templates/booking/index.html:15
+msgid "ツアの申し込み"
+msgstr "Book tour"
+
+#: booking/templates/booking/index.html:25
+msgid "確認しない"
+msgstr "Do not confirm"
+
+#: booking/templates/booking/index.html:27
+#: email_blast/templates/email_blast/update_email.html:17
+msgid "確認"
+msgstr "Confirm booking"
+
+#: booking/templates/booking/index.html:41
+#: email_blast/templates/email_blast/index.html:71
+msgid "1ページ目"
+msgstr "First"
+
+#: booking/templates/booking/index.html:42
+#: email_blast/templates/email_blast/index.html:72
+msgid "前のページ"
+msgstr "Back"
+
+#: booking/templates/booking/index.html:45
+#: email_blast/templates/email_blast/index.html:75
+#, python-format
+msgid ""
+"\n"
+"          ページ #%(number)s/%(total)s\n"
+"        "
+msgstr ""
+"\n"
+"          Page #%(number)s/%(total)s\n"
+"        "
+
+#: booking/templates/booking/index.html:50
+#: email_blast/templates/email_blast/index.html:80
+msgid "次のページ"
+msgstr "Next"
+
+#: booking/templates/booking/index.html:51
+#: email_blast/templates/email_blast/index.html:81
+msgid "最後のページ"
+msgstr "Last"
+
+#: booking/templates/booking/update.html:9
+#: booking/templates/booking/update.html:30
+msgid "ツア更新"
+msgstr "Update booking"
+
+#: booking/templates/booking/update.html:33
+msgid "更新する"
+msgstr "Update"
+
 #: email_blast/templates/email_blast/delete_mail.html:11
 #: email_blast/templates/email_blast/delete_mail.html:19
 msgid "メールを削除する"
@@ -34,18 +233,6 @@ msgstr "Delete email"
 #: email_blast/templates/email_blast/delete_mail.html:20
 msgid "このメールを削除してもよろしいですか？"
 msgstr "Are you sure you want to delete this email?"
-
-#: email_blast/templates/email_blast/delete_mail.html:23
-msgid "削除"
-msgstr "Confirm Delete"
-
-#: email_blast/templates/email_blast/delete_mail.html:24
-#: email_blast/templates/email_blast/draft_email.html:17
-#: email_blast/templates/email_blast/update_email.html:13
-#: email_blast/templates/email_blast/view_send.html:31
-#: home/templates/home/about.html:163 home/templates/home/about.html:192
-msgid "戻る"
-msgstr "Go back"
 
 #: email_blast/templates/email_blast/draft_email.html:9
 msgid "メールを書く"
@@ -66,11 +253,6 @@ msgstr "All emails"
 #: email_blast/templates/email_blast/index.html:15
 msgid "下書きのメールを書く"
 msgstr "Create an email draft "
-
-#: email_blast/templates/email_blast/index.html:30
-#: email_blast/templates/email_blast/view_send.html:30
-msgid "更新"
-msgstr "Update"
 
 #: email_blast/templates/email_blast/index.html:31
 msgid "確認する / 送る"
@@ -114,40 +296,9 @@ msgstr ""
 "                %(sent)s\n"
 "              "
 
-#: email_blast/templates/email_blast/index.html:71
-msgid "1ページ目"
-msgstr "First"
-
-#: email_blast/templates/email_blast/index.html:72
-msgid "前のページ"
-msgstr "Back"
-
-#: email_blast/templates/email_blast/index.html:75
-#, python-format
-msgid ""
-"\n"
-"          ページ #%(number)s/%(total)s\n"
-"        "
-msgstr ""
-"\n"
-"          Page #%(number)s/%(total)s\n"
-"        "
-
-#: email_blast/templates/email_blast/index.html:80
-msgid "次のページ"
-msgstr "Next"
-
-#: email_blast/templates/email_blast/index.html:81
-msgid "最後のページ"
-msgstr "Last"
-
 #: email_blast/templates/email_blast/update_email.html:9
 msgid "メールの更新"
 msgstr "Update email"
-
-#: email_blast/templates/email_blast/update_email.html:17
-msgid "確認"
-msgstr "Confirm"
 
 #: email_blast/templates/email_blast/view_send.html:9
 msgid "メールの確認"

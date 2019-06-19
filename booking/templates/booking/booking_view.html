@@ -1,12 +1,12 @@
 {% extends 'home/layout.html' %}
-{% load crispy_forms_tags static %}
+{% load crispy_forms_tags static i18n %}
 
 {% block styling %}
   <link rel="stylesheet" type="text/css" href="{% static 'booking/css/booking-all.css' %}">
 {% endblock %}
 
 {% block title %}
-  ブッキング情報
+  {% trans 'ブッキング情報' %}
 {% endblock %}
 
 {% block main %}
@@ -14,50 +14,50 @@
     <h1 class="display-4 text-center">{{ booking.contact_name }}: {{ booking.scheduled_at }}</h1>
     <hr>
     <div class="container">
-      <h3>連絡先</h3>
+      <h3>{% trans '連絡先' %}</h3>
       <ul>
-        <li>名前：{{ booking.contact_name }}</li>
-        <li>電話番号：{{ booking.contact_number }}</li>
-        <li>住所：{{ booking.contact_address }}</li>
-        <li>メールアドレス：{{ booking.contact_email }}</li>
+        <li>{% trans '名前：' %}{{ booking.contact_name }}</li>
+        <li>{% trans '電話番号：' %}{{ booking.contact_number }}</li>
+        <li>{% trans '住所：' %}{{ booking.contact_address }}</li>
+        <li>{% trans 'メールアドレス：' %}{{ booking.contact_email }}</li>
       </ul>
     </div>
     <div class="container">
-      <h3>グループの情報</h3>
+      <h3>{% trans 'グループの情報' %}</h3>
       <ul>
-        <li>グループ予約：{% if booking.is_group %}<i class="fas fa-check"></i>{% else %}<i class="fas fa-times"></i>{% endif %}</li>
-        <li>グループ名前：{{ booking.group_name }}</li>
-        <li>グループの数：{{ booking.group_number }}</li>
-        <li>期間：{{ booking.age_group }}</li>
+        <li>{% trans 'グループ予約：' %}{% if booking.is_group %}<i class="fas fa-check"></i>{% else %}<i class="fas fa-times"></i>{% endif %}</li>
+        <li>{% trans 'グループ名前：' %}{{ booking.group_name }}</li>
+        <li>{% trans 'グループの数：' %}{{ booking.group_number }}</li>
+        <li>{% trans '期間：' %}{{ booking.age_group }}</li>
       </ul>
     </div>
     <div class="container">
-      <h3>基本情報</h3>
+      <h3>{% trans '基本情報' %}</h3>
       <ul>
-        <li>予定時間：{{ booking.scheduled_at }}</li>
-        <li>期間：{{ booking.duration }}</li>
-        <li>使う交通手段：{{ booking.transportation }}</li>
-        <li>訪問したい酒蔵：{{ booking.places_to_visit }}</li>
+        <li>{% trans '予定時間：' %}{{ booking.scheduled_at }}</li>
+        <li>{% trans '期間：' %}{{ booking.duration }}</li>
+        <li>{% trans '使う交通手段：' %}{{ booking.transportation }}</li>
+        <li>{% trans '訪問したい酒蔵：' %}{{ booking.places_to_visit }}</li>
       </ul>
     </div>
     <div class="container">
-      <h3>他に伝えたい情報</h3>
+      <h3>{% trans '他に伝えたい情報' %}</h3>
       <p>{{ booking.extra_details }}</p>
-      <p>確認：{% if booking.confirmed %}<i class="fas fa-check"></i>{% else %}<i class="fas fa-times"></i>{% endif %}</p>
-      <p>完成：{% if booking.complete %}<i class="fas fa-check"></i>{% else %}<i class="fas fa-times"></i>{% endif %}</p>
+      <p>{% trans '確認：' %}{% if booking.confirmed %}<i class="fas fa-check"></i>{% else %}<i class="fas fa-times"></i>{% endif %}</p>
+      <p>{% trans '完成：' %}{% if booking.complete %}<i class="fas fa-check"></i>{% else %}<i class="fas fa-times"></i>{% endif %}</p>
     </div>
     <div class="container">
-      <a href="{% url 'booking-update' booking.id %}" class="btn btn-sm btn-custom-1">更新</a>
-      <a href="{% url 'booking-delete' booking.id %}" class="btn btn-sm btn-custom-danger">削除</a>
+      <a href="{% url 'booking-update' booking.id %}" class="btn btn-sm btn-custom-1">{% trans '更新' %}</a>
+      <a href="{% url 'booking-delete' booking.id %}" class="btn btn-sm btn-custom-danger">{% trans '削除' %}</a>
       {% if booking.confirmed %}
-        <a href="{% url 'booking-unconfirm' booking.id %}" class="btn btn-sm btn-custom-2">未確認</a>
+        <a href="{% url 'booking-unconfirm' booking.id %}" class="btn btn-sm btn-custom-2">{% trans '未確認' %}</a>
       {% else %}
-        <a href="{% url 'booking-confirm' booking.id %}" class="btn btn-sm btn-custom-3">確認する</a>
+        <a href="{% url 'booking-confirm' booking.id %}" class="btn btn-sm btn-custom-3">{% trans '確認する' %}</a>
       {% endif %}
       {% if booking.complete %}
-        <a href="{% url 'booking-uncomplete' booking.id %}" class="btn btn-sm btn-custom-danger">不完全</a>
+        <a href="{% url 'booking-uncomplete' booking.id %}" class="btn btn-sm btn-custom-danger">{% trans '不完全' %}</a>
       {% else %}
-        <a href="{% url 'booking-complete' booking.id %}" class="btn btn-sm btn-success">終わり</a>
+        <a href="{% url 'booking-complete' booking.id %}" class="btn btn-sm btn-success">{% trans '終わり' %}</a>
       {% endif %}
     </div>
     <div class="container">
