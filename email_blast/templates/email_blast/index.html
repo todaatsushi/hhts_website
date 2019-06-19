@@ -6,13 +6,13 @@
 {% endblock %}
 
 {% block title %}
-  メール管理
+  {% trans 'メール管理' %}
 {% endblock %}
 
 {% block main %}
   <div class="container">
-    <h1 class="display-4 text-center blast-title">全てのメール</h1>
-    <a href="{% url 'email-draft' %}" class="btn btn-custom-3 btn-block my-2">下書きのメールを書く<i class="fas fa-mail-bulk""></i></a>
+    <h1 class="display-4 text-center blast-title">{% trans '全てのメール' %}</h1>
+    <a href="{% url 'email-draft' %}" class="btn btn-custom-3 btn-block my-2">{% trans '下書きのメールを書く' %}<i class="fas fa-mail-bulk"></i></a>
     <hr>
 
     {% for email in emails %}
@@ -27,13 +27,17 @@
           {% endif %}
         </h2>
         {% if not email.sent %}
-          <a href="{% url 'email-update' email.pk %}" class="btn btn-sm btn-custom-2">更新</a>
-          <a href="{% url 'email-view' email.pk %}" class="btn btn-sm btn-custom-3">確認する / 送る</a>
-          <a href="{% url 'email-delete' email.pk %}" class="btn btn-sm btn-custom-danger">削除する</a>
+          <a href="{% url 'email-update' email.pk %}" class="btn btn-sm btn-custom-2">{% trans '更新' %}</a>
+          <a href="{% url 'email-view' email.pk %}" class="btn btn-sm btn-custom-3">{% trans '確認する / 送る' %}</a>
+          <a href="{% url 'email-delete' email.pk %}" class="btn btn-sm btn-custom-danger">{% trans '削除する' %}</a>
         {% endif %}
         <h5 class="my-2">
           <ul class="list-group blast-list my-3">
-            <li class="list-group-item active disabled">{{ email.sender.profile.name }}から、受取人：</li>
+            <li class="list-group-item active disabled">
+              {% blocktrans with sender=email.sender.profile.name %}
+                {{ sender }}から、受取人：
+              {% endblocktrans %}
+            </li>
             {% for person in email.recipients|to_list %}
               <li class="list-group-item">{{ person }}</li>
             {% endfor %}
@@ -45,13 +49,17 @@
         </p>
 
         <small>
-          Created: {{ email.created_at|date:'G:i - d/m/y' }}<br>
-          Updated: {{ email.last_updated_at|date:'G:i - d/m/y' }}<br>
-          Sent: {% if not email.sent %}
-              -
-           {% else %}
-             {{ email.sent_at|date:'G:i - d/m/y' }}
-           {% endif %}
+          {% blocktrans with created=email.created_at|date:'G:i - d/m/y' updated=email.last_updated_at|date:'G:i - d/m/y' %}
+            作成時間: {{{ created }}}<br>
+            更新時間: {{ updated }}<br>
+          {% endblocktrans %}
+          {% with sent=email.sent_at|date:'G:i - d/m/y' %}
+            送られた時間: {% if not email.sent %}-{% else %} 
+              {% blocktrans with sent=sent%}
+                {{ sent }}
+              {% endblocktrans %} 
+            {% endif %}
+          {% endwith %}
         </small>
       </div>
       <hr>
@@ -60,15 +68,17 @@
     {% if is_paginated %}
       <div>
         {% if page_obj.has_previous %}
-          <a href="?page=1">1ページ目</a>
-          <a href="?page={{ page_obj.previous_page_number }}">前のページ</a>
+          <a href="?page=1">{% trans '1ページ目' %}</a>
+          <a href="?page={{ page_obj.previous_page_number }}">{% trans '前のページ' %}</a>
         {% endif %}
 
-        ページ #{{ page_obj.number }}/{{ page_obj.paginator.num_pages }}
+        {% blocktrans with number=page_obj.number total=page_obj.paginator.num_pages %}
+          ページ #{{ number }}/{{ total }}
+        {% endblocktrans %}
 
         {% if page_obj.has_next %}
-          <a href="?page={{ page_obj.next_page_number }}">次のページ</a>
-          <a href="?page={{ page_obj.paginator.num_pages }}">最後のページ</a>
+          <a href="?page={{ page_obj.next_page_number }}">{% trans '次のページ' %}</a>
+          <a href="?page={{ page_obj.paginator.num_pages }}">{% trans '最後のページ' %}</a>
         {% endif %}
       </div>
     {% endif %}

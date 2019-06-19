@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-06-18 20:12+0100\n"
+"POT-Creation-Date: 2019-06-19 19:18+0100\n"
 "PO-Revision-Date: 2019-06-19 14:53+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -26,42 +26,171 @@ msgstr "Site Admin"
 msgid "Django administration"
 msgstr "Admin"
 
-#: home/templates/400.html:10 home/templates/404.html:10
+#: email_blast retained/delete_mail.html:11 retained/delete_mail.html:19
+msgid "メールを削除する"
+msgstr ""
+
+#: email_blast retained/delete_mail.html:20
+msgid "このメールを削除してもよろしいですか？"
+msgstr ""
+
+#: email_blast retained/delete_mail.html:24 retained/draft_email.html:18
+#: retained/update_email.html:12 retained/view_send.html:31
+#: home/templates/home/about.html:163 home/templates/home/about.html:192
+msgid "戻る"
+msgstr "Go back"
+
+#: email_blast retained/draft_email.html:10
+msgid "メールを書く"
+msgstr ""
+
+#: email_blast retained/draft_email.html:14
+msgid "ドラフト"
+msgstr ""
+
+#: email_blast retained/index.html:9
+msgid "メール管理"
+msgstr ""
+
+#: email_blast retained/index.html:14
+msgid "全てのメール"
+msgstr ""
+
+#: email_blast retained/index.html:15
+msgid "下書きのメールを書く"
+msgstr ""
+
+#: email_blast retained/index.html:30 retained/view_send.html:30
+msgid "更新"
+msgstr ""
+
+#: email_blast retained/index.html:31
+msgid "確認する / 送る"
+msgstr ""
+
+#: email_blast retained/index.html:32
+msgid "削除する"
+msgstr ""
+
+#: email_blast retained/index.html:37
+#, python-format
+msgid ""
+"\n"
+"                %(sender)sから、受取人：\n"
+"              "
+msgstr ""
+
+#: email_blast retained/index.html:52
+#, python-format
+msgid ""
+"\n"
+"            作成時間: %({ created)s}<br>\n"
+"            更新時間: %(updated)s<br>\n"
+"          "
+msgstr ""
+
+#: email_blast retained/index.html:58
+#, python-format
+msgid ""
+"\n"
+"                %(sent)s\n"
+"              "
+msgstr ""
+
+#: email_blast retained/index.html:71
+msgid "1ページ目"
+msgstr ""
+
+#: email_blast retained/index.html:72
+msgid "前のページ"
+msgstr ""
+
+#: email_blast retained/index.html:75
+#, python-format
+msgid ""
+"\n"
+"          ページ #%(number)s/%(total)s\n"
+"        "
+msgstr ""
+
+#: email_blast retained/index.html:80
+msgid "次のページ"
+msgstr ""
+
+#: email_blast retained/index.html:81
+msgid "最後のページ"
+msgstr ""
+
+#: email_blast retained/update_email.html:8
+msgid "メールの更新"
+msgstr ""
+
+#: email_blast retained/update_email.html:16
+msgid "確認"
+msgstr ""
+
+#: email_blast retained/view_send.html:9
+msgid "メールの確認"
+msgstr ""
+
+#: email_blast retained/view_send.html:14
+#, fuzzy
+#| msgid "他のページを使ってください。"
+msgid "メールを確認してください"
+msgstr "Please use another page."
+
+#: email_blast retained/view_send.html:20
+msgid "受取人"
+msgstr ""
+
+#: email_blast retained/view_send.html:29
+msgid "送る"
+msgstr ""
+
+#: hhts_website/settings/base.py:110
+msgid "English"
+msgstr "English"
+
+#: hhts_website/settings/base.py:111
+msgid "Japanese"
+msgstr "Japanese"
+
+#: home/templates/400.html:11 home/templates/404.html:11
 msgid "そのページは存在いしていません。"
 msgstr "The page requested does not exist."
 
-#: home/templates/403.html:10
+#: home/templates/403.html:11
 msgid "このページはログインしないと見えません。"
 msgstr "Without logging in as a staff member, you cannot see this page."
 
-#: home/templates/500.html:10 home/templates/home/error_base.html:11
+#: home/templates/500.html:11 home/templates/home/error_base.html:11
 msgid "他のページを使ってください。"
 msgstr "Please use another page."
 
-#: home/templates/home/about.html:4
+#: home/templates/home/about.html:10
 #, fuzzy
 #| msgid "東広島ボランティアガイド"
 msgid "東広島ボランティアガイドについて"
 msgstr "Higashi Hiroshima Volunteer Guide"
 
-#: home/templates/home/about.html:14 home/templates/home/about.html:97
-#: home/templates/home/about.html:147
+#: home/templates/home/about.html:22 home/templates/home/about.html:124
+#: home/templates/home/about.html:176
 msgid "酒蔵通り案内"
 msgstr "Sake Brewery Tours"
 
-#: home/templates/home/about.html:15
+#: home/templates/home/about.html:25
 msgid "JR西条駅前に広がる酒蔵通りのご案内をいたします。"
 msgstr "We give tours of the sake breweries in front of the JR station."
 
-#: home/templates/home/about.html:16
+#: home/templates/home/about.html:28 home/templates/home/about.html:62
 msgid "さらに読む"
 msgstr "Read more"
 
-#: home/templates/home/about.html:23
+#: home/templates/home/about.html:38
 msgid "東広島探訪講座"
 msgstr "Higashi Hiroshima Exploration Course"
 
-#: home/templates/home/about.html:25
+#: home/templates/home/about.html:41
 msgid ""
 "\n"
 "                東広島市内の興味深い歴史と場所、東広島ゆかりの人物などを学び"
@@ -74,11 +203,11 @@ msgstr ""
 "people\n"
 "Our annual event which helps raise awareness every time."
 
-#: home/templates/home/about.html:36
+#: home/templates/home/about.html:53
 msgid "子供ガイド養成講座"
 msgstr "Junior Guide Training Course"
 
-#: home/templates/home/about.html:38
+#: home/templates/home/about.html:56
 msgid ""
 "\n"
 "                  自分の住む街を知り魅力を発見してもらいます。ガイドになって"
@@ -90,11 +219,11 @@ msgstr ""
 "Become an expert resident and rediscover this town.\n"
 "Consider becoming a guide yourself."
 
-#: home/templates/home/about.html:52
+#: home/templates/home/about.html:73
 msgid "東広島を歩く"
 msgstr "Walk Higashi Hiroshima"
 
-#: home/templates/home/about.html:54
+#: home/templates/home/about.html:76
 msgid ""
 "\n"
 "                東広島市内の名所旧跡を巡る歴史散策ウォークです。\n"
@@ -105,11 +234,11 @@ msgstr ""
 "A historical walk around all the sites of the city carried out 1-3 times "
 "every year."
 
-#: home/templates/home/about.html:65
+#: home/templates/home/about.html:88
 msgid "春の西条・醸華町まつり"
 msgstr "Saijo Spring Festival"
 
-#: home/templates/home/about.html:67
+#: home/templates/home/about.html:91
 msgid ""
 "\n"
 "                毎年3月の第一土曜日に西条酒蔵通りにて開催しています。年々来場"
@@ -126,11 +255,11 @@ msgstr ""
 "special brewery tours (reservation required) and a coupon hunt that yields "
 "luxurious prizes!"
 
-#: home/templates/home/about.html:79
+#: home/templates/home/about.html:103
 msgid "その他"
 msgstr "Other"
 
-#: home/templates/home/about.html:81
+#: home/templates/home/about.html:105
 msgid ""
 "\n"
 "                様々な大学講座秋や西条酒まつりに協力しています。特に熟年大学"
@@ -143,11 +272,11 @@ msgstr ""
 "We partner with various universities in the autumn and visit city sights in "
 "a special bus tour."
 
-#: home/templates/home/about.html:103
+#: home/templates/home/about.html:132
 msgid "てくてくガイド"
 msgstr "Guide Info"
 
-#: home/templates/home/about.html:105
+#: home/templates/home/about.html:134
 msgid ""
 "\n"
 "                  毎月10日 <br>\n"
@@ -164,11 +293,11 @@ msgstr ""
 "Approx. 90mins long <br>\n"
 "Free! <br>"
 
-#: home/templates/home/about.html:113
+#: home/templates/home/about.html:142
 msgid "JRハイキング"
 msgstr "JR Hiking"
 
-#: home/templates/home/about.html:115
+#: home/templates/home/about.html:144
 msgid ""
 "\n"
 "                  毎週日曜 <br>\n"
@@ -185,12 +314,12 @@ msgstr ""
 "Approx. 90mins long <br>\n"
 "Free! <br>"
 
-#: home/templates/home/about.html:123 home/templates/home/guide.html:4
-#: home/templates/home/layout.html:117
+#: home/templates/home/about.html:152 home/templates/home/guide.html:10
+#: home/templates/home/layout.html:92
 msgid "ガイド派遣"
 msgstr "Guide Service"
 
-#: home/templates/home/about.html:125
+#: home/templates/home/about.html:154
 msgid ""
 "\n"
 "                  東広島観光協会を通してガイド派遣を受け付けています。<br>\n"
@@ -206,11 +335,7 @@ msgstr ""
 "Parties exceeding that will be charged 2000¥ per guide required <br>\n"
 "Please visit the site for further information <br>"
 
-#: home/templates/home/about.html:134 home/templates/home/about.html:163
-msgid "戻る"
-msgstr "Go back"
-
-#: home/templates/home/about.html:154
+#: home/templates/home/about.html:183
 msgid ""
 "\n"
 "                  毎年6月から8月に開催、全5回の講座です。<br>\n"
@@ -225,19 +350,19 @@ msgstr ""
 "500¥ per child (t-shirt fee) <br>\n"
 "Recruitment is done by the city’s information desk.<br>"
 
-#: home/templates/home/about.html:174
+#: home/templates/home/about.html:203
 msgid "お問い"
 msgstr "Contact"
 
-#: home/templates/home/about.html:174
+#: home/templates/home/about.html:203
 msgid "合わせ"
 msgstr "Information"
 
-#: home/templates/home/about.html:177
+#: home/templates/home/about.html:206
 msgid "西条酒蔵通り案内所"
 msgstr "Saijo Sake Brewery Street Information"
 
-#: home/templates/home/about.html:178
+#: home/templates/home/about.html:207
 msgid "〒739-0011 広島県東広島市西条本町17-1"
 msgstr ""
 "17-1 Nishijo Honcho, Higashihiroshima City, Hiroshima Prefecture 739-0011"
@@ -246,53 +371,53 @@ msgstr ""
 msgid "エラー"
 msgstr "Error"
 
-#: home/templates/home/guide.html:10
+#: home/templates/home/guide.html:16
 msgid "ガイド"
 msgstr "Guide "
 
-#: home/templates/home/guide.html:10
+#: home/templates/home/guide.html:16
 msgid "派遣"
 msgstr "Dispatch"
 
-#: home/templates/home/guide.html:11
+#: home/templates/home/guide.html:17
 msgid ""
 "酒蔵通りのガイドをご希望の方は申込書に記入の上、FAXにてお申し込みください。"
 msgstr ""
 "If you would like a guide, please fill out the application form and fax it "
 "over."
 
-#: home/templates/home/guide.html:19
+#: home/templates/home/guide.html:25
 msgid "所要時間 ご案内する酒蔵の数により1時間から2時間かかります"
 msgstr "Depending on the number of breweries, the tour takes 1 -2 hours."
 
-#: home/templates/home/guide.html:20
+#: home/templates/home/guide.html:26
 msgid "ガイド料 5名まで1000円"
 msgstr "Guide fee for up to 5 people - 1000¥"
 
-#: home/templates/home/guide.html:21
+#: home/templates/home/guide.html:27
 msgid "6名以上20名まで2000円"
 msgstr "Guide fee for 6 - 20 people - 2000¥"
 
-#: home/templates/home/guide.html:22
+#: home/templates/home/guide.html:28
 msgid "20名以上の場合は複数のガイドがご案内致します。"
 msgstr "Guide fee for over 20 people will require multiple guides."
 
-#: home/templates/home/guide.html:24
+#: home/templates/home/guide.html:30
 msgid "ガイド派遣の申し込み書はこちら。"
 msgstr "Enquire about guides here"
 
-#: home/templates/home/guide.html:29
+#: home/templates/home/guide.html:35
 msgid ""
 "酒蔵通り以外のガイドをご希望の方は案内所まで電話でお問い合わせください。"
 msgstr ""
 "For other guide services (not sake brewery related), contact the information "
 "center by phone."
 
-#: home/templates/home/home.html:12
+#: home/templates/home/home.html:17
 msgid "ようこそ西条へ"
 msgstr "Welcome to Higashi Hiroshima!"
 
-#: home/templates/home/home.html:14
+#: home/templates/home/home.html:19
 msgid ""
 "\n"
 "          東広島の中心地西条は江戸時代には広島藩最大の本陣を誇る宿場町でし"
@@ -313,7 +438,7 @@ msgstr ""
 "and many sake breweries are still producing top quality\n"
 "produce."
 
-#: home/templates/home/home.html:21
+#: home/templates/home/home.html:26
 msgid ""
 "\n"
 "          また、古代の古墳、国分寺跡、中世の山城など見所もございます。\n"
@@ -329,81 +454,81 @@ msgstr ""
 msgid "東広島ボランティアガイド"
 msgstr "Higashi Hiroshima Volunteer Guide"
 
-#: home/templates/home/layout.html:89
+#: home/templates/home/layout.html:64
 #, fuzzy
 #| msgid "こんにちは。"
 msgid "こんにちは"
 msgstr "Hello"
 
-#: home/templates/home/layout.html:93
+#: home/templates/home/layout.html:68
 msgid "ブッキングシステム"
 msgstr "Booking System"
 
-#: home/templates/home/layout.html:95
+#: home/templates/home/layout.html:70
 msgid "新しいポスト"
 msgstr "New Post"
 
-#: home/templates/home/layout.html:96
+#: home/templates/home/layout.html:71
 msgid "スタフ専用ポスト"
 msgstr "Staff Only Posts"
 
-#: home/templates/home/layout.html:97
+#: home/templates/home/layout.html:72
 msgid "全てのポスト"
 msgstr "All Posts"
 
-#: home/templates/home/layout.html:99
+#: home/templates/home/layout.html:74
 msgid "メールシステム"
 msgstr "Mail Management System"
 
-#: home/templates/home/layout.html:101
+#: home/templates/home/layout.html:76
 msgid "プロファイル"
 msgstr "Profile"
 
-#: home/templates/home/layout.html:103
+#: home/templates/home/layout.html:78
 msgid "ロッグアウト"
 msgstr "Logout"
 
-#: home/templates/home/layout.html:108
+#: home/templates/home/layout.html:83
 msgid "トップページ"
 msgstr "Home"
 
-#: home/templates/home/layout.html:111
+#: home/templates/home/layout.html:86
 msgid "ニュース"
 msgstr "News"
 
-#: home/templates/home/layout.html:114
+#: home/templates/home/layout.html:89
 msgid "活動紹介"
 msgstr "Activities"
 
-#: home/templates/home/layout.html:120 home/templates/home/saijo.html:4
+#: home/templates/home/layout.html:95 home/templates/home/saijo.html:10
 msgid "西条の観光"
 msgstr "Saijo Tours"
 
-#: home/templates/home/layout.html:123
+#: home/templates/home/layout.html:98
 msgid "スタフ"
 msgstr "Staff"
 
-#: home/templates/home/saijo.html:9
+#: home/templates/home/saijo.html:15
 msgid "西条の"
 msgstr "Saijo "
 
-#: home/templates/home/saijo.html:9
+#: home/templates/home/saijo.html:15
 msgid "観光"
 msgstr "Sightseeing"
 
-#: home/templates/home/saijo.html:15
+#: home/templates/home/saijo.html:21
 msgid "三ツ城古墳"
 msgstr "Mitsujokofun"
 
-#: home/templates/home/saijo.html:17
+#: home/templates/home/saijo.html:23
 msgid "広島県最大の前方後円墳を含む3つの古墳群。史跡公園として整備されている。"
 msgstr "A historical park containing the largest ancient imperial grave."
 
-#: home/templates/home/saijo.html:25
+#: home/templates/home/saijo.html:31
 msgid "鏡山城"
 msgstr "Kagamiyama Castle"
 
-#: home/templates/home/saijo.html:27
+#: home/templates/home/saijo.html:33
 msgid ""
 "\n"
 "              大内氏の安芸国支配の中心となった山城跡。周囲は整備され鏡山公園"
@@ -417,11 +542,11 @@ msgstr ""
 "The surrounding area has been maintained, becoming Kayama Park.\n"
 "In the spring, the cherry blossoms are especially beautiful."
 
-#: home/templates/home/saijo.html:38
+#: home/templates/home/saijo.html:44
 msgid "安芸国分寺歴史公園(国史跡)"
 msgstr "Aki Kokubunji History Park (National Historic Site)"
 
-#: home/templates/home/saijo.html:40
+#: home/templates/home/saijo.html:46
 msgid ""
 "\n"
 "              奈良時代に建立された安芸国分寺跡が歴史公園となっている。現在"
@@ -434,14 +559,12 @@ msgstr ""
 "The temple\n"
 "gates are the only medieval gate in the prefecture."
 
-#: home/templates/home/saijo.html:52
+#: home/templates/home/saijo.html:58
 msgid ""
 "その他、東広島の観光については東広島観光協会のホームページをごらんください。"
 msgstr ""
 "For anything else, please visit the Higashi Hiroshima Tourism Association."
 
-#~ msgid "English"
-#~ msgstr "English"
-
-#~ msgid "Japanese"
-#~ msgstr "Japanese"
+#: home/views.py:33
+msgid "That language is not available"
+msgstr ""

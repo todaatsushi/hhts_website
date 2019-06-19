@@ -7,13 +7,13 @@
 {% endblock %}
 
 {% block title %}
-  メールを書く
+  {% trans 'メールを書く' %}
 {% endblock %}
 
 {% block button_text %}
-  ドラフト
+  {% trans 'ドラフト' %}
 {% endblock %}
 
 {% block back %}
-  <a href="{% url 'email-index' %}" class="btn btn-sm btn-block btn-custom-2">戻る</a>
+  <a href="{% url 'email-index' %}" class="btn btn-sm btn-block btn-custom-2">{% trans '戻る' %}</a>
 {% endblock %}
