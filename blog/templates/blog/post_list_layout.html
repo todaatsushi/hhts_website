@@ -1,5 +1,12 @@
 {% extends "home/layout.html" %}
 
+{% load static %}
+
+{% block styling %}
+  <link rel="stylesheet" type="text/css" href="{% static 'blog/css/blog-list.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'blog/css/blog-delete.css' %}">
+{% endblock %}
+
 {% block main %}
   {% block header %}
   {% endblock %}

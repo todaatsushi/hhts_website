@@ -1,5 +1,11 @@
 {% extends "home/layout.html" %}
 
+{% load static %}
+
+{% block styling %}
+  <link rel="stylesheet" type="text/css" href="{% static 'email_blast/css/emails-all.css' %}">
+{% endblock %}
+
 {% block title %}
   メールを削除する
 {% endblock %}

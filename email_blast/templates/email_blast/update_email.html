@@ -1,4 +1,8 @@
-{% extends "blog/post_form_layout.html" %}
+{% extends "blog/post_form_layout.html" %}{% load static %}
+
+{% block styling %}
+  <link rel="stylesheet" type="text/css" href="{% static 'email_blast/css/emails-all.css' %}">
+{% endblock %}
 
 {% block title %}
   メールの更新

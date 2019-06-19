@@ -1,5 +1,10 @@
 {% extends 'home/layout.html' %}
 {% load i18n %}
+{% load static %}
+
+{% block styling %}
+  <link rel="stylesheet" type="text/css" href="{% static 'home/css/home.css' %}">
+{% endblock %}
 
 {% block title %}
   ホームページ
