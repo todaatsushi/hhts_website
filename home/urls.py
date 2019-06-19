@@ -8,4 +8,7 @@ urlpatterns = [
     path('about/', v.about, name='about'),
     path('guide/', v.guide_info, name='guide'),
     path('saijo-tours/', v.saijo_info, name='saijo'),
+
+    # Language settings
+    path('lang/<str:language>/', v.change_language, name='language'),
 ]

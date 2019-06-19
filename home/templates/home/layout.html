@@ -65,7 +65,7 @@
     <script type="text/javascript" src="{% static 'users/js/users-js.js' %}"></script>
 
   <body>
-    {% load static %}
+    {% comment %} Top nav {% endcomment %}
     <nav class="navbar navbar-expand-xl navbar-light" id="nav">
       <div class="logo">
         <a href="{% url 'home' %}" class="navbar-brand">
@@ -140,12 +140,18 @@
     {% block main %}
     {% endblock %}
 
+    <!-- Language control -->
+    <section id="language-change">
+      <a href="{% url 'language' 'en' %}" class="lang-choice btn btn-primary">English</a>
+      <a href="{% url 'language' 'ja' %}" class="lang-choice btn btn-info">日本語</a>
+    </section>
+    
     <script>
-  $(function () {
-    $("#id_scheduled_at").datetimepicker({
-      format: 'd/m/Y H:i',
-    });
-  });
-</script>
+      $(function () {
+        $("#id_scheduled_at").datetimepicker({
+          format: 'd/m/Y H:i',
+        });
+      });
+    </script>
   </body>
 </html>
