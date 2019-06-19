@@ -1,5 +1,9 @@
 {% extends 'home/layout.html' %}
-{% load recipients %}
+{% load recipients static %}
+
+{% block styling %}
+  <link rel="stylesheet" type="text/css" href="{% static 'email_blast/css/emails-all.css' %}">
+{% endblock %}
 
 {% block title %}
   View Email
