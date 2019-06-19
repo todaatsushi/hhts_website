@@ -20,7 +20,7 @@
         <p class="lead text-center">{% trans 'このメールを削除してもよろしいですか？' %}</p>
       </fieldset>
       <div class="form-group del-fg">
-        <input type="submit" value="削除" class="btn btn-custom-danger submit-btn">
+        <input type="submit" value="{% trans '削除' %}" class="btn btn-custom-danger submit-btn">
         <a href="{% url 'email-index'%}" class="btn btn-custom-2 submit-btn">{% trans '戻る' %}</a>
       </div>
     </form>

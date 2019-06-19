@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-06-19 19:18+0100\n"
-"PO-Revision-Date: 2019-06-19 14:53+0100\n"
+"POT-Creation-Date: 2019-06-19 21:00+0100\n"
+"PO-Revision-Date: 2019-06-19 21:00+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en\n"
@@ -26,126 +26,144 @@ msgstr "Site Admin"
 msgid "Django administration"
 msgstr "Admin"
 
-#: email_blast retained/delete_mail.html:11 retained/delete_mail.html:19
+#: email_blast/templates/email_blast/delete_mail.html:11
+#: email_blast/templates/email_blast/delete_mail.html:19
 msgid "メールを削除する"
-msgstr ""
+msgstr "Delete email"
 
-#: email_blast retained/delete_mail.html:20
+#: email_blast/templates/email_blast/delete_mail.html:20
 msgid "このメールを削除してもよろしいですか？"
-msgstr ""
+msgstr "Are you sure you want to delete this email?"
 
-#: email_blast retained/delete_mail.html:24 retained/draft_email.html:18
-#: retained/update_email.html:12 retained/view_send.html:31
+#: email_blast/templates/email_blast/delete_mail.html:23
+msgid "削除"
+msgstr "Confirm Delete"
+
+#: email_blast/templates/email_blast/delete_mail.html:24
+#: email_blast/templates/email_blast/draft_email.html:17
+#: email_blast/templates/email_blast/update_email.html:13
+#: email_blast/templates/email_blast/view_send.html:31
 #: home/templates/home/about.html:163 home/templates/home/about.html:192
 msgid "戻る"
 msgstr "Go back"
 
-#: email_blast retained/draft_email.html:10
+#: email_blast/templates/email_blast/draft_email.html:9
 msgid "メールを書く"
-msgstr ""
+msgstr "Create email"
 
-#: email_blast retained/draft_email.html:14
+#: email_blast/templates/email_blast/draft_email.html:13
 msgid "ドラフト"
-msgstr ""
+msgstr "Draft"
 
-#: email_blast retained/index.html:9
+#: email_blast/templates/email_blast/index.html:9
 msgid "メール管理"
-msgstr ""
+msgstr "Email management"
 
-#: email_blast retained/index.html:14
+#: email_blast/templates/email_blast/index.html:14
 msgid "全てのメール"
-msgstr ""
+msgstr "All emails"
 
-#: email_blast retained/index.html:15
+#: email_blast/templates/email_blast/index.html:15
 msgid "下書きのメールを書く"
-msgstr ""
+msgstr "Create an email draft "
 
-#: email_blast retained/index.html:30 retained/view_send.html:30
+#: email_blast/templates/email_blast/index.html:30
+#: email_blast/templates/email_blast/view_send.html:30
 msgid "更新"
-msgstr ""
+msgstr "Update"
 
-#: email_blast retained/index.html:31
+#: email_blast/templates/email_blast/index.html:31
 msgid "確認する / 送る"
-msgstr ""
+msgstr "Confirm / Send"
 
-#: email_blast retained/index.html:32
+#: email_blast/templates/email_blast/index.html:32
 msgid "削除する"
-msgstr ""
+msgstr "Delete"
 
-#: email_blast retained/index.html:37
+#: email_blast/templates/email_blast/index.html:37
 #, python-format
 msgid ""
 "\n"
 "                %(sender)sから、受取人：\n"
 "              "
 msgstr ""
-
-#: email_blast retained/index.html:52
-#, python-format
-msgid ""
 "\n"
-"            作成時間: %({ created)s}<br>\n"
-"            更新時間: %(updated)s<br>\n"
-"          "
-msgstr ""
+"                From %(sender)s, to:\n"
+"              "
 
-#: email_blast retained/index.html:58
+#: email_blast/templates/email_blast/index.html:53
+msgid "作成時間"
+msgstr "Created at"
+
+#: email_blast/templates/email_blast/index.html:54
+msgid "更新時間"
+msgstr "Updated at"
+
+#: email_blast/templates/email_blast/index.html:57
+msgid "送られた時間"
+msgstr "Sent at"
+
+#: email_blast/templates/email_blast/index.html:58
 #, python-format
 msgid ""
 "\n"
 "                %(sent)s\n"
 "              "
 msgstr ""
+"\n"
+"                %(sent)s\n"
+"              "
 
-#: email_blast retained/index.html:71
+#: email_blast/templates/email_blast/index.html:71
 msgid "1ページ目"
-msgstr ""
+msgstr "First"
 
-#: email_blast retained/index.html:72
+#: email_blast/templates/email_blast/index.html:72
 msgid "前のページ"
-msgstr ""
+msgstr "Back"
 
-#: email_blast retained/index.html:75
+#: email_blast/templates/email_blast/index.html:75
 #, python-format
 msgid ""
 "\n"
 "          ページ #%(number)s/%(total)s\n"
 "        "
 msgstr ""
+"\n"
+"          Page #%(number)s/%(total)s\n"
+"        "
 
-#: email_blast retained/index.html:80
+#: email_blast/templates/email_blast/index.html:80
 msgid "次のページ"
-msgstr ""
+msgstr "Next"
 
-#: email_blast retained/index.html:81
+#: email_blast/templates/email_blast/index.html:81
 msgid "最後のページ"
-msgstr ""
+msgstr "Last"
 
-#: email_blast retained/update_email.html:8
+#: email_blast/templates/email_blast/update_email.html:9
 msgid "メールの更新"
-msgstr ""
+msgstr "Update email"
 
-#: email_blast retained/update_email.html:16
+#: email_blast/templates/email_blast/update_email.html:17
 msgid "確認"
-msgstr ""
+msgstr "Confirm"
 
-#: email_blast retained/view_send.html:9
+#: email_blast/templates/email_blast/view_send.html:9
 msgid "メールの確認"
-msgstr ""
+msgstr "Confirm email"
 
-#: email_blast retained/view_send.html:14
-#, fuzzy
-#| msgid "他のページを使ってください。"
+#: email_blast/templates/email_blast/view_send.html:14
 msgid "メールを確認してください"
-msgstr "Please use another page."
+msgstr "Please use another page"
 
-#: email_blast retained/view_send.html:20
+#: email_blast/templates/email_blast/view_send.html:20
 msgid "受取人"
-msgstr ""
+msgstr "Recipients"
 
-#: email_blast retained/view_send.html:29
+#: email_blast/templates/email_blast/view_send.html:29
 msgid "送る"
-msgstr ""
+msgstr "Send"
 
 #: hhts_website/settings/base.py:110
 msgid "English"
@@ -168,10 +186,8 @@ msgid "他のページを使ってください。"
 msgstr "Please use another page."
 
 #: home/templates/home/about.html:10
-#, fuzzy
-#| msgid "東広島ボランティアガイド"
 msgid "東広島ボランティアガイドについて"
-msgstr "Higashi Hiroshima Volunteer Guide"
+msgstr "About the Higashi Hiroshima Volunteer Guide Service"
 
 #: home/templates/home/about.html:22 home/templates/home/about.html:124
 #: home/templates/home/about.html:176
@@ -413,6 +429,10 @@ msgstr ""
 "For other guide services (not sake brewery related), contact the information "
 "center by phone."
 
+#: home/templates/home/home.html:10
+msgid "ホームページ"
+msgstr "Home"
+
 #: home/templates/home/home.html:17
 msgid "ようこそ西条へ"
 msgstr "Welcome to Higashi Hiroshima!"
@@ -455,8 +475,6 @@ msgid "東広島ボランティアガイド"
 msgstr "Higashi Hiroshima Volunteer Guide"
 
 #: home/templates/home/layout.html:64
-#, fuzzy
-#| msgid "こんにちは。"
 msgid "こんにちは"
 msgstr "Hello"
 
@@ -566,5 +584,16 @@ msgstr ""
 "For anything else, please visit the Higashi Hiroshima Tourism Association."
 
 #: home/views.py:33
-msgid "That language is not available"
-msgstr ""
+msgid "選択した言語は利用できません"
+msgstr "Your selected language is not available for this site."
+
+#~ msgid ""
+#~ "\n"
+#~ "            作成時間: %({ created)s}<br>\n"
+#~ "            更新時間: %(updated)s<br>\n"
+#~ "          "
+#~ msgstr ""
+#~ "\n"
+#~ "            Created at: %({ created)s}<br>\n"
+#~ "            Updated at: %(updated)s<br>\n"
+#~ "          "
