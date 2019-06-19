@@ -107,15 +107,12 @@ AUTH_PASSWORD_VALIDATORS = [
 
 # All langs
 LANGUAGES = (
-    # ('en-gb', _('英語')),
-    # ('ja', _('日本語')),
     ('en', _('English')),
     ('ja', _('Japanese')),
 )
 
 # Default lang
 LANGUAGE_CODE = 'ja'
-# LANGUAGE_CODE = 'en'
 
 TIME_ZONE = 'UTC'
 
