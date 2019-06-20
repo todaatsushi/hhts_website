@@ -114,11 +114,22 @@
     {% block main %}
     {% endblock %}
 
-    <!-- Language control -->
-    <section id="language-change">
-      <a href="{% url 'language' 'en' %}" class="lang-choice btn btn-primary">English</a>
-      <a href="{% url 'language' 'ja' %}" class="lang-choice btn btn-info">日本語</a>
-    </section>
+    <!-- Bottom Nav -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" id="bottom-nav">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav">
+            <!-- Language choice -->
+            <li class="nav-item dropdown">
+              <span class="lang-choice mr-3">{% trans '言語の選択' %}:</span>
+              <a href="{% url 'language' 'en' %}" class="lang-choice btn btn-primary">English</a>
+              <a href="{% url 'language' 'ja' %}" class="lang-choice btn btn-info">日本語</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
     
     <script>
       $(function () {

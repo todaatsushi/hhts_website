@@ -197,9 +197,13 @@ button.btn-custom-danger {
   margin: 0 33%;
 }
 
-#language-change {
-  position: fixed;
-  width: 100px;
-  bottom: 5px;
-  left: 5px;
+
+/* Bottom nav in.c language choices */
+#bottom-nav {
+  height: 5vh;
+  min-height: 30px;
+}
+
+.lang-choice {
+  font-size: 0.7rem;
 }
