@@ -1,4 +1,5 @@
 from django import forms
+from django.utils.translation import gettext as _
 
 from .models import Post, Comment
 
@@ -9,8 +10,8 @@ class CommentPostForm(forms.ModelForm):
         model = Comment
         fields = ['commenter', 'comment']
         labels = {
-            'commenter': '名前',
-            'comment': 'コメント',
+            'commenter': _('名前'),
+            'comment': _('コメント'),
         }
 
 
@@ -21,5 +22,5 @@ class CommentDeleteForm(forms.ModelForm):
         model = Comment
         fields = ['confirm']
         labels = {
-            'confirm': '確認'
+            'confirm': _('確認'),
         }
