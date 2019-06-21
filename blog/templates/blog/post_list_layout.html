@@ -20,11 +20,11 @@
 
         <p class="blog-content">{{ post.content | linebreaks }}</p>
 
-        <p><small>By <a href="{% url 'user-about' post.author.username %}" class="blog-author">{{ post.author.profile.name }}</a></small></p>
-        <p><small>Posted at: {{ post.posted_at|date:"G:i - d M, Y"}}</small><br>
-        <small>Updated last at: {{ post.updated_at|date:"G:i - d M, Y"}}</small></p>
+        <p><small>{% trans '名前' %} <a href="{% url 'user-about' post.author.username %}" class="blog-author">{{ post.author.profile.name }}</a></small></p>
+        <p><small>{% trans '投稿時間' %}: {{ post.posted_at|date:"G:i - d M, Y"}}</small><br>
+        <small>{% trans '更新時間' %}: {{ post.updated_at|date:"G:i - d M, Y"}}</small></p>
         <div>
-          <a href="{% url 'post-comment' post.id %}" class="btn btn-sm btn-custom-1 my-1">コメントする</a>
+          <a href="{% url 'post-comment' post.id %}" class="btn btn-sm btn-custom-1 my-1">{% trans 'コメントする' %}</a>
           {% if user.is_authenticated %}
             {% if post.pinned %}
               <a href="{% url 'post-unpin' post.id %}" class="btn btn-sm btn-custom-1 my-1"><i class="fas fa-times"></i> <i class="fas fa-thumbtack"></i></a>
@@ -52,11 +52,9 @@
                 <div class="my-2 comment">
                   {{ comment.comment }} {% if comment.by_admin %}<i class="fas fa-check" style="color: #4d783e;"></i>{% endif %}
                   <br>
-                  <small>By <strong>{{ comment.commenter }}</strong> at {{ comment.posted_at|date:"G:i, d/m/y" }}</small>
+                  <small>{% trans '名前' %} <strong>{{ comment.commenter }}</strong>, {{ comment.posted_at|date:"G:i, d/m/y" }}</small>
                   {% if comment.posted_at|date:"G:i, d/m/y" != comment.last_updated_at|date:"G:i, d/m/y" %}
-                    {% blocktrans with updated=comment.last_updated_at|date:"G:i, d/m/y"}
-                      <small>更新時間: {{ updated }}</small>
-                    {% endblock %}
+                    <small>{% trans '更新時間' %}: {{ comment.last_updated_at|date:"G:i, d/m/y" }}</small>
                   {% endif %}
                   <br>
                   {% if user.is_authenticated %}
@@ -74,14 +72,12 @@
           {% else %}
             <div class="container">
               {% for comment in post.comments.all %}
-                <div  class="my-2 comment">
-                  {{ comment.comment }} {% if comment.by_admin %} <i class="fas fa-check"></i>{% endif %}
+                <div class="my-2 comment">
+                  {{ comment.comment }} {% if comment.by_admin %}<i class="fas fa-check" style="color: #4d783e;"></i>{% endif %}
                   <br>
-                  <small>By {{ comment.commenter }} at {{ comment.posted_at|date:"G:i, d/m/y" }}</small>
+                  <small>{% trans '名前' %} <strong>{{ comment.commenter }}</strong>, {{ comment.posted_at|date:"G:i, d/m/y" }}</small>
                   {% if comment.posted_at|date:"G:i, d/m/y" != comment.last_updated_at|date:"G:i, d/m/y" %}
-                    {% blocktrans with updated=comment.last_updated_at|date:"G:i, d/m/y"}
-                      <small>更新時間: {{ updated }}</small>
-                    {% endblock %}
+                    <small>{% trans '更新時間' %}: {{ comment.last_updated_at|date:"G:i, d/m/y" }}</small>
                   {% endif %}
                   <br>
                   {% if user.is_authenticated %}

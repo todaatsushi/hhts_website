@@ -12,15 +12,11 @@
 
     <p><small>{% trans '名前'　%} <a href="{% url 'user-about' post.author.username %}" class="blog-author">{{ post.author.profile.name }}</a></small></p>
     <p><small>
-        {% blocktrans with posted=post.posted_at|date:"G:i - d M, Y" %}
-          投稿時間: {{　posted }}
-        {% endblocktrans %}
+      {% trans '投稿時間' %}: {{ post.posted_at|date:"G:i - d M, Y" }}
     <small>
-      {% blocktrans with updated=post.updated_at|date:"G:i - d M, Y" %}
-        更新時間: {{ post.updated_at|date:"G:i - d M, Y"}}
-      {% endblocktrans %}
+      {% trans '更新時間' %}: {{ post.updated_at|date:"G:i - d M, Y" }}
     </small></p>
-    <a href="{% url 'post-comment' post.id %}" class="btn btn-sm btn-custom-2">{% trans 'コメントする %}</a>
+    <a href="{% url 'post-comment' post.id %}" class="btn btn-sm btn-custom-2">{% trans 'コメントする' %}</a>
     <a href="{% url 'blog-home' %}" class="btn btn-sm btn-custom-2">{% trans '戻る' %}</a>
     {% if post.author == user %}
       <a href="{% url 'post-update' post.id %}" class="btn btn-sm btn-custom-3">{% trans '更新' %}</a>

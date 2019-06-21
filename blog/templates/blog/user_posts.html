@@ -9,10 +9,10 @@
 
 {% block header %}
   <h1 class="display-4 text-center my-4 blog-header">
-    Posts by <a href="{% url 'user-about' user.username %}" class="blog-title">{{ user.profile.name }}</a> <span class="text-muted">({{ page_obj.paginator.count }})
+    <a href="{% url 'user-about' user.username %}" class="blog-title">{{ user.profile.name }}</a> {% trans 'のポスト' %} <span class="text-muted">({{ page_obj.paginator.count }})
 
     {% blocktrans with name=user.profile.name count=page_obj.paginator.count %}
-    {{ name }}のポスト ({{ count }})
+      {{ name }}のポスト ({{ count }})
     {% endblocktrans %}
     </span>
   </h1>
