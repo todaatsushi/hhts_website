@@ -37,8 +37,8 @@
               <a href="{% url 'post-admin' post.id %}" class="btn btn-sm btn-custom-1 my-1"><i class="fas fa-users"></i></a>
             {% endif %}
             {% if post.author == user %}
-              <a href="{% url 'post-update' post.id %}"><button class="btn btn-sm btn-custom-1 my-1">更新</button></a>
-              <a href="{% url 'post-delete' post.id %}"><button class="btn btn-sm btn-custom-danger my-1">削除する</button></a>
+              <a href="{% url 'post-update' post.id %}"><button class="btn btn-sm btn-custom-1 my-1">{% trans '更新' %}</button></a>
+              <a href="{% url 'post-delete' post.id %}"><button class="btn btn-sm btn-custom-danger my-1">{% trans '削除する' %}</button></a>
             {% endif %}
           {% endif %}
 
