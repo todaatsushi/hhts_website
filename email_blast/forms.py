@@ -6,7 +6,6 @@ from .helper import generate_email, validate_emails
 
 
 class DraftEmailForm(forms.Form):
-
     try:
         everyone = [(user.pk, user) for user in list(User.objects.all())]
         staff_recipients = forms.MultipleChoiceField(choices=everyone, required=False)
