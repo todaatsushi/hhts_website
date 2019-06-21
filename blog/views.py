@@ -24,7 +24,7 @@ class PublicPostView(ListView):
         return Post.objects.filter(admin_post=False).order_by('-pinned', '-posted_at')
 
 
-class BlogAllView(ListView):
+class BlogAllView(LoginRequiredMixin, ListView):
     model = Post
     template_name = 'blog/blog_all.html'
     context_object_name = 'posts'
@@ -40,7 +40,12 @@ class AllUserPostView(ListView):
 
     def get_queryset(self):
         user = get_object_or_404(User, username=self.kwargs.get('username'))
-        return Post.objects.filter(author=user).order_by('-pinned', '-posted_at')
+
+        # return all posts if staff
+        if self.request.user.is_authenticated:
+            return Post.objects.filter(author=user).order_by('-pinned', '-posted_at')
+
+        return Post.objects.filter(author=user, admin_post=False).order_by('-pinned', '-posted_at')
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
