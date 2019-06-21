@@ -1,5 +1,5 @@
 {% extends "home/layout.html" %}
-{% load static %}
+{% load static i18n %}
 
 {% block title %}
   {{ post.title }}
@@ -10,8 +10,11 @@
     <h2 class="display-4 text-center mt-4 mb-4">{{ post.title }}</h2>
     <p class="lead">{{ post.content | linebreaks }}</p>
 
-    <p><small>By <a href="{% url 'user-about' post.author.username %}" class="blog-author">{{ post.author.profile.name }}</a></small></p>
-    <p><small>Posted at: {{ post.posted_at|date:"G:i - d M, Y"}}</small><br>
+    <p><small>{% trans '名前'　%} <a href="{% url 'user-about' post.author.username %}" class="blog-author">{{ post.author.profile.name }}</a></small></p>
+    <p><small>
+        {% blocktrans with posted=post.posted_at|date:"G:i - d M, Y" %}
+          投稿時間: {{　posted }}
+        {% endblocktrans %}
     <small>
       {% blocktrans with updated=post.updated_at|date:"G:i - d M, Y" %}
         更新時間: {{ post.updated_at|date:"G:i - d M, Y"}}
@@ -33,7 +36,8 @@
           <br>
           <small>
             {% blocktrans with name=comment.commenter time=comment.posted_at|date:"G:i, d/m/y" %}
-            名前： {{ name }}　時間： {{ time }}
+              名前： {{ name }}　時間： {{ time }}
+            {% endblocktrans %}
           </small>
           <br class="mb-2">
           {% if user.is_authenticated %}
