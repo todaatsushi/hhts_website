@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block title %}
-  ポスト削除
+  {% trans 'ポスト削除' %}
 {% endblock %}
 
 {% block main %}
@@ -10,12 +10,16 @@
     <form method="post">
       {% csrf_token %}
       <fieldset class="form-group del-fg">
-        <legend class="text-center"><h1>ポスト削除</h1></legend>
-        <p class="lead text-center">"{{ object.title }}"を削除しますけどよろしいですか？</p>
+        <legend class="text-center"><h1>{% trans 'ポスト削除' %}</h1></legend>
+        <p class="lead text-center">
+          {% blocktrans with title=object.title %}
+            "{{ title }}"を削除しますけどよろしいですか？
+          {% endblocktrans %}
+        </p>
       </fieldset>
       <div class="form-group del-fg">
         <input type="submit" value="確認" class="btn btn-custom-danger submit-btn">
-        <a href="{% url 'post-detail' object.id %}" class="btn btn-custom-1 submit-btn">戻る</a>
+        <a href="{% url 'post-detail' object.id %}" class="btn btn-custom-1 submit-btn">{% trans '戻る' %}</a>
       </div>
     </form>
   </div>

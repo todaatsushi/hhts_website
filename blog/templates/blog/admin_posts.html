@@ -1,14 +1,18 @@
 {% extends "blog/post_list_layout.html" %}
-{% load static %}
+{% load static i18n %}
 
 {% block title %}
-  Admin Posts
+  {% trans 'スタフポッスト' %}
 {% endblock %}
 
 {% block header %}
-  <h1 class="display-4 text-center my-4">ポスト<span class="text-muted">スタフ専用</span></h1>
+  <h1 class="display-4 text-center my-4">{% trans 'ポスト' %}<span class="text-muted">{% trans 'スタフ専用' %}</span></h1>
 {% endblock %}
 
 {% block select_posts %}
-  <a href="{% url 'post-user' post.author.username %}" class="btn btn-sm btn-outline-primary">{{ post.author.profile.name }}のポストを全て見る</a>
+  <a href="{% url 'post-user' post.author.username %}" class="btn btn-sm btn-outline-primary">
+    {% blocktrans with author=post.author.profile.name %}
+      {{ author }}のポストを全て見る
+    {% endblocktrans %}
+  </a>
 {% endblock %}

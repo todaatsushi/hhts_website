@@ -1,17 +1,19 @@
 {% extends "blog/post_form_layout.html" %}
 
 {% block title %}
-  Update Post
+  {% trans 'ポストの更新'}
 {% endblock %}
 
 {% block form_func %}
-  Update Post
+  {% trans 'ポストの更新'}
 {% endblock %}
 
 {% block back %}
-  <a href="{% url 'post-detail' object.id %}" class="btn btn-sm btn-custom-2 btn-block">戻る</a>
+  <a href="{% url 'post-detail' object.id %}" class="btn btn-sm btn-custom-2 btn-block">
+    {% trans '戻る' %}
+  </a>
 {% endblock %}
 
 {% block button_text %}
-  Update
+  {% trans '更新' %}
 {% endblock %}

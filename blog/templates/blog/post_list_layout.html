@@ -14,7 +14,7 @@
   {% for post in posts %}
     {% if not user.is_authenticated and post.admin_post %}
     {% else %}
-      <div class="container">
+      <div class="container">≈≈
 
         <h2><a href="{% url 'post-detail' post.id %}" class="blog-title">{{ post.title }}</a>
           {% if post.pinned %} <i class="fas fa-thumbtack ml-3 post-icon"></i> {% endif %}{% if post.admin_post %} <i class="fas fa-users ml-3 post-icon"></i> {% endif %}</h2>
@@ -55,11 +55,13 @@
                   <br>
                   <small>By <strong>{{ comment.commenter }}</strong> at {{ comment.posted_at|date:"G:i, d/m/y" }}</small>
                   {% if comment.posted_at|date:"G:i, d/m/y" != comment.last_updated_at|date:"G:i, d/m/y" %}
-                    <small>Last updated at: {{ comment.last_updated_at|date:"G:i, d/m/y" }}</small>
+                    {% blocktrans with updated=comment.last_updated_at|date:"G:i, d/m/y"}
+                      <small>更新時間: {{ updated }}</small>
+                    {% endblock %}
                   {% endif %}
                   <br>
                   {% if user.is_authenticated %}
-                    <a href="{% url 'post-comment_delete' pk=post.pk pkc=comment.pk %}" class="btn btn-sm btn-custom-danger mt-1">削除する</a>
+                    <a href="{% url 'post-comment_delete' pk=post.pk pkc=comment.pk %}" class="btn btn-sm btn-custom-danger mt-1">{% trans '削除する' %}</a>
                     {% if comment.by_admin %}
                       <a href="{% url 'post-comment_unadmin' pk=post.pk pkc=comment.pk %}" class="btn btn-sm btn-custom-1 mt-1"><i class="fas fa-times"></i> <i class="fas fa-users"></i></a>
                     {% else %}
@@ -68,7 +70,7 @@
                   {% endif %}
                 </div>
               {% endfor %}
-              <a href="{% url 'post-detail' post.id %}" class="btn btn-custom-1 btn-sm">View All Comments</a>
+              <a href="{% url 'post-detail' post.id %}" class="btn btn-custom-1 btn-sm">{% trans '全てのコメントを読む' %}</a>
             </div>
           {% else %}
             <div class="container">
@@ -78,11 +80,13 @@
                   <br>
                   <small>By {{ comment.commenter }} at {{ comment.posted_at|date:"G:i, d/m/y" }}</small>
                   {% if comment.posted_at|date:"G:i, d/m/y" != comment.last_updated_at|date:"G:i, d/m/y" %}
-                    <small>Last updated at: {{ comment.last_updated_at|date:"G:i, d/m/y" }}</small>
+                    {% blocktrans with updated=comment.last_updated_at|date:"G:i, d/m/y"}
+                      <small>更新時間: {{ updated }}</small>
+                    {% endblock %}
                   {% endif %}
                   <br>
                   {% if user.is_authenticated %}
-                    <a href="{% url 'post-comment_delete' pk=post.pk pkc=comment.pk %}" class="btn btn-sm btn-custom-danger mt-1">削除する</a>
+                    <a href="{% url 'post-comment_delete' pk=post.pk pkc=comment.pk %}" class="btn btn-sm btn-custom-danger mt-1">{% trans '削除する' %}</a>
                     {% if comment.by_admin %}
                       <a href="{% url 'post-comment_unadmin' pk=post.pk pkc=comment.pk %}" class="btn btn-sm btn-custom-1 mt-1"><i class="fas fa-times"></i> <i class="fas fa-users"></i></a>
                     {% else %}
@@ -102,15 +106,17 @@
   {% if is_paginated %}
     <div>
       {% if page_obj.has_previous %}
-        <a href="?page=1">1ページ目</a>
-        <a href="?page={{ page_obj.previous_page_number }}">前のページ</a>
+        <a href="?page=1">{% trans '1ページ目' %}</a>
+        <a href="?page={{ page_obj.previous_page_number }}">{% trans '前のページ' %}</a>
       {% endif %}
 
-      ページ #{{ page_obj.number }}/{{ page_obj.paginator.num_pages }}
+      {% blocktrans with number=page_obj.number total=page_obj.paginator.num_pages %}
+        ページ #{{ number }}/{{ total }}
+      {% endblocktrans %}
 
       {% if page_obj.has_next %}
-        <a href="?page={{ page_obj.next_page_number }}">次のページ</a>
-        <a href="?page={{ page_obj.paginator.num_pages }}">最後のページ</a>
+        <a href="?page={{ page_obj.next_page_number }}">{% trans '次のページ' %}</a>
+        <a href="?page={{ page_obj.paginator.num_pages }}">{% trans '最後のページ' %}</a>
       {% endif %}
     </div>
   {% endif %}

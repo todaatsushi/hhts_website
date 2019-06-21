@@ -1,13 +1,13 @@
 {% extends "blog/post_form_layout.html" %}
 
 {% block title %}
-  コメントの削除
+  {% trans 'コメントの削除' %}
 {% endblock %}
 
 {% block back %}
-  <a href="{% url 'post-detail' post.id %}" class="btn btn-block mt-2 btn-custom-1">戻る</a>
+  <a href="{% url 'post-detail' post.id %}" class="btn btn-block mt-2 btn-custom-1">{% trans '戻る' %}</a>
 {% endblock %}
 
 {% block button_text %}
-  削除
+  {% trans '削除' %}
 {% endblock %}
