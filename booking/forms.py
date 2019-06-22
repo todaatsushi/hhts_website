@@ -26,11 +26,11 @@ class BookTourForm(forms.ModelForm):
                             f"""
                             <select name="transportation" class="mr-3 form-control" required="" id="id_transportation">
                               <option value="{_("使う交通手段")}" selected disabled>{_("使う交通手段")}</option>
-                              <option value="{_("電車")}">{_("電車")}</option>
-                              <option value="{_("コーチ")}">{_("コーチ")}</option>
-                              <option value="{_("自動車・バン")}">{_("自動車・バン")}</option>
-                              <option value="{_("タクシ")}">{_("タクシ")}</option>
-                              <option value="{_("その他")}">{_("他の交通手段は後で伝えてください")}</option>
+                              <option value="Train">{_("電車")}</option>
+                              <option value="Coach">{_("コーチ")}</option>
+                              <option value="Car / Van">{_("自動車・バン")}</option>
+                              <option value="Taxi">{_("タクシ")}</option>
+                              <option value="Other">{_("他の交通手段は後で伝えてください")}</option>
                             </select>
                             """
                         ),
@@ -74,11 +74,11 @@ class BookTourForm(forms.ModelForm):
                         f"""
                         <select name="age_group" class="mr-3 select form-control" required="" id="id_age_group">
                             <option value="NA" selected disabled>{_('年齢層')}</option>
-                            <option value={_('家族')}>{_('家族')}</option>
-                            <option value={_('大人')}>{_('大人')}</option>
-                            <option value={_('高齢者')}>{_('高齢者')}</option>
-                            <option value={_('子供・思春期')}>{_('子供・思春期')}</option>
-                            <option value={_('ミックス')}>{_('ミックス')}</option>
+                            <option value="Family">{_('家族')}</option>
+                            <option value="Adults">{_('大人')}</option>
+                            <option value="Seniors">{_('高齢者')}</option>
+                            <option value="Children / Adolescents">{_('子供・思春期')}</option>
+                            <option value="Mixed">{_('ミックス')}</option>
                         </select>
                         """
                     ),

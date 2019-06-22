@@ -10,20 +10,19 @@ from .email_helper import ConfirmEmail
 class Booking(models.Model):
 
     AGE_GROUPS = (
-        (_('家族'), _('家族')),
-        (_('大人'), _('大人')),
-        (_('高齢者'), _('高齢者')),
-        (_('子供・思春期'), _('子供・思春期')),
-        (_('ミックス'), _('ミックス')),
+        ('Family', _('家族')),
+        ('Adults', _('大人')),
+        ('Seniors', _('高齢者')),
+        ('Children / Adolescents', _('子供・思春期')),
+        ('Mixed', _('ミックス')),
     )
 
     TRANSPORT_OPTIONS = (
-        (_('使う交通手段'), _('使う交通手段')),
-        (_('電車'), _('電車')),
-        (_('コーチ'), _('コーチ')),
-        (_('自動車・バン'), _('自動車・バン')),
-        (_('タクシ'), _('タクシ')),
-        (_('その他'), _('他の交通手段は後で伝えてください')),
+        ('Train', _('電車')),
+        ('Coach', _('コーチ')),
+        ('Car / Van', _('自動車・バン')),
+        ('Taxi', _('タクシ')),
+        ('Other', _('他の交通手段は後で伝えてください')),
     )
 
     contact_name = models.CharField(max_length=50, verbose_name=_('名前'))
@@ -68,3 +67,7 @@ class Booking(models.Model):
     def not_done(self):
         self.complete = False
         self.save()
+
+    def save(self):
+        print(self.scheduled_at)
+        super().save()
