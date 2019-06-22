@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-06-21 20:16+0100\n"
-"PO-Revision-Date: 2019-06-21 20:20+0100\n"
+"POT-Creation-Date: 2019-06-22 13:16+0100\n"
+"PO-Revision-Date: 2019-06-22 13:17+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en\n"
@@ -21,7 +21,8 @@ msgstr ""
 #: blog/forms.py:13 blog/models.py:48 blog/templates/blog/post.html:13
 #: blog/templates/blog/post_list_layout.html:23
 #: blog/templates/blog/post_list_layout.html:55
-#: blog/templates/blog/post_list_layout.html:78
+#: blog/templates/blog/post_list_layout.html:78 booking/forms.py:50
+#: booking/models.py:28 users/models.py:9
 msgid "名前"
 msgstr "Name:"
 
@@ -270,6 +271,135 @@ msgstr ""
 msgid "のポスト"
 msgstr "All Posts"
 
+#: booking/forms.py:20 booking/templates/booking/booking_view.html:35
+msgid "基本情報"
+msgstr "Basic information"
+
+#: booking/forms.py:23 booking/models.py:35
+msgid "予定時間"
+msgstr "Booking time:"
+
+#: booking/forms.py:24
+msgid "期間"
+msgstr "Period:"
+
+#: booking/forms.py:40 booking/models.py:38
+msgid "訪問したい酒蔵"
+msgstr "Desired sake shops to visit:"
+
+#: booking/forms.py:47 users/models.py:10
+msgid "個人情報"
+msgstr "Personal information"
+
+#: booking/forms.py:51 booking/models.py:32
+msgid "電話番号"
+msgstr "Telephone number:"
+
+#: booking/forms.py:52 booking/models.py:34
+msgid "メールアドレス"
+msgstr "Email address:"
+
+#: booking/forms.py:56 booking/models.py:33
+msgid "住所"
+msgstr "Address:"
+
+#: booking/forms.py:63 booking/templates/booking/booking_view.html:26
+msgid "グループの情報"
+msgstr "Group information"
+
+#: booking/forms.py:71 booking/models.py:30
+msgid "グループ名前"
+msgstr "Group name:"
+
+#: booking/forms.py:72 booking/models.py:31
+msgid "グループの数"
+msgstr "Group number:"
+
+#: booking/forms.py:89
+msgid "そのほかと確認"
+msgstr "Other options and confirmation"
+
+#: booking/forms.py:92 booking/models.py:40
+#: booking/templates/booking/booking_view.html:44
+msgid "他に伝えたい情報"
+msgstr "Other information"
+
+#: booking/forms.py:100 email_blast/templates/email_blast/view_send.html:29
+msgid "送る"
+msgstr "Send"
+
+#: booking/models.py:12
+msgid "家族"
+msgstr "Family"
+
+#: booking/models.py:13
+msgid "大人"
+msgstr "Adults"
+
+#: booking/models.py:14
+msgid "高齢者"
+msgstr "Senior citizens"
+
+#: booking/models.py:15
+msgid "子供・思春期"
+msgstr "Children / Adolescent"
+
+#: booking/models.py:16
+msgid "ミックス"
+msgstr "Mix"
+
+#: booking/models.py:20
+msgid "使う交通手段"
+msgstr "Transportation method:"
+
+#: booking/models.py:21
+msgid "電車"
+msgstr "Train"
+
+#: booking/models.py:22
+msgid "コーチ"
+msgstr "Coach"
+
+#: booking/models.py:23
+msgid "自動車・バン"
+msgstr "Car / Van"
+
+#: booking/models.py:24
+msgid "タクシ"
+msgstr "Taxi"
+
+#: booking/models.py:25 home/templates/home/about.html:103
+msgid "その他"
+msgstr "Other"
+
+#: booking/models.py:25
+msgid "他の交通手段は後で伝えてください"
+msgstr "Please use another page."
+
+#: booking/models.py:29
+msgid "グループ予約"
+msgstr "Group booking:"
+
+#: booking/models.py:36
+msgid "期間・分"
+msgstr "Time needed (min)"
+
+#: booking/models.py:37
+msgid "年齢層"
+msgstr "Age group"
+
+#: booking/models.py:41
+msgid "予約をとった時間"
+msgstr "Reservation time"
+
+#: booking/models.py:42
+msgid "確認されたが"
+msgstr "Confirmed"
+
+#: booking/models.py:43
+msgid "完成した"
+msgstr "Completed"
+
 #: booking/templates/booking/book_tour.html:9
 #: booking/templates/booking/book_tour.html:30
 msgid "ツアーを予約"
@@ -299,10 +429,6 @@ msgstr "Address:"
 msgid "メールアドレス："
 msgstr "Email address:"
 
-#: booking/templates/booking/booking_view.html:26
-msgid "グループの情報"
-msgstr "Group information"
-
 #: booking/templates/booking/booking_view.html:28
 msgid "グループ予約："
 msgstr "Group booking:"
@@ -320,10 +446,6 @@ msgstr "Group number:"
 msgid "期間："
 msgstr "Period:"
 
-#: booking/templates/booking/booking_view.html:35
-msgid "基本情報"
-msgstr "Basic information"
-
 #: booking/templates/booking/booking_view.html:37
 msgid "予定時間："
 msgstr "Booking time:"
@@ -335,10 +457,6 @@ msgstr "Transportation method:"
 #: booking/templates/booking/booking_view.html:40
 msgid "訪問したい酒蔵："
 msgstr "Desired sake shops to visit:"
-
-#: booking/templates/booking/booking_view.html:44
-msgid "他に伝えたい情報"
-msgstr "Other information"
 
 #: booking/templates/booking/booking_view.html:46
 #: booking/templates/booking/index.html:20
@@ -521,10 +639,6 @@ msgstr "Please use another page"
 msgid "受取人"
 msgstr "Recipients"
 
-#: email_blast/templates/email_blast/view_send.html:29
-msgid "送る"
-msgstr "Send"
-
 #: hhts_website/settings/base.py:110
 msgid "English"
 msgstr "English"
@@ -630,10 +744,6 @@ msgstr ""
 "place! Take part in \n"
 "special brewery tours (reservation required) and a coupon hunt that yields "
 "luxurious prizes!"
-
-#: home/templates/home/about.html:103
-msgid "その他"
-msgstr "Other"
 
 #: home/templates/home/about.html:105
 msgid ""
@@ -946,6 +1056,18 @@ msgstr ""
 #: home/views.py:33
 msgid "選択した言語は利用できません"
 msgstr "Your selected language is not available for this site."
+
+#: users/models.py:8
+msgid "ユーザー"
+msgstr "User"
+
+#: users/models.py:11
+msgid "写真"
+msgstr "Photo"
+
+#: users/models.py:12
+msgid "役割"
+msgstr "Role"
 
 #~ msgid ""
 #~ "\n"
