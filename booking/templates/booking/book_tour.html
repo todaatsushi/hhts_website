@@ -32,3 +32,14 @@
     </form>
   </div>
 {% endblock %}
+
+{% block scripts %}
+  <script>
+    // Datetime Picker
+    $(function () {
+      $("#id_scheduled_at").datetimepicker({
+        format: 'd/m/Y H:i',
+      });
+    });
+  </script>
+{% endblock %}

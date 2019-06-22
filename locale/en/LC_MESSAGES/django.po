@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-06-22 14:18+0100\n"
-"PO-Revision-Date: 2019-06-22 13:25+0100\n"
+"PO-Revision-Date: 2019-06-22 16:32+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en\n"
@@ -284,7 +284,7 @@ msgstr "Booking time:"
 
 #: booking/forms.py:24
 msgid "期間"
-msgstr "Period:"
+msgstr "Duration - mins :"
 
 #: booking/forms.py:40 booking/models.py:38
 msgid "訪問したい酒蔵"
@@ -377,7 +377,7 @@ msgstr "Other"
 
 #: booking/models.py:25
 msgid "他の交通手段は後で伝えてください"
-msgstr "Please use another page."
+msgstr "Other - please specify at the end"
 
 #: booking/models.py:29
 msgid "グループ予約"
