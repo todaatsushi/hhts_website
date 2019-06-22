@@ -195,15 +195,57 @@ class BlogViewsTestCase(TestCase):
 
     def test_update_view(self):
         self.client.force_login(self.user)
-        response = self.client.get(reverse('post-update'), kwargs={'pk': self.post.id})
+        response = self.client.get(reverse('post-update', kwargs={'pk': 1}))
         self.assertEqual(response.status_code, 200)
-        self.assertTemplateUsed(response, 'blog/create.html')
-        self.assertContains(response, 'Update post')
+        self.assertTemplateUsed(response, 'blog/update.html')
+        self.assertContains(response, '更新')
 
     def test_update_view_en(self):
         self.client.force_login(self.user)
-        response = self.client.get(reverse('post-update'), kwargs={'pk': self.post.id})
+        response = self.client.get(reverse('post-update', kwargs={'pk': 1}))
         self.assertEqual(response.status_code, 200)
-        self.assertTemplateUsed(response, 'blog/create.html')
-        self.assertContains(response, 'ポストの更新 ')
+        self.assertTemplateUsed(response, 'blog/update.html')
+        self.assertContains(response, 'ポストの更新')
 
+    def test_delete_view(self):
+        self.client.force_login(self.user)
+        response = self.client.get(reverse('post-delete', kwargs={'pk': 1}))
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'blog/confirm_delete.html')
+        self.assertContains(response, 'ポスト削除')
+
+    def test_delete_view_en(self):
+        with self.english_setting():
+            self.client.force_login(self.user)
+            response = self.client.get(reverse('post-delete', kwargs={'pk': 1}))
+            self.assertEqual(response.status_code, 200)
+            self.assertTemplateUsed(response, 'blog/confirm_delete.html')
+            self.assertContains(response, 'Delete post')
+
+    def test_post_comment(self):
+        response = self.client.get(reverse('post-comment', kwargs={'pk': 1}))
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'blog/comment.html')
+        self.assertContains(response, 'コメントを残す')
+
+    def test_post_comment_en(self):
+        with self.english_setting():
+            response = self.client.get(reverse('post-comment', kwargs={'pk': 1}))
+            self.assertEqual(response.status_code, 200)
+            self.assertTemplateUsed(response, 'blog/comment.html')
+            self.assertContains(response, 'Comment')
+
+    def test_post_comment_delete_view(self):
+        self.client.force_login(self.user)
+        response = self.client.get(reverse('post-comment_delete', kwargs={'pk': self.post.pk, 'pkc': self.comment.pk}))
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'blog/delete_comment.html')
+        self.assertContains(response, 'コメント')
+
+    def test_post_comment_delete_view(self):
+        with self.english_setting():
+            self.client.force_login(self.user)
+            response = self.client.get(reverse('post-comment_delete', kwargs={'pk': self.post.pk, 'pkc': self.comment.pk}))
+            self.assertEqual(response.status_code, 200)
+            self.assertTemplateUsed(response, 'blog/delete_comment.html')
+            self.assertContains(response, 'Delete')
