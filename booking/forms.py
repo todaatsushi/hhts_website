@@ -118,7 +118,7 @@ class BookTourForm(forms.ModelForm):
             'extra_details',
         ]
         widgets = {
-            'scheduled_at': forms.DateTimeInput(format=['%d/%m/%y %H:%M']),
+            'scheduled_at': forms.DateTimeInput(format=['%Y-%d-%m %H:%M']),
             'contact_email': forms.EmailInput(),
             'group_number': forms.NumberInput()
         }
