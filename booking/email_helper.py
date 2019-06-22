@@ -44,7 +44,7 @@ class ConfirmEmail(object):
             """
 
         body += f"""
-            Exra details:
+            Extra details:
                 - {self.booking.extra_details}
 
                 

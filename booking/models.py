@@ -37,7 +37,7 @@ class Booking(models.Model):
     age_group = models.CharField(max_length=50, choices=AGE_GROUPS, verbose_name=_('年齢層'))
     places_to_visit = models.TextField(verbose_name=_('訪問したい酒蔵'))
     transportation = models.CharField(max_length=50, choices=TRANSPORT_OPTIONS, verbose_name='使う交通手段')
-    extra_details = models.TextField(verbose_name=_('他に伝えたい情報'))
+    extra_details = models.TextField(verbose_name=_('他に伝えたい情報'), null=True)
     booked_at = models.DateTimeField(default=timezone.now, verbose_name=_('予約をとった時間'))
     confirmed = models.BooleanField(default=False, verbose_name=_('確認されたが'))
     complete = models.BooleanField(default=False, verbose_name=_('完成した'))
