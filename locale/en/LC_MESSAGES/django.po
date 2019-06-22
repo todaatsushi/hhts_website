@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-06-22 13:16+0100\n"
-"PO-Revision-Date: 2019-06-22 13:17+0100\n"
+"POT-Creation-Date: 2019-06-22 14:18+0100\n"
+"PO-Revision-Date: 2019-06-22 13:25+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en\n"
@@ -30,10 +30,11 @@ msgstr "Name:"
 msgid "コメント"
 msgstr "Comment"
 
-#: blog/forms.py:25 booking/templates/booking/index.html:27
+#: blog/forms.py:25 blog/templates/blog/confirm_delete.html:21
+#: booking/templates/booking/index.html:27
 #: email_blast/templates/email_blast/update_email.html:17
 msgid "確認"
-msgstr "Confirm booking"
+msgstr "Confirm"
 
 #: blog/models.py:9
 msgid "名称"
@@ -118,8 +119,9 @@ msgstr "Leave a comment"
 
 #: blog/templates/blog/comment.html:14
 #: blog/templates/blog/confirm_delete.html:22
-#: blog/templates/blog/create.html:13 blog/templates/blog/delete_comment.html:9
-#: blog/templates/blog/post.html:20 blog/templates/blog/update.html:14
+#: blog/templates/blog/create.html:13
+#: blog/templates/blog/delete_comment.html:13 blog/templates/blog/post.html:20
+#: blog/templates/blog/update.html:14
 #: booking/templates/booking/confirm_delete.html:22
 #: email_blast/templates/email_blast/delete_mail.html:24
 #: email_blast/templates/email_blast/draft_email.html:17
@@ -158,10 +160,11 @@ msgid "投稿"
 msgstr "Post"
 
 #: blog/templates/blog/delete_comment.html:5
+#: blog/templates/blog/delete_comment.html:9
 msgid "コメントの削除"
 msgstr "Delete comment"
 
-#: blog/templates/blog/delete_comment.html:13
+#: blog/templates/blog/delete_comment.html:17
 #: booking/templates/booking/booking_view.html:51
 #: booking/templates/booking/index.html:23
 #: email_blast/templates/email_blast/delete_mail.html:23
@@ -183,7 +186,7 @@ msgstr "Leave comment"
 msgid "更新"
 msgstr "Update"
 
-#: blog/templates/blog/post.html:23 blog/templates/blog/post.html:40
+#: blog/templates/blog/post.html:23 blog/templates/blog/post.html:50
 #: blog/templates/blog/post_list_layout.html:41
 #: blog/templates/blog/post_list_layout.html:61
 #: blog/templates/blog/post_list_layout.html:84
@@ -191,7 +194,7 @@ msgstr "Update"
 msgid "削除する"
 msgstr "Delete"
 
-#: blog/templates/blog/post.html:34
+#: blog/templates/blog/post.html:44
 #, python-format
 msgid ""
 "\n"
@@ -1068,6 +1071,17 @@ msgstr "Photo"
 #: users/models.py:12
 msgid "役割"
 msgstr "Role"
+
+#~ msgid ""
+#~ "\n"
+#~ "          <input type=\"submit\" value=\"確認\" class=\"btn btn-custom-"
+#~ "danger submit-btn\">\n"
+#~ "        "
+#~ msgstr ""
+#~ "\n"
+#~ "          <input type=“submit” value=“Confirm delete” class=“btn btn-"
+#~ "custom-danger submit-btn”>\n"
+#~ "        "
 
 #~ msgid ""
 #~ "\n"

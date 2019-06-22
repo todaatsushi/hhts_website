@@ -22,6 +22,16 @@
       <a href="{% url 'post-update' post.id %}" class="btn btn-sm btn-custom-3">{% trans '更新' %}</a>
       <a href="{% url 'post-delete' post.id %}" class="btn btn-sm btn-custom-danger">{% trans '削除する' %}</a>
     {% endif %}
+    {% if post.pinned %}
+      <a href="{% url 'post-unpin' post.id %}" class="btn btn-sm btn-custom-1 my-1"><i class="fas fa-times"></i> <i class="fas fa-thumbtack"></i></a>
+    {% else %}
+      <a href="{% url 'post-pin' post.id %}" class="btn btn-sm btn-custom-1 my-1"><i class="fas fa-thumbtack"></i></a>
+    {% endif %}
+    {% if post.admin_post %}
+      <a href="{% url 'post-unadmin' post.id %}" class="btn btn-sm btn-custom-1 my-1"><i class="fas fa-times"></i> <i class="fas fa-users"></i></a>
+    {% else %}
+      <a href="{% url 'post-admin' post.id %}" class="btn btn-sm btn-custom-1 my-1"><i class="fas fa-users"></i></a>
+    {% endif %}
     <hr>
   </div>
   {% if post.comments.all.count != 0 %}

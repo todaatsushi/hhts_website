@@ -5,6 +5,10 @@
   {% trans 'コメントの削除' %}
 {% endblock %}
 
+{% block form_func %}
+  {% trans 'コメントの削除' %}
+{% endblock %}
+
 {% block back %}
   <a href="{% url 'post-detail' post.id %}" class="btn btn-block mt-2 btn-custom-1">{% trans '戻る' %}</a>
 {% endblock %}
