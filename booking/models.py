@@ -6,6 +6,7 @@ from django.utils.translation import gettext_lazy as _
 
 from .email_helper import ConfirmEmail
 
+
 class Booking(models.Model):
 
     AGE_GROUPS = (
@@ -32,8 +33,8 @@ class Booking(models.Model):
     contact_number = models.CharField(max_length=50, verbose_name=_('電話番号'))
     contact_address = models.TextField(verbose_name=_('住所'))
     contact_email = models.EmailField(verbose_name=_('メールアドレス'))
-    scheduled_at = models.DateTimeField(verbose_name=_('予定時間'))
-    duration = models.CharField(max_length=50, verbose_name=_('期間・分'))
+    scheduled_at = models.DateTimeField(verbose_name=_('予定時間')) # - BUG? CERTAIN DATETIME INPUTS CAUSE MODELFORM.CLEAN() TO FAIL
+    duration = models.IntegerField(verbose_name=_('期間・分'))
     age_group = models.CharField(max_length=50, choices=AGE_GROUPS, verbose_name=_('年齢層'))
     places_to_visit = models.TextField(verbose_name=_('訪問したい酒蔵'))
     transportation = models.CharField(max_length=50, choices=TRANSPORT_OPTIONS, verbose_name='使う交通手段')
