@@ -64,10 +64,25 @@ class AdminPostView(LoginRequiredMixin, ListView):
         return Post.objects.filter(admin_post=True).order_by('-pinned', '-posted_at')
 
 
-class PostDetailView(DetailView):
+class PostDetailView(UserPassesTestMixin, DetailView):
     model = Post
     template_name = 'blog/post.html'
     context_object_name = "post"
+
+    def test_func(self):
+        """
+        Non admin is trying to see admin post check.
+        """
+        post = Post.objects.get(pk=self.kwargs['pk'])
+
+        # Allow logged in users
+        if self.request.user.is_authenticated:
+            return True
+        else:
+            # If post is an admin post, block. Else, allow.
+            if post.admin_post:
+                return False
+            return True
 
 
 class PostCreateView(LoginRequiredMixin, CreateView):
