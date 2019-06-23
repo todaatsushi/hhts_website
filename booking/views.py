@@ -84,7 +84,7 @@ def booking_complete(request, pk):
 
 
 @login_required
-def booking_uncomplete(request, pk):
+def booking_incomplete(request, pk):
     booking = get_object_or_404(Booking, id=pk)
     booking.not_done()
     return HttpResponseRedirect(reverse('booking-index'))

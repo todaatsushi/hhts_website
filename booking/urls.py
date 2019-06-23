@@ -1,6 +1,6 @@
 from django.urls import path
 
-from . import views as v
+import booking.views as v
 
 
 urlpatterns = [
@@ -12,5 +12,5 @@ urlpatterns = [
     path('<int:pk>/confirm/', v.booking_confirm, name='booking-confirm'),
     path('<int:pk>/complete/', v.booking_complete, name='booking-complete'),
     path('<int:pk>/unconfirm/', v.booking_unconfirm, name='booking-unconfirm'),
-    path('<int:pk>/uncomplete/', v.booking_uncomplete, name='booking-uncomplete'),
+    path('<int:pk>/incomplete/', v.booking_incomplete, name='booking-incomplete'),
 ]
