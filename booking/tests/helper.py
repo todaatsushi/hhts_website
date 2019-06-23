@@ -1,6 +1,7 @@
 from django.utils import timezone
 
 import os
+import datetime
 
 from booking.models import Booking
 
@@ -17,13 +18,11 @@ def create_booking():
         contact_number=12345,
         contact_address='Rio',
         contact_email=os.environ.get('GMAIL_ADDRESS'),
-        scheduled_at=timezone.now(),
+        scheduled_at=timezone.now().strftime('%Y-%m-%d %H:%M'),
         duration='60',
         age_group='ミックス',
         places_to_visit='All of them',
         transportation='自動車・バン',
         extra_details=None,
-        booked_at=timezone.now(),
-        confirmed=False,
-        complete=False
+        booked_at=timezone.now().strftime('%Y-%m-%d %H:%M')
     )
