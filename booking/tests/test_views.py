@@ -17,43 +17,13 @@ class BookingViewsTestCase(TestCase):
     def english_setting(self):
         return self.settings(LANGUAGE_CODE='en')
 
-    def basic_view_check(self, path, template, login_required,
-                         text_on_page):
-        """
-        Checks if view bounces non logged in user (or not) and the right template.
-
-        Inputs:
-            path - reverse(x) or absolute url.
-            template - app/template.html
-            login_required - bool
-            text_on_page - list of strings with contained texts
-        """
-
-        # Helper func
-        def check_auth(self, path):
-            """
-            Bounces non logged in sessions.
-            """
-            response = self.client.get(path)
-            self.assertEqual(response.status_code, 302)
-
-
-        if login_required:
-            check_auth(self, path)
-            self.client.force_login(self.user)
-
-        response = self.client.get(path)
-        self.assertEqual(response.status_code, 200)
-        self.assertTemplateUsed(response, template)
-
-        for t in text_on_page:
-            self.assertContains(response, t)
-
     def test_all_bookings_view(self):
-        self.basic_view_check(
+        h.basic_view_check(
+            test_case_obj=self,
             path=reverse('booking-index'),
             template='booking/index.html',
             login_required=True,
+            login_desired=True,
             text_on_page=[
                 '全てのブッキング', # Japanese text
                 'Me', # Booking itself
@@ -62,9 +32,11 @@ class BookingViewsTestCase(TestCase):
 
     def test_all_bookings_view_en(self):
         with self.english_setting():
-            self.basic_view_check(
+            h.basic_view_check(
+                self,
                 reverse('booking-index'),
                 'booking/index.html',
+                True,
                 True,
                 [
                     'All bookings', # Japanese text
@@ -73,9 +45,11 @@ class BookingViewsTestCase(TestCase):
             )
 
     def test_book_tour_create_view(self):
-        self.basic_view_check(
+        h.basic_view_check(
+            self,
             reverse('booking-book'),
             'booking/book_tour.html',
+            True,
             True,
             [
                 'ツアーを予約', # Japanese text
@@ -85,9 +59,11 @@ class BookingViewsTestCase(TestCase):
 
     def test_book_tour_create_view_en(self):
         with self.english_setting():
-            self.basic_view_check(
+            h.basic_view_check(
+                self,
                 reverse('booking-book'),
                 'booking/book_tour.html',
+                True,
                 True,
                 [
                     'Book a tour', # English text
@@ -96,9 +72,11 @@ class BookingViewsTestCase(TestCase):
             )
     
     def test_booking_detail_view(self):
-        self.basic_view_check(
+        h.basic_view_check(
+            self,
             reverse('booking-detail', kwargs={'pk': self.booking.pk}),
             'booking/booking_view.html',
+            True,
             True,
             [
                 self.booking.contact_name,
@@ -108,9 +86,11 @@ class BookingViewsTestCase(TestCase):
 
     def test_booking_detail_view_en(self):
         with self.english_setting():
-            self.basic_view_check(
+            h.basic_view_check(
+                self,
                 reverse('booking-detail', kwargs={'pk': self.booking.pk}),
                 'booking/booking_view.html',
+                True,
                 True,
                 [
                     self.booking.contact_name,
@@ -119,9 +99,11 @@ class BookingViewsTestCase(TestCase):
             )
 
     def test_booking_update_view(self):
-        self.basic_view_check(
+        h.basic_view_check(
+            self,
             reverse('booking-update', kwargs={'pk': self.booking.pk}),
             'booking/update.html',
+            True,
             True,
             [
                 'ツア更新',
@@ -131,9 +113,11 @@ class BookingViewsTestCase(TestCase):
 
     def test_booking_update_view_en(self):
         with self.english_setting():
-            self.basic_view_check(
+            h.basic_view_check(
+                self,
                 reverse('booking-update', kwargs={'pk': self.booking.pk}),
                 'booking/update.html',
+                True,
                 True,
                 [
                     'Update booking',
@@ -142,9 +126,11 @@ class BookingViewsTestCase(TestCase):
             )
 
     def test_booking_delete_view(self):
-        self.basic_view_check(
+        h.basic_view_check(
+            self,
             reverse('booking-delete', kwargs={'pk': self.booking.pk}),
             'booking/confirm_delete.html',
+            True,
             True,
             [
                 'ツアのカンセル',
@@ -154,13 +140,15 @@ class BookingViewsTestCase(TestCase):
 
     def test_booking_delete_view_en(self):
         with self.english_setting():
-            self.basic_view_check(
+            h.basic_view_check(
+                self,
                 reverse('booking-delete', kwargs={'pk': self.booking.pk}),
                 'booking/confirm_delete.html',
                 True,
+                True,
                 [
                     'Cancel tour',
-                    'Confirm' # Confirm button text
+                    'Confirm'
                 ]
             )
 
