@@ -18,7 +18,7 @@
         <p class="lead text-center">{% trans 'ブッキングを削除しますけどよろしいですか？' %}</p>
       </fieldset>
       <div class="form-group del-fg">
-        <input type="submit" value="確認" class="btn btn-danger submit-btn">
+        <input type="submit" value="{% trans '確認' %}" class="btn btn-danger submit-btn">
         <a href="{% url 'post-detail' object.id %}" class="btn btn-info submit-btn">{% trans '戻る' %}</a>
       </div>
     </form>
