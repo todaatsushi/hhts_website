@@ -19,7 +19,7 @@ class AllBookingsView(LoginRequiredMixin, ListView):
     paginate_by = 5
 
 
-class BookTourView(CreateView):
+class BookTourView(LoginRequiredMixin, CreateView):
     model = Booking
     template_name = 'booking/book_tour.html'
     form_class = BookTourForm
@@ -27,6 +27,7 @@ class BookTourView(CreateView):
 
     def form_valid(self, form):
         form.instance.booked_at = timezone.now()
+        print(form.data)
         return super().form_valid(form)
 
 
