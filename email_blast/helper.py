@@ -8,20 +8,24 @@ def generate_email(request, cleaned_data):
     Given django form cleaned_data (dict), returns EmailBlast object with processed attributes.
     """
 
+    # Don't send to any non admins if admin email is True
     if cleaned_data.get('admin_email'):
         others_to = []
     else:
         others_to = cleaned_data.get('other_recipients', 'None').split(',\r\n')
 
+    # If email is for every staff member, automatically add their emails
     if cleaned_data.get('all_staff'):
         staff_to = [
             u.email for u in User.objects.all()
         ]
     else:
+        # Otherwise only add those who are specified
         staff_to = [
             u.email for u in User.objects.filter(id__in=cleaned_data.get('staff_recipients', ''))
         ]
 
+    # Aggregate all recipients
     all_to = ','.join(staff_to) + ',' if staff_to else ''
     all_to += ','.join(others_to) if others_to else ''
     all_to = all_to.rstrip(',')
