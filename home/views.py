@@ -24,6 +24,7 @@ def saijo_info(request):
 
 
 def change_language(request, language):
+    redirect_url_name = request.GET.get('q')
     # make sure language is available
     valid = False
     for l in settings.LANGUAGES:
@@ -34,6 +35,6 @@ def change_language(request, language):
 
     # Make language the setting for the session
     translation.activate(language)
-    response = redirect(reverse('home'))
+    response = redirect(reverse(redirect_url_name))
     response.set_cookie(settings.LANGUAGE_COOKIE_NAME, language)
     return response

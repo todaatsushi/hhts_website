@@ -124,8 +124,8 @@
             <!-- Language choice -->
             <li class="nav-item dropdown">
               <span class="lang-choice mr-3">{% trans '言語の選択' %}:</span>
-              <a href="{% url 'language' 'en' %}" class="lang-choice btn btn-primary">English</a>
-              <a href="{% url 'language' 'ja' %}" class="lang-choice btn btn-info">日本語</a>
+              <a href="{% url 'language' 'en' %}?q={{ request.resolver_match.url_name }}" class="lang-choice btn btn-primary">English</a>
+              <a href="{% url 'language' 'ja' %}?q={{ request.resolver_match.url_name }}" class="lang-choice btn btn-info">日本語</a>
             </li>
           </ul>
         </div>
