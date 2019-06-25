@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-06-22 14:18+0100\n"
-"PO-Revision-Date: 2019-06-22 16:32+0100\n"
+"POT-Creation-Date: 2019-06-23 21:03+0100\n"
+"PO-Revision-Date: 2019-06-25 14:08+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en\n"
@@ -31,6 +31,7 @@ msgid "コメント"
 msgstr "Comment"
 
 #: blog/forms.py:25 blog/templates/blog/confirm_delete.html:21
+#: booking/templates/booking/confirm_delete.html:21
 #: booking/templates/booking/index.html:27
 #: email_blast/templates/email_blast/update_email.html:17
 msgid "確認"
@@ -331,29 +332,25 @@ msgstr "Other information"
 msgid "送る"
 msgstr "Send"
 
-#: booking/models.py:12
+#: booking/models.py:13
 msgid "家族"
 msgstr "Family"
 
-#: booking/models.py:13
+#: booking/models.py:14
 msgid "大人"
 msgstr "Adults"
 
-#: booking/models.py:14
+#: booking/models.py:15
 msgid "高齢者"
 msgstr "Senior citizens"
 
-#: booking/models.py:15
+#: booking/models.py:16
 msgid "子供・思春期"
 msgstr "Children / Adolescent"
 
-#: booking/models.py:16
+#: booking/models.py:17
 msgid "ミックス"
 msgstr "Mix"
-
-#: booking/models.py:20
-msgid "使う交通手段"
-msgstr "Transportation method:"
 
 #: booking/models.py:21
 msgid "電車"
@@ -370,10 +367,6 @@ msgstr "Car / Van"
 #: booking/models.py:24
 msgid "タクシ"
 msgstr "Taxi"
-
-#: booking/models.py:25 home/templates/home/about.html:103
-msgid "その他"
-msgstr "Other"
 
 #: booking/models.py:25
 msgid "他の交通手段は後で伝えてください"
@@ -535,6 +528,10 @@ msgstr "Update booking"
 msgid "更新する"
 msgstr "Update"
 
+#: email_blast/forms.py:30
+msgid "各メールは、最後にコンマを入れて、別々の行に入れてください。"
+msgstr "Each email should be on a seperate line, with a comma at the end."
+
 #: email_blast/models.py:8
 msgid "件名"
 msgstr "Subject"
@@ -636,7 +633,7 @@ msgstr "Confirm email"
 
 #: email_blast/templates/email_blast/view_send.html:14
 msgid "メールを確認してください"
-msgstr "Please use another page"
+msgstr "Confirm your email before sending"
 
 #: email_blast/templates/email_blast/view_send.html:20
 msgid "受取人"
@@ -747,6 +744,10 @@ msgstr ""
 "place! Take part in \n"
 "special brewery tours (reservation required) and a coupon hunt that yields "
 "luxurious prizes!"
+
+#: home/templates/home/about.html:103
+msgid "その他"
+msgstr "Other"
 
 #: home/templates/home/about.html:105
 msgid ""
@@ -1071,6 +1072,12 @@ msgstr "Photo"
 #: users/models.py:12
 msgid "役割"
 msgstr "Role"
+
+#~ msgid "Each email should be on a seperate line, with a comma at the end:"
+#~ msgstr "各メールは、最後にコンマを入れて、別々の行に入れてください。"
+
+#~ msgid "使う交通手段"
+#~ msgstr "Transportation method:"
 
 #~ msgid ""
 #~ "\n"
