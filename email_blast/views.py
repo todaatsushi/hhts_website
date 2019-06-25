@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.views.generic import ListView, FormView, UpdateView, DeleteView, DetailView
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.contrib.auth.models import User
@@ -9,6 +9,7 @@ from django.contrib.auth.decorators import login_required
 from django.http import HttpResponseRedirect
 from django.urls import reverse
 from django.core.mail import EmailMessage
+
 
 from .models import EmailBlast
 from .forms import DraftEmailForm
@@ -78,7 +79,8 @@ class ViewMailView(LoginRequiredMixin, DetailView):
 
 @login_required
 def send_mail(request, pk):
-    details = EmailBlast.objects.get(id=pk)
+    details = get_object_or_404(EmailBlast, pk=pk)
+    print(details)
     email = EmailMessage(
         subject=details.subject,
         body=details.content,
