@@ -80,7 +80,6 @@ class ViewMailView(LoginRequiredMixin, DetailView):
 @login_required
 def send_mail(request, pk):
     details = get_object_or_404(EmailBlast, pk=pk)
-    print(details)
     email = EmailMessage(
         subject=details.subject,
         body=details.content,
