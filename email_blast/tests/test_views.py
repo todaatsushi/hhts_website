@@ -19,12 +19,12 @@ class EmailBlastViewsTestCase(TestCase):
 
     def test_all_blasts_view(self):
         basic_view_check(
-            self,
-            reverse('email-index'),
-            'email_blast/index.html',
-            True,
-            True,
-            [
+            test_case_obj=self,
+            path=reverse('email-index'),
+            template='email_blast/index.html',
+            login_required=True,
+            login_desired=True,
+            text_on_page=[
                 '全てのメール',
                 'Test email'
             ]
