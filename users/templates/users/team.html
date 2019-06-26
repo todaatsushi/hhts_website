@@ -6,7 +6,7 @@
 {% endblock %}
 
 {% block title %}
-  メンバー情報
+  {% trans 'メンバー情報' %}
 {% endblock %}
 
 {% block main %}
@@ -32,15 +32,17 @@
   {% if is_paginated %}
     <div>
       {% if page_obj.has_previous %}
-        <a href="?page=1">1ページ目</a>
-        <a href="?page={{ page_obj.previous_page_number }}">前のページ</a>
+        <a href="?page=1">{% trans '1ページ目' %}</a>
+        <a href="?page={{ page_obj.previous_page_number }}">{% trans '前のページ' %}</a>
       {% endif %}
 
-      ページ #{{ page_obj.number }}/{{ page_obj.paginator.num_pages }}
+      {% blocktrans with number=page_obj.number max=page_obj.paginator.num_pages %}
+        ページ #{{ number}}/{{ max }}
+      {% endblocktrans %}
 
       {% if page_obj.has_next %}
-        <a href="?page={{ page_obj.next_page_number }}">次のページ</a>
-        <a href="?page={{ page_obj.paginator.num_pages }}">最後のページ</a>
+        <a href="?page={{ page_obj.next_page_number }}">{% trans '次のページ' %}</a>
+        <a href="?page={{ page_obj.paginator.num_pages }}">{% trans '最後のページ' %}</a>
       {% endif %}
     </div>
   {% endif %}

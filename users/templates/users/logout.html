@@ -1,15 +1,17 @@
 {% extends "home/layout.html" %}
+{% load i18n %}
+
 {% block title %}
-  ログアウト
+  {% trans 'ログアウト' %}
 {% endblock %}
 
 {% block main %}
   <div class="container py-5">
-    <h2 class="text-center display-4 mb-5">ログアウトが完成しました。</h2>
+    <h2 class="text-center display-4 mb-5">{% trans 'ログアウトが完成しました。' %}</h2>
 
     <div class="center">
-      <a href="{% url 'home' %}" class="btn btn-custom-2">ホームページに戻る</a>
-      <a href="{% url 'user-login' %}" class="btn btn-custom-3">サインインする。</a>
+      <a href="{% url 'home' %}" class="btn btn-custom-2">{% trans 'ホームページに戻る' %}</a>
+      <a href="{% url 'user-login' %}" class="btn btn-custom-3">{% trans 'サインインする。' %}</a>
     </div>
   </div>
 

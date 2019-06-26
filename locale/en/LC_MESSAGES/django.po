@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-06-23 21:03+0100\n"
-"PO-Revision-Date: 2019-06-25 14:08+0100\n"
+"POT-Creation-Date: 2019-06-26 18:58+0100\n"
+"PO-Revision-Date: 2019-06-26 19:02+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en\n"
@@ -22,7 +22,7 @@ msgstr ""
 #: blog/templates/blog/post_list_layout.html:23
 #: blog/templates/blog/post_list_layout.html:55
 #: blog/templates/blog/post_list_layout.html:78 booking/forms.py:50
-#: booking/models.py:28 users/models.py:9
+#: booking/models.py:28 users/models.py:13
 msgid "名前"
 msgstr "Name:"
 
@@ -34,6 +34,8 @@ msgstr "Comment"
 #: booking/templates/booking/confirm_delete.html:21
 #: booking/templates/booking/index.html:27
 #: email_blast/templates/email_blast/update_email.html:17
+#: users/templates/users/password_reset_confirm.html:17
+#: users/templates/users/register.html:17
 msgid "確認"
 msgstr "Confirm"
 
@@ -105,14 +107,15 @@ msgstr "Site Admin"
 msgid "Django administration"
 msgstr "Admin"
 
+#: blog/templates/blog/blog_all.html:5 blog/templates/blog/blog_all.html:9
+#: blog/templates/blog/user_posts.html:18
+msgid "全ポスト"
+msgstr "All posts"
+
 #: blog/templates/blog/blog_all.html:9 blog/templates/blog/public_posts.html:5
 #: blog/templates/blog/public_posts.html:9
 msgid "ブロッグ"
 msgstr "Blog"
-
-#: blog/templates/blog/blog_all.html:9 blog/templates/blog/user_posts.html:18
-msgid "全ポスト"
-msgstr "All posts"
 
 #: blog/templates/blog/comment.html:9 blog/templates/blog/comment.html:19
 msgid "コメントを残す"
@@ -129,6 +132,7 @@ msgstr "Leave a comment"
 #: email_blast/templates/email_blast/update_email.html:13
 #: email_blast/templates/email_blast/view_send.html:31
 #: home/templates/home/about.html:163 home/templates/home/about.html:192
+#: users/templates/users/form_layout.html:19
 msgid "戻る"
 msgstr "Go back"
 
@@ -213,12 +217,14 @@ msgstr "Read all comments"
 #: blog/templates/blog/post_list_layout.html:104
 #: booking/templates/booking/index.html:41
 #: email_blast/templates/email_blast/index.html:71
+#: users/templates/users/team.html:35
 msgid "1ページ目"
 msgstr "First"
 
 #: blog/templates/blog/post_list_layout.html:105
 #: booking/templates/booking/index.html:42
 #: email_blast/templates/email_blast/index.html:72
+#: users/templates/users/team.html:36
 msgid "前のページ"
 msgstr "Back"
 
@@ -236,12 +242,14 @@ msgstr ""
 #: blog/templates/blog/post_list_layout.html:113
 #: booking/templates/booking/index.html:50
 #: email_blast/templates/email_blast/index.html:80
+#: users/templates/users/team.html:44
 msgid "次のページ"
 msgstr "Next"
 
 #: blog/templates/blog/post_list_layout.html:114
 #: booking/templates/booking/index.html:51
 #: email_blast/templates/email_blast/index.html:81
+#: users/templates/users/team.html:45
 msgid "最後のページ"
 msgstr "Last"
 
@@ -291,7 +299,7 @@ msgstr "Duration - mins :"
 msgid "訪問したい酒蔵"
 msgstr "Desired sake shops to visit:"
 
-#: booking/forms.py:47 users/models.py:10
+#: booking/forms.py:47 users/models.py:14
 msgid "個人情報"
 msgstr "Personal information"
 
@@ -300,6 +308,7 @@ msgid "電話番号"
 msgstr "Telephone number:"
 
 #: booking/forms.py:52 booking/models.py:34
+#: users/templates/users/profile.html:22
 msgid "メールアドレス"
 msgstr "Email address:"
 
@@ -525,6 +534,7 @@ msgid "ツア更新"
 msgstr "Update booking"
 
 #: booking/templates/booking/update.html:33
+#: users/templates/users/profile.html:28 users/templates/users/profile.html:71
 msgid "更新する"
 msgstr "Update"
 
@@ -968,7 +978,8 @@ msgstr "All Posts"
 msgid "メールシステム"
 msgstr "Mail Management System"
 
-#: home/templates/home/layout.html:76
+#: home/templates/home/layout.html:76 users/templates/users/profile.html:9
+#: users/templates/users/profile.html:27
 msgid "プロファイル"
 msgstr "Profile"
 
@@ -1057,21 +1068,136 @@ msgid ""
 msgstr ""
 "For anything else, please visit the Higashi Hiroshima Tourism Association."
 
-#: home/views.py:33
+#: home/views.py:34
 msgid "選択した言語は利用できません"
 msgstr "Your selected language is not available for this site."
 
-#: users/models.py:8
+#: users/models.py:11
 msgid "ユーザー"
 msgstr "User"
 
-#: users/models.py:11
+#: users/models.py:18
 msgid "写真"
 msgstr "Photo"
 
-#: users/models.py:12
+#: users/models.py:20 users/templates/users/profile.html:23
 msgid "役割"
 msgstr "Role"
+
+#: users/templates/users/login.html:5 users/templates/users/login.html:9
+#: users/templates/users/login.html:27 users/templates/users/register.html:21
+msgid "ログイン"
+msgstr "Login"
+
+#: users/templates/users/login.html:16
+msgid "ユーザーネーム"
+msgstr "Username"
+
+#: users/templates/users/login.html:21
+msgid "パスワード"
+msgstr "Password"
+
+#: users/templates/users/login.html:31
+msgid "パスワードを忘れた"
+msgstr "Forgotten password"
+
+#: users/templates/users/logout.html:5
+msgid "ログアウト"
+msgstr "Logout"
+
+#: users/templates/users/logout.html:10
+msgid "ログアウトが完成しました。"
+msgstr "You’ve successfully logged out."
+
+#: users/templates/users/logout.html:13
+#: users/templates/users/password_reset_complete.html:13
+#: users/templates/users/password_reset_done.html:12
+msgid "ホームページに戻る"
+msgstr "Back home"
+
+#: users/templates/users/logout.html:14
+msgid "サインインする。"
+msgstr "Sign in"
+
+#: users/templates/users/password_reset.html:5
+#: users/templates/users/password_reset_complete.html:5
+#: users/templates/users/profile.html:65
+msgid "パスワードリセット"
+msgstr "Password reset"
+
+#: users/templates/users/password_reset.html:9
+msgid "パスワードを新しく作りますか？"
+msgstr "Would you like to make a new password?"
+
+#: users/templates/users/password_reset.html:17
+msgid "メールにやり方を送る"
+msgstr "Send instructions to my email"
+
+#: users/templates/users/password_reset_complete.html:10
+msgid "パスワードリセットが完成しました。"
+msgstr "You have completed your password reset"
+
+#: users/templates/users/password_reset_complete.html:14
+msgid "改めてサインイン"
+msgstr "Sign in again"
+
+#: users/templates/users/password_reset_confirm.html:5
+#: users/templates/users/password_reset_confirm.html:9
+msgid "新しいパスワードの決定"
+msgstr "Decide a new password"
+
+#: users/templates/users/password_reset_done.html:4
+msgid "パスワードを新しく申し込む"
+msgstr "Get a new password"
+
+#: users/templates/users/password_reset_done.html:9
+msgid "パスワードリセットの説明書のメールを送りました。"
+msgstr "We have sent password reset instructions to your email"
+
+#: users/templates/users/profile.html:39
+#, python-format
+msgid ""
+"\n"
+"              %(name)sについて\n"
+"            "
+msgstr ""
+"\n"
+"              About %(name)s\n"
+"            "
+
+#: users/templates/users/profile.html:47
+#, python-format
+msgid ""
+"\n"
+"                  %(person.profile.name)sのポスト\n"
+"                "
+msgstr ""
+"\n"
+"                  %(person.profile.name)s Posts\n"
+"                "
+
+#: users/templates/users/profile.html:63
+msgid "個人情報の更新"
+msgstr "Update personal information"
+
+#: users/templates/users/register.html:5 users/templates/users/register.html:9
+msgid "ユーザー申し込み"
+msgstr "Make a new user"
+
+#: users/templates/users/team.html:9
+msgid "メンバー情報"
+msgstr "Member information"
+
+#: users/templates/users/team.html:39
+#, python-format
+msgid ""
+"\n"
+"        ページ #%(number)s/%(max)s\n"
+"      "
+msgstr ""
+"\n"
+"          Page #%(number)s/%(max)s\n"
+"        "
 
 #~ msgid "Each email should be on a seperate line, with a comma at the end:"
 #~ msgstr "各メールは、最後にコンマを入れて、別々の行に入れてください。"
