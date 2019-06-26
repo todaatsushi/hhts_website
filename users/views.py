@@ -9,6 +9,17 @@ from django.views.generic import ListView
 from .forms import UserRegisterForm, UserUpdateForm, ProfileUpdateForm
 
 
+def index(request):
+    if request.user.is_authenticated:
+        return HttpResponseRedirect(
+            reverse('user-about', kwargs={'username': request.user.username})
+        )
+    else:
+        return HttpResponseRedirect(
+            reverse('user-login')
+        )
+
+
 @login_required
 def register(request):
     if request.method == 'POST':

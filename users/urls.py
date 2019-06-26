@@ -5,6 +5,8 @@ from django.urls import path
 from users import views as uv
 
 urlpatterns = [   
+    path('', uv.index, name='user-home'),
+
      # User views
     path('register/', uv.register, name='user-reg'),
     path('team/', uv.TeamView.as_view(), name='team'),
