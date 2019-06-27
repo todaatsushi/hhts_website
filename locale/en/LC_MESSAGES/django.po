@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-06-26 18:58+0100\n"
-"PO-Revision-Date: 2019-06-26 19:05+0100\n"
+"POT-Creation-Date: 2019-06-27 15:15+0100\n"
+"PO-Revision-Date: 2019-06-27 15:16+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en\n"
@@ -18,10 +18,12 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 2.2.3\n"
 
-#: blog/forms.py:13 blog/models.py:48 blog/templates/blog/post.html:13
-#: blog/templates/blog/post_list_layout.html:23
-#: blog/templates/blog/post_list_layout.html:55
-#: blog/templates/blog/post_list_layout.html:78 booking/forms.py:50
+#: blog/forms.py:13 blog/models.py:48 blog/templates/blog/post.html:14
+#: blog/templates/blog/post.html:16
+#: blog/templates/blog/post_list_layout.html:24
+#: blog/templates/blog/post_list_layout.html:26
+#: blog/templates/blog/post_list_layout.html:60
+#: blog/templates/blog/post_list_layout.html:83 booking/forms.py:50
 #: booking/models.py:28 users/models.py:13
 msgid "名前"
 msgstr "Name:"
@@ -47,16 +49,16 @@ msgstr "Name"
 msgid "内容"
 msgstr "Content"
 
-#: blog/models.py:11 blog/models.py:50 blog/templates/blog/post.html:15
-#: blog/templates/blog/post_list_layout.html:24
+#: blog/models.py:11 blog/models.py:50 blog/templates/blog/post.html:19
+#: blog/templates/blog/post_list_layout.html:29
 msgid "投稿時間"
 msgstr "Posted at"
 
-#: blog/models.py:12 blog/models.py:51 blog/templates/blog/post.html:17
-#: blog/templates/blog/post_list_layout.html:25
-#: blog/templates/blog/post_list_layout.html:57
-#: blog/templates/blog/post_list_layout.html:80 email_blast/models.py:13
-#: email_blast/templates/email_blast/index.html:54
+#: blog/models.py:12 blog/models.py:51 blog/templates/blog/post.html:21
+#: blog/templates/blog/post_list_layout.html:30
+#: blog/templates/blog/post_list_layout.html:62
+#: blog/templates/blog/post_list_layout.html:85 email_blast/models.py:13
+#: email_blast/templates/email_blast/index.html:58
 msgid "更新時間"
 msgstr "Updated at"
 
@@ -88,12 +90,12 @@ msgstr "Staff posts"
 msgid "スタフ専用"
 msgstr "Staff only posts"
 
-#: blog/templates/blog/admin_posts.html:14 blog/templates/blog/blog_all.html:14
+#: blog/templates/blog/admin_posts.html:15 blog/templates/blog/blog_all.html:15
 #, python-format
 msgid ""
 "\n"
-"      %(author)sのポストを全て見る\n"
-"    "
+"        %(author)sのポストを全て見る\n"
+"      "
 msgstr ""
 "\n"
 "      Posts by %(author)s\n"
@@ -124,7 +126,7 @@ msgstr "Leave a comment"
 #: blog/templates/blog/comment.html:14
 #: blog/templates/blog/confirm_delete.html:22
 #: blog/templates/blog/create.html:13
-#: blog/templates/blog/delete_comment.html:13 blog/templates/blog/post.html:20
+#: blog/templates/blog/delete_comment.html:13 blog/templates/blog/post.html:24
 #: blog/templates/blog/update.html:14
 #: booking/templates/booking/confirm_delete.html:22
 #: email_blast/templates/email_blast/delete_mail.html:24
@@ -176,13 +178,18 @@ msgstr "Delete comment"
 msgid "削除"
 msgstr "Confirm Delete"
 
-#: blog/templates/blog/post.html:19
-#: blog/templates/blog/post_list_layout.html:27
+#: blog/templates/blog/post.html:16
+#: blog/templates/blog/post_list_layout.html:26
+msgid "無し"
+msgstr "None"
+
+#: blog/templates/blog/post.html:23
+#: blog/templates/blog/post_list_layout.html:32
 msgid "コメントする"
 msgstr "Leave comment"
 
-#: blog/templates/blog/post.html:22
-#: blog/templates/blog/post_list_layout.html:40
+#: blog/templates/blog/post.html:26
+#: blog/templates/blog/post_list_layout.html:45
 #: blog/templates/blog/update.html:19
 #: booking/templates/booking/booking_view.html:50
 #: booking/templates/booking/index.html:22
@@ -191,15 +198,15 @@ msgstr "Leave comment"
 msgid "更新"
 msgstr "Update"
 
-#: blog/templates/blog/post.html:23 blog/templates/blog/post.html:50
-#: blog/templates/blog/post_list_layout.html:41
-#: blog/templates/blog/post_list_layout.html:61
-#: blog/templates/blog/post_list_layout.html:84
+#: blog/templates/blog/post.html:27 blog/templates/blog/post.html:54
+#: blog/templates/blog/post_list_layout.html:46
+#: blog/templates/blog/post_list_layout.html:66
+#: blog/templates/blog/post_list_layout.html:89
 #: email_blast/templates/email_blast/index.html:32
 msgid "削除する"
 msgstr "Delete"
 
-#: blog/templates/blog/post.html:44
+#: blog/templates/blog/post.html:48
 #, python-format
 msgid ""
 "\n"
@@ -210,25 +217,25 @@ msgstr ""
 "              By: %(name)s　時間： %(time)s\n"
 "            "
 
-#: blog/templates/blog/post_list_layout.html:70
+#: blog/templates/blog/post_list_layout.html:75
 msgid "全てのコメントを読む"
 msgstr "Read all comments"
 
-#: blog/templates/blog/post_list_layout.html:104
+#: blog/templates/blog/post_list_layout.html:109
 #: booking/templates/booking/index.html:41
-#: email_blast/templates/email_blast/index.html:71
+#: email_blast/templates/email_blast/index.html:75
 #: users/templates/users/team.html:35
 msgid "1ページ目"
 msgstr "First"
 
-#: blog/templates/blog/post_list_layout.html:105
+#: blog/templates/blog/post_list_layout.html:110
 #: booking/templates/booking/index.html:42
-#: email_blast/templates/email_blast/index.html:72
+#: email_blast/templates/email_blast/index.html:76
 #: users/templates/users/team.html:36
 msgid "前のページ"
 msgstr "Back"
 
-#: blog/templates/blog/post_list_layout.html:108
+#: blog/templates/blog/post_list_layout.html:113
 #, python-format
 msgid ""
 "\n"
@@ -239,26 +246,26 @@ msgstr ""
 "          Page #%(number)s/%(total)s\n"
 "        "
 
-#: blog/templates/blog/post_list_layout.html:113
+#: blog/templates/blog/post_list_layout.html:118
 #: booking/templates/booking/index.html:50
-#: email_blast/templates/email_blast/index.html:80
+#: email_blast/templates/email_blast/index.html:84
 #: users/templates/users/team.html:44
 msgid "次のページ"
 msgstr "Next"
 
-#: blog/templates/blog/post_list_layout.html:114
+#: blog/templates/blog/post_list_layout.html:119
 #: booking/templates/booking/index.html:51
-#: email_blast/templates/email_blast/index.html:81
+#: email_blast/templates/email_blast/index.html:85
 #: users/templates/users/team.html:45
 msgid "最後のページ"
 msgstr "Last"
 
-#: blog/templates/blog/public_posts.html:14
+#: blog/templates/blog/public_posts.html:15
 #, python-format
 msgid ""
 "\n"
-"      %(post.author.profile.name)sのポッストを見る</a>\n"
-"    "
+"        %(post.author.profile.name)sのポッストを見る</a>\n"
+"      "
 msgstr ""
 "\n"
 "      See all posts by %(post.author.profile.name)s</a>\n"
@@ -517,7 +524,7 @@ msgid "確認しない"
 msgstr "Do not confirm"
 
 #: booking/templates/booking/index.html:45
-#: email_blast/templates/email_blast/index.html:75
+#: email_blast/templates/email_blast/index.html:79
 #, python-format
 msgid ""
 "\n"
@@ -603,26 +610,30 @@ msgstr "Create an email draft "
 msgid "確認する / 送る"
 msgstr "Confirm / Send"
 
-#: email_blast/templates/email_blast/index.html:37
+#: email_blast/templates/email_blast/index.html:38
 #, python-format
 msgid ""
 "\n"
-"                %(sender)sから、受取人：\n"
-"              "
+"                  %(sender)sから、受取人：\n"
+"                "
 msgstr ""
 "\n"
 "                From %(sender)s, to:\n"
 "              "
 
-#: email_blast/templates/email_blast/index.html:53
+#: email_blast/templates/email_blast/index.html:42
+msgid "無しから、受取人"
+msgstr "From None, recipients"
+
+#: email_blast/templates/email_blast/index.html:57
 msgid "作成時間"
 msgstr "Created at"
 
-#: email_blast/templates/email_blast/index.html:57
+#: email_blast/templates/email_blast/index.html:61
 msgid "送られた時間"
 msgstr "Sent at"
 
-#: email_blast/templates/email_blast/index.html:58
+#: email_blast/templates/email_blast/index.html:62
 #, python-format
 msgid ""
 "\n"
@@ -1068,7 +1079,7 @@ msgid ""
 msgstr ""
 "For anything else, please visit the Higashi Hiroshima Tourism Association."
 
-#: home/views.py:34
+#: home/views.py:61
 msgid "選択した言語は利用できません"
 msgstr "Your selected language is not available for this site."
 
@@ -1111,7 +1122,7 @@ msgstr "You’ve successfully logged out."
 
 #: users/templates/users/logout.html:13
 #: users/templates/users/password_reset_complete.html:13
-#: users/templates/users/password_reset_done.html:12
+#: users/templates/users/password_reset_done.html:13
 msgid "ホームページに戻る"
 msgstr "Back home"
 
@@ -1146,11 +1157,11 @@ msgstr "Sign in again"
 msgid "新しいパスワードの決定"
 msgstr "Decide a new password"
 
-#: users/templates/users/password_reset_done.html:4
+#: users/templates/users/password_reset_done.html:5
 msgid "パスワードを新しく申し込む"
 msgstr "Get a new password"
 
-#: users/templates/users/password_reset_done.html:9
+#: users/templates/users/password_reset_done.html:10
 msgid "パスワードリセットの説明書のメールを送りました。"
 msgstr "We have sent password reset instructions to your email"
 
@@ -1198,6 +1209,21 @@ msgstr ""
 "\n"
 "          Page #%(number)s/%(max)s\n"
 "        "
+
+#: users/views.py:31
+#, python-brace-format
+msgid "{username}のアカウントが完成いされました。ロッグインしてください。"
+msgstr "Account created for {username}. Please login."
+
+#: users/views.py:44
+#, python-brace-format
+msgid "{username}のアカウントは存在位していません。"
+msgstr "Account for {username} doesn’t exist."
+
+#: users/views.py:55
+#, python-brace-format
+msgid "{username}のアカウントが更新されました。"
+msgstr "Account for {username} has been updated."
 
 #~ msgid "Each email should be on a seperate line, with a comma at the end:"
 #~ msgstr "各メールは、最後にコンマを入れて、別々の行に入れてください。"
