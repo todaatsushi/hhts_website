@@ -5,6 +5,7 @@ from django.http import HttpResponseRedirect
 from django.urls import reverse
 from django.contrib import messages
 from django.views.generic import ListView
+from django.utils.translation import gettext_lazy as _
 
 from .forms import UserRegisterForm, UserUpdateForm, ProfileUpdateForm
 
@@ -27,7 +28,7 @@ def register(request):
         if form.is_valid():
             form.save()
             username = form.cleaned_data.get('username')
-            messages.success(request, f'Account made for {username}. Please login.')
+            messages.success(request, _(f'{username}のアカウントが完成いされました。ロッグインしてください。'))
             return HttpResponseRedirect(reverse('blog-home'))
     else:
         form = UserRegisterForm()
@@ -40,7 +41,7 @@ def user_profile(request, username):
     try:
         user = User.objects.get(username=username)
     except User.DoesNotExist:
-        messages.error(request, f'Account {username} does not exist.')
+        messages.error(request, _(f'{username}のアカウントは存在位していません。'))
         return HttpResponseRedirect(reverse('blog-home'))
 
     if request.method == 'POST':
@@ -51,7 +52,7 @@ def user_profile(request, username):
             user_form.save()
             profile_form.save()
             username = user_form.cleaned_data.get('username')
-            messages.success(request, f'Account {username} has been updated.')
+            messages.success(request, _(f'{username}のアカウントが更新されました。'))
             return HttpResponseRedirect(reverse('user-about', kwargs={'username': user.username}))
 
     if request.user == user:
