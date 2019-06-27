@@ -1,5 +1,6 @@
 from django.test import TestCase, Client
 from django.urls import reverse
+from django.contrib.auth.models import User
 
 from blog.models import Post
 import blog.tests.helper as h
@@ -14,6 +15,16 @@ class BlogViewsTestCase(TestCase):
         self.post = h.create_post(self.user)
         self.admin_post = h.create_admin_post(self.user)
         self.comment = h.create_comment(self.post)
+
+        # Check ON_DELETE functionality
+        self.user2 = User.objects.create(
+            username='User2',
+            email='email2@email.com',
+            password='SuPEr1256Strong'
+        )
+
+        self.post2 = h.create_post(self.user2)
+        User.objects.last().delete()
 
     def english_setting(self):
         return self.settings(LANGUAGE_CODE='en')

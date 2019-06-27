@@ -19,8 +19,13 @@
           {% if post.pinned %} <i class="fas fa-thumbtack ml-3 post-icon"></i> {% endif %}{% if post.admin_post %} <i class="fas fa-users ml-3 post-icon"></i> {% endif %}</h2>
 
         <p class="blog-content">{{ post.content | linebreaks }}</p>
+        
+        {% if post.author %}
+          <p><small>{% trans '名前' %} <a href="{% url 'user-about' post.author.username %}" class="blog-author">{{ post.author.profile.name }}</a></small></p>
+        {% else %}
+          <p><small>{% trans '名前' %} <a href="#" class="blog-author">{% trans '無し' %}</a></small></p>
+        {% endif %}
 
-        <p><small>{% trans '名前' %} <a href="{% url 'user-about' post.author.username %}" class="blog-author">{{ post.author.profile.name }}</a></small></p>
         <p><small>{% trans '投稿時間' %}: {{ post.posted_at|date:"G:i - d M, Y"}}</small><br>
         <small>{% trans '更新時間' %}: {{ post.updated_at|date:"G:i - d M, Y"}}</small></p>
         <div>

@@ -34,9 +34,13 @@
         <h5 class="my-2">
           <ul class="list-group blast-list my-3">
             <li class="list-group-item active disabled">
-              {% blocktrans with sender=email.sender.profile.name %}
-                {{ sender }}から、受取人：
-              {% endblocktrans %}
+              {% if email.sender %}
+                {% blocktrans with sender=email.sender.profile.name %}
+                  {{ sender }}から、受取人：
+                {% endblocktrans %}
+              {% else %}
+                {% trans '無しから、受取人'%}：
+              {% endif %}
             </li>
             {% for person in email.recipients|to_list %}
               <li class="list-group-item">{{ person }}</li>

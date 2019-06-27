@@ -10,9 +10,11 @@
 {% endblock %}
 
 {% block select_posts %}
-  <a href="{% url 'post-user' post.author.username %}" class="btn btn-sm btn-custom-1">
-    {% blocktrans with author=post.author.profile.name %}
-      {{ author }}のポストを全て見る
-    {% endblocktrans %}
-  </a>
+  {% if post.author %}
+    <a href="{% url 'post-user' post.author.username %}" class="btn btn-sm btn-custom-1">
+      {% blocktrans with author=post.author.profile.name %}
+        {{ author }}のポストを全て見る
+      {% endblocktrans %}
+    </a>
+  {% endif %}
 {% endblock %}
