@@ -16,7 +16,8 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 
     <!-- LAYOUT STYLING -->
-    <link rel="stylesheet" type="text/css" href="{% static 'home/css/hhts-general.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'home/desktop/css/hhts-general.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'home/mobile/css/hhts-general-mob.css' %}">
 
     {% block styling %}
     {% endblock %}
@@ -40,97 +41,92 @@
   </head>
 
   <body>
-    {% comment %} Top nav {% endcomment %}
-    <nav class="navbar navbar-expand-xl navbar-light" id="nav">
-      <div class="logo">
-        <a href="{% url 'home' %}" class="navbar-brand">
-          東広島<span style="color: #4d783e;">ボランティアガイド</span>
-        </a>
-        <span class="subline">
-          <p>ツア・案内・ボランティア</p>
-        </span>
-      </div>
+    <!-- Basic layout adapted from https://stackoverflow.com/a/42794081/8172492 -->
+    <section class="container-fluid" id="all">
+        <div class="row" id="content">
+            <aside class="col-12 col-md-3 p-0" id="side">
+                <nav class="navbar navbar-expand flex-md-column py-2" id="main-nav">
+                    <div class="collapse navbar-collapse">
+                        <ul class="flex-md-column flex-row navbar-nav w-100 justify-content-between">
+                            <li class="nav-item">
+                                <div class="logo">
+                                  <a href="{% url 'home' %}">
+                                    東広島<span style="color: #4d783e;">ボランティアガイド</span>
+                                  </a>
+                                  <span class="subline">
+                                    <p>ツア・案内・ボランティア</p>
+                                  </span>
+                                </div>
+                            </li>
+                            <li class="nav-item my-1 ml-1">
+                              <div class="nav-choice">
+                                  <a href="{% url 'home' %}" class="nav-link pl-0 text-nowrap"><span class="full-only">{% trans 'トップページ' %}</span><i class=" mob-only fas fa-home ml-3"></i></a>
+                              </div>
+                            </li>
+                            <li class="nav-item my-1 ml-1">
+                              <div class="nav-choice">
+                                <a href="{% url 'blog-home' %}" class="nav-link pl-0 text-nowrap"><span class="full-only">{% trans 'ニュース' %}</span><i class=" mob-only fas fa-info-circle ml-3"></i></a>
+                              </div>
+                            </li>
+                            <li class="nav-item my-1 ml-1">
+                              <div class="nav-choice">
+                                <a href="{% url 'about' %}" class="nav-link pl-0 text-nowrap"><span class="full-only">{% trans '活動紹介' %}</span><i class=" mob-only fas fa-hiking ml-3"></i></a>
+                              </div>
+                            </li>
+                            <li class="nav-item my-1 ml-1">
+                              <div class="nav-choice">
+                                <a href="{% url 'guide' %}" class="nav-link pl-0 text-nowrap"><span class="full-only">{% trans 'ガイド派遣' %}</span><i class=" mob-only fas fa-hands-helping ml-3"></i></a>
+                              </div>
+                            </li>
+                            <li class="nav-item my-1 ml-1">
+                              <div class="nav-choice">
+                                <a href="{% url 'saijo' %}" class="nav-link pl-0 text-nowrap"><span class="full-only">{% trans '西条の観光' %}</span><i class=" mob-only fas fa-directions ml-3"></i></a>
+                              </div>
+                            </li>
+                            <li class="nav-item mt-1 ml-1">
+                              <div class="nav-choice">
+                                <a href="{% url 'team' %}" class="nav-link pl-0 text-nowrap"><span class="full-only">{% trans 'スタフ' %}</span><i class=" mob-only fas fa-user-friends ml-3"></i></a>
+                              </div>
+                            </li>
+                          <li class="nav-item mt-5" id="language-choice">
+                              <span class="lang-choice mr-3">{% trans '言語の選択' %}:</span>
+                              <a href="{% url 'language' 'en' %}?url_name={{ request.resolver_match.url_name }}&full_path={{ request.path }}" class="lang-choice btn btn-primary">English</a>
+                              <a href="{% url 'language' 'ja' %}?url_name={{ request.resolver_match.url_name }}&full_path={{ request.path }}" class="lang-choice btn btn-info">日本語</a>
+                          </li>
+                        </ul>
+                    </div>
+                </nav>
+            </aside>
+            <main class="col bg-faded py-3" id="center">
+              {% if messages %}
+                {% for message in messages %}
+                <div class="alert alert-info alert-dismissible fade show" role="alert">
+                  {{ message }}
+                  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                {% endfor %}
+              {% endif %}
+        
+              {% block main %}
+              {% endblock %} 
 
-      <button class="navbar-toggler mx-auto" type="button" data-toggle="collapse" data-target="#hh-nav" aria-controls="hh-nav" aria-expanded="false" aria-label="Toggle navigation">
-        <i class="fas fa-bars"></i>
-      </button>
-
-      <div class="collapse navbar-collapse" id="hh-nav">
-        <ul class="navbar-nav ml-auto">
-        {% if user.is_authenticated %}
-          <li class="nav-item dropdown active my-1 ml-1">
-            <a class="nav-link dropdown-toggle" href="#" id="user-options" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <span class="greet">
-                <small>{% trans 'こんにちは' %} <strong>{{ user.username }}</strong>。</small>
-              </span>
-            </a>
-            <div class="dropdown-menu" aria-labelledby="user-options">
-              <a href="{% url 'booking-index' %}" class="dropdown-item">{% trans 'ブッキングシステム' %}</a>
-              <div class="dropdown-divider"></div>
-              <a href="{% url 'post-new' %}" class="dropdown-item">{% trans '新しいポスト' %}</a>
-              <a href="{% url 'post-admin' %}" class="dropdown-item">{% trans 'スタフ専用ポスト' %}</a>
-              <a href="{% url 'post-all' %}" class="dropdown-item">{% trans '全てのポスト' %}</a>
-              <div class="dropdown-divider"></div>
-              <a href="{% url 'email-index' %}" class="dropdown-item">{% trans 'メールシステム' %}</a>
-              <div class="dropdown-divider"></div>
-              <a href="{% url 'user-about' user.username %}" class="dropdown-item">{% trans 'プロファイル' %}</a>
-              <div class="dropdown-divider"></div>
-              <a href="{% url 'user-logout' %}" class="dropdown-item"><button class="btn btn-outline-success">{% trans 'ロッグアウト' %}</button></a>
-            </div>
-          </li>
-        {% endif %}
-          <li class="nav-item my-1 ml-1">
-            <a href="{% url 'home' %}" class="nav-link">{% trans 'トップページ' %}</a>
-          </li>
-          <li class="nav-item my-1 ml-1">
-            <a href="{% url 'blog-home' %}" class="nav-link">{% trans 'ニュース' %}</a>
-          </li>
-          <li class="nav-item my-1 ml-1">
-            <a href="{% url 'about' %}" class="nav-link">{% trans '活動紹介' %}</a>
-          </li>
-          <li class="nav-item my-1 ml-1">
-            <a href="{% url 'guide' %}" class="nav-link">{% trans 'ガイド派遣' %}</a>
-          </li>
-          <li class="nav-item my-1 ml-1">
-            <a href="{% url 'saijo' %}" class="nav-link">{% trans '西条の観光' %}</a>
-          </li>
-          <li class="nav-item my-1 ml-1">
-            <a href="{% url 'team' %}" class="nav-link">{% trans 'スタフ' %}</a>
-          </li>
-        </ul>
-      </div>
-    </nav>
-
-    {% if messages %}
-      {% for message in messages %}
-      <div class="alert alert-info alert-dismissible fade show" role="alert">
-        {{ message }}
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      {% endfor %}
-    {% endif %}
-
-    {% block main %}
-    {% endblock %}
-
-    <!-- Bottom Nav -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light" id="bottom-nav">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-          <ul class="navbar-nav">
-            <!-- Language choice -->
-            <li class="nav-item dropdown">
-              <span class="lang-choice mr-3">{% trans '言語の選択' %}:</span>
-              <a href="{% url 'language' 'en' %}?url_name={{ request.resolver_match.url_name }}&full_path={{ request.path }}" class="lang-choice btn btn-primary">English</a>
-              <a href="{% url 'language' 'ja' %}?url_name={{ request.resolver_match.url_name }}&full_path={{ request.path }}" class="lang-choice btn btn-info">日本語</a>
-            </li>
-          </ul>
+              <nav class="navbar navbar-expand-lg navbar-light bg-light" id="bottom-nav">
+                  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav">
+                      <!-- Language choice -->
+                      <li class="nav-item dropdown">
+                      </li>
+                    </ul>
+                  </div>
+              </nav>
+            </main>
         </div>
-      </nav>
+  </section>
     
   {% block scripts %}
   {% endblock %}

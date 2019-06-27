@@ -1,0 +1,86 @@
+/* Japanese font */
+@font-face {
+    font-family: AM;
+    src: url(fonts/AppliMincho.otf);
+}
+
+.border {
+    border: 5px solid red;
+}
+
+.mob-only {
+    display: none;
+}
+
+.full-only {
+    display: block;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    /* font-family: AM; */
+    display: flex;
+    justify-content: space-between;
+}
+
+/* All container */
+#content {
+    min-height: 100vh;
+}
+
+/* Nav is full page height */
+#content > aside > nav, #content > main {
+    height: 99vh;
+    min-height: 600px;
+}
+
+#center {
+    height: 500px;
+    overflow-y: scroll;
+}
+
+/* Nav */
+
+/* Nav contents */
+/* Logo */
+.logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0.4rem;
+}
+
+.logo > a {
+    font-size: 1.5rem;
+    border-bottom: 2px solid black;
+    padding-bottom: 0.2rem;
+}
+
+.subline {
+    color: #5b6c5d;
+    font-size: 0.9em;
+    padding-top: 3px;
+}
+
+/* Menu items */
+.nav-choice {
+    width: 100%;
+    /* border: 1px solid purple; */
+    padding: 0.1rem;
+    display: flex;
+    justify-content: space-around;
+}
+
+/* Language choice */
+#language-choice {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#language-choice > a {
+    font-size: 0.75rem;
+}

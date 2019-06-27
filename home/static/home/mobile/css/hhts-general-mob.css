@@ -1,0 +1,15 @@
+@media (max-width: 768px) {
+    .mob-only {
+        display: block;
+    }
+
+    .full-only {
+        display: none;
+    }
+
+    /* Nav is vertical appropriate height */
+    #content > aside > nav {
+        height: 100px;
+        min-height: 0;
+    }
+}
