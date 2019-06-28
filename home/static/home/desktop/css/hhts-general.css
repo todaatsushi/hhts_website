@@ -1,21 +1,3 @@
-/* Japanese font */
-@font-face {
-    font-family: AM;
-    src: url(fonts/AppliMincho.otf);
-}
-
-.border {
-    border: 5px solid red;
-}
-
-.mob-only {
-    display: none;
-}
-
-.full-only {
-    display: block;
-}
-
 body {
     padding: 0;
     margin: 0;
@@ -45,6 +27,10 @@ body {
 
 /* Nav contents */
 /* Layout */
+#collapse {
+    width: 100%;
+}
+
 #collapse > ul {
     flex-direction: row;
 }
@@ -83,13 +69,15 @@ body {
 
 /* Language choice */
 #language-choice {
-    width: 100%;
     display: flex;
     justify-content: space-around;
     align-items: center;
-    font-size: 0.6rem;
+    font-size: 0.8rem;
+    padding: 5px;
+    width: 100%;
 }
 
 #language-choice > a {
     font-size: 0.6rem;
+    width: calc(25px + 20%);
 }

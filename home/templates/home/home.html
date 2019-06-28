@@ -3,7 +3,7 @@
 {% load static %}
 
 {% block styling %}
-  <link rel="stylesheet" type="text/css" href="{% static 'home/css/home.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'home/desktop/css/home.css' %}">
 {% endblock %}
 
 {% block scripts %}
@@ -14,25 +14,66 @@
 {% endblock %}
 
 {% block main %}
-  <div class="main">
-    <div class="jumbotron jumbotron-fluid home-splash"></div>
-    <div class="home-text px-2">
-      <h1>{% trans 'ようこそ西条へ' %}</h1>
-      <p>
+  <section class="main container-fluid">
+    <section class="jumbotron jumbotron-fluid home-splash"></section>
+    <section class="home-text px-2">
+      <h1 class="site-title">{% trans 'ようこそ西条へ' %}。</h1>
+      <p class="site-text">
         {% blocktrans %}
           東広島の中心地西条は江戸時代には広島藩最大の本陣を誇る宿場町でした。 明治になり酒作りが盛んとなり、大正から昭和にかけての酒造りの黄金期には「酒都西条」
           とて灘、伏見に続く三大銘醸地となりました。現在も多くの酒蔵が軒を連ねて銘酒を醸し
           ております。
         {% endblocktrans %}
       </p>
-      <p>
+      <p class="site-text">
         {% blocktrans %}
           また、古代の古墳、国分寺跡、中世の山城など見所もございます。
           我々と共に西条探訪に出かけませんか。
         {% endblocktrans %}
       </p>
-      <p>
+      <hr class="hh-divider">
+      <p class="site-text">
+        <h3 class="site-title my-5">
+          {% trans 'このサイトについて' %}
+        </h3>
+
+        <dl class="row">
+          <dt class="col-sm-3">
+            <a href="{% url 'home' %}">{% trans 'ニュース' %}</a>
+          </dt>
+          <dd class="col-sm-9">
+            {% trans 'スタッフから最新の情報、お知らせとニュースはこちらです。' %}
+          </dd>
+
+          <dt class="col-sm-3">
+            <a href="{% url 'about' %}" class="nav-link pl-0 text-nowrap">{% trans '活動紹介' %}</a>
+          </dt>
+          <dd class="col-sm-9">
+            {% trans '東広島ボランティアガイドグループの活動についての情報はこちら。' %}
+          </dd>
+
+          <dt class="col-sm-3">
+            <a href="{% url 'guide' %}" class="nav-link pl-0 text-nowrap">{% trans 'ガイド派遣' %}</a>
+          </dt>
+          <dd class="col-sm-9">
+            {% trans 'ボランティアを目指している物のための情報はこちら。' %}
+          </dd>
+
+          <dt class="col-sm-3">
+            <a href="{% url 'saijo' %}" class="nav-link pl-0 text-nowrap">{% trans '西条の観光' %}</a>
+          </dt>
+          <dd class="col-sm-9">
+            {% trans '東広島ボランティアガイドは西条と周辺地域のガイドをやっています。それについての情報はこちら。' %}
+          </dd>
+
+          <dt class="col-sm-3">
+            <a href="{% url 'team' %}" class="nav-link pl-0 text-nowrap">{% trans 'スタフ' %}</a>
+          </dt>
+          <dd class="col-sm-9">
+            {% trans '東広島ボランティアガイドのメンバーとスタフについてまたは連絡先はこちら。' %}
+          </dd>
+        </dl>
       </p>
-    </div>
-  </div>
+    </section>
+  </section>
 {% endblock %}

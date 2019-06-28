@@ -1,12 +1,4 @@
 @media (max-width: 768px) {
-    .mob-only {
-        display: none;
-    }
-
-    .full-only {
-        display: block;
-    }
-
     /* Nav is vertical appropriate height */
     #content > aside > nav {
         height: auto;

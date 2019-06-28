@@ -1,0 +1,68 @@
+/* Utility classes & typography */
+/* Japanese font */
+@font-face {
+    font-family: AM;
+    src: url(fonts/AppliMincho.otf);
+}
+
+/* Dev */
+.border1 {
+    border: 2px solid purple;
+}
+
+.border2 {
+    border: 2px solid gold;
+}
+
+.border3 {
+    border: 2px solid hotpink;
+}
+
+.mob-only {
+    display: none;
+}
+
+.full-only {
+    display: block;
+}
+
+
+/* Typography */
+.site-title {
+    margin: 1.7rem 0;
+}
+
+.site-text {
+    font-size: 1.2rem;
+    text-align: justify;
+}
+
+h1.site-title {
+    font-size: calc(2rem + 3vw);
+}
+
+h2.site-title {
+    font-size: calc(1.5rem + 3vw);
+}
+
+h3.site-title {
+    font-size: calc(1rem + 3vw);
+}
+
+h4.site-title {
+    font-size: calc(1rem + 3vw);
+}
+
+
+
+
+/* Mobile */
+@media (max-width: 768px) {
+    .mob-only {
+        display: block;
+    }
+
+    .full-only {
+        display: none;
+    }
+}
