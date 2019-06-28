@@ -11,6 +11,11 @@ body {
     min-height: 100vh;
 }
 
+.main {
+    height: 100%;
+    width: 100%;
+}
+
 /* Nav is full page height */
 #content > aside > nav, #content > main {
     height: 99vh;

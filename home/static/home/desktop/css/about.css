@@ -1,0 +1,57 @@
+/* MAIN DIVS */
+#about-title {
+    text-align: center;
+}
+
+/* INFO CARDS */
+.card-about {
+    width: auto;
+    height: auto;
+    margin: 10px;
+    padding: 0;
+}
+
+.about-img {
+    height: 250px;
+    background-position: center;
+    background-size: cover;
+    box-shadow: inset 0 0 0 100vh rgba(0, 0, 0, 0.3);
+    background-color: #f2f2f2;
+}
+
+/* BACKGROUND IMAGES */
+.abt-1 {
+    background-image: url("/media/img/hh1.jpg");
+}
+
+.abt-2 {
+    background-image: url("/media/img/hh2.jpg");
+}
+
+.abt-3 {
+    background-image: url("/media/img/hh3.jpg");
+}
+
+.abt-4 {
+    background-image: url("/media/img/hh4.jpg");
+}
+
+.abt-5 {
+    background-image: url("/media/img/hh5.jpg");
+}
+
+.abt-6 {
+    background-image: url("/media/img/hh5.jpg");
+}
+
+/* Contact Info */
+#contact-div {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.contact-message > h5 {
+    text-align: center;
+}

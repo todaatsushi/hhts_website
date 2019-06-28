@@ -3,7 +3,8 @@
 {% load static %}
 
 {% block styling %}
-  <link rel="stylesheet" type="text/css" href="{% static 'home/css/about.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'home/desktop/css/about.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'home/mobile/css/about-mob.css' %}">
 {% endblock %}
 
 {% block title %}
@@ -11,109 +12,150 @@
 {% endblock %}
 
 {% block main %}
-  <div class="about-main d-flex flex-column justify-content-center">
+<main class="main container-fluid">
+  <h1 class="site-title" id="about-title">{% trans '活動紹介' %}</h1>
 
-      <div class="row mt-5">
-        <div class="card card-about col-sm">
-          <div class="card-img-top about-img abt-1"></div>
-          <div class="card-body">
+  <section class="row">
+      <!-- Card 1 - JR info -->
+      <div class="card card-about col-sm">
+        <div class="card-img-top about-img abt-1"></div>
+        <div class="card-body site-text">
 
-            <h5 class="card-title text-center">
-              {% trans '酒蔵通り案内' %}
-            </h5>
-            <p class="card-body">
-              {% trans 'JR西条駅前に広がる酒蔵通りのご案内をいたします。' %}
-            </p>
-            <button class="btn btn-custom-1 btn-block" type="button" data-toggle="modal" data-target="#info1" >
-              {% trans 'さらに読む' %}
-            </button>
+          <h5 class="card-title text-center">
+            {% trans '酒蔵通り案内' %}
+          </h5>
+          <p class="card-body site-text">
+            {% trans 'JR西条駅前に広がる酒蔵通りのご案内をいたします。' %}
+          </p>
+          <button class="btn" type="button" data-toggle="modal" data-target="#info1" >
+            {% trans 'さらに読む' %}
+          </button>
 
-          </div>
-        </div>
-
-        <div class="card card-about col-sm">
-          <div class="card-img-top about-img abt-2"></div>
-          <div class="card-body">
-            <h5 class="card-title text-center">
-              {% trans '東広島探訪講座' %}
-            </h5>
-            <p class="card-body">
-              {% blocktrans %}
-                東広島市内の興味深い歴史と場所、東広島ゆかりの人物などを学びましょう。
-                毎年実施しています。その都度市の広報等で募集します。
-              {% endblocktrans %}
-            </p>
-          </div>
-        </div>
-
-          <div class="card card-about col-sm">
-            <div class="card-img-top about-img abt-3"></div>
-            <div class="card-body">
-              <h5 class="card-title text-center">
-                {% trans '子供ガイド養成講座' %}
-              </h5>
-              <p class="card-body">
-                {% blocktrans %}
-                  自分の住む街を知り魅力を発見してもらいます。ガイドになってお客さんのご案内
-                  をしま せんか?
-                {% endblocktrans %}
-              </p>
-              <button class="btn btn-custom-1 btn-block" type="button" data-toggle="modal" data-target="#info2" >
-                {% trans 'さらに読む' %}
-              </button>
-            </div>
-          </div>
-      </div>
-
-      <div class="row mb-3">
-        <div class="card card-about col-sm">
-          <div class="card-img-top about-img abt-4"></div>
-          <div class="card-body">
-            <h5 class="card-title text-center">
-              {% trans '東広島を歩く' %}
-            </h5>
-            <p class="card-body">
-              {% blocktrans %}
-                東広島市内の名所旧跡を巡る歴史散策ウォークです。
-                毎年1-3回実施しています。その都度市の広報等で募集します。
-              {% endblocktrans %}
-            </p>
-          </div>
-        </div>
-
-        <div class="card card-about col-sm">
-          <div class="card-img-top about-img abt-5"></div>
-          <div class="card-body">
-            <h5 class="card-title text-center">
-              {% trans '春の西条・醸華町まつり' %}
-            </h5>
-            <p class="card-body">
-              {% blocktrans %}
-                毎年3月の第一土曜日に西条酒蔵通りにて開催しています。年々来場者が増え、春
-                を告げる楽しいお祭りになっています。普段見ることのできない酒蔵内の見学もできます
-                (要予約)。スタンプラリーに参加して、豪華景品をゲットしましょう!
-              {% endblocktrans %}
-            </p>
-          </div>
-        </div>
-
-        <div class="card card-about col-sm">
-          <div class="card-img-top about-img abt-6"></div>
-          <div class="card-body">
-            <h5 class="card-title text-center">{% trans 'その他' %}</h5>
-            <p class="card-body">
-              {% blocktrans %}
-                様々な大学講座秋や西条酒まつりに協力しています。特に熟年大学では「探検・我
-                が町めぐり」としてマイクロバスによる市内名所めぐりをしています。
-              {% endblocktrans %}
-            </p>
-          </div>
         </div>
       </div>
 
+      <!-- Card 2 - Sake brewery tours -->
+      <div class="card card-about col-sm">
+        <div class="card-img-top about-img abt-1"></div>
+        <div class="card-body site-text">
 
-    <!-- INFO 1 -->
-    <div class="modal fade" id="info1" tabindex="-1" role="dialog" aria-labelledby="info1-label" aria-hidden="true">
+          <h5 class="card-title text-center">
+            {% trans '酒蔵通り案内' %}
+          </h5>
+          <p class="card-body site-text">
+            {% trans 'JR西条駅前に広がる酒蔵通りのご案内をいたします。' %}
+          </p>
+          <button class="btn" type="button" data-toggle="modal" data-target="#info1" >
+            {% trans 'さらに読む' %}
+          </button>
+
+        </div>
+      </div>
+  </section>
+  <section class="row">
+    <!-- Card 3 - Exploration Course -->
+    <div class="card card-about col-sm">
+      <div class="card-img-top about-img abt-2"></div>
+      <div class="card-body site-text">
+        <h5 class="card-title text-center">
+          {% trans '東広島探訪講座' %}
+        </h5>
+        <p class="card-body site-text">
+          {% blocktrans %}
+            東広島市内の興味深い歴史と場所、東広島ゆかりの人物などを学びましょう。
+            毎年実施しています。その都度市の広報等で募集します。
+          {% endblocktrans %}
+        </p>
+      </div>
+    </div>
+
+    <!-- Card 4 - Children guides -->
+    <div class="card card-about col-sm">
+      <div class="card-img-top about-img abt-3"></div>
+      <div class="card-body site-text">
+        <h5 class="card-title text-center">
+          {% trans '子供ガイド養成講座' %}
+        </h5>
+        <p class="card-body site-text">
+          {% blocktrans %}
+            自分の住む街を知り魅力を発見してもらいます。ガイドになってお客さんのご案内
+            をしま せんか?
+          {% endblocktrans %}
+        </p>
+        <button class="btn" type="button" data-toggle="modal" data-target="#info2" >
+          {% trans 'さらに読む' %}
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <section class="row">
+    <!-- Card 5 - Walk the area -->
+    <div class="card card-about col-sm">
+      <div class="card-img-top about-img abt-4"></div>
+      <div class="card-body site-text">
+        <h5 class="card-title text-center">
+          {% trans '東広島を歩く' %}
+        </h5>
+        <p class="card-body site-text">
+          {% blocktrans %}
+            東広島市内の名所旧跡を巡る歴史散策ウォークです。
+            毎年1-3回実施しています。その都度市の広報等で募集します。
+          {% endblocktrans %}
+        </p>
+      </div>
+    </div>
+
+    <!-- Card 6 - Festival -->
+    <div class="card card-about col-sm">
+      <div class="card-img-top about-img abt-5"></div>
+      <div class="card-body site-text">
+        <h5 class="card-title text-center">
+          {% trans '春の西条・醸華町まつり' %}
+        </h5>
+        <p class="card-body site-text">
+          {% blocktrans %}
+            毎年3月の第一土曜日に西条酒蔵通りにて開催しています。年々来場者が増え、春
+            を告げる楽しいお祭りになっています。普段見ることのできない酒蔵内の見学もできます
+            (要予約)。スタンプラリーに参加して、豪華景品をゲットしましょう!
+          {% endblocktrans %}
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="row">
+    <!-- Card 7 - Other -->
+    <div class="card card-about col-sm">
+      <div class="card-img-top about-img abt-6"></div>
+      <div class="card-body site-text">
+        <h5 class="card-title text-center">{% trans 'その他' %}</h5>
+        <p class="card-body site-text">
+          {% blocktrans %}
+            様々な大学講座秋や西条酒まつりに協力しています。特に熟年大学では「探検・我
+            が町めぐり」としてマイクロバスによる市内名所めぐりをしています。
+          {% endblocktrans %}
+        </p>
+
+        <!-- Contact Info -->
+        <section id="contact-div">
+          <div class="contact-message">
+            <h5 class="display-4 text-muted">{% trans 'お問い' %}<span class="theme-green">{% trans '合わせ' %}</span></h5>
+          </div>
+          <div class="contact-channels pb-2 my-2">
+            <span class="text-muted">{% trans '西条酒蔵通り案内所' %}</span> <br>
+            <span class="text-muted">{% trans '〒739-0011 広島県東広島市西条本町17-1' %}</span> <br>
+            <span class="text-muted">Tel / Fax 082-421-2311</span> <br>
+          </div>
+        </section>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Modals -->
+  <!-- INFO 1 -->
+  <div class="modal fade" id="info1" tabindex="-1" role="dialog" aria-labelledby="info1-label" aria-hidden="true">
       <div class="vertical-alignment-helper">
         <div class="modal-dialog vertical-align-center" role="document">
           <div class="modal-content">
@@ -165,47 +207,36 @@
           </div>
         </div>
       </div>
-    </div>
-
-    <!-- INFO 2 -->
-    <div class="modal fade" id="info2" tabindex="-1" role="dialog" aria-labelledby="info2-label" aria-hidden="true">
-      <div class="vertical-alignment-helper">
-        <div class="modal-dialog vertical-align-center" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="info2-label">{% trans '酒蔵通り案内' %}</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-              <p>
-                {% blocktrans %}
-                  毎年6月から8月に開催、全5回の講座です。<br>
-                  対象は小学校4、5、6年生 <br>
-                  参加費 500円 (子供ガイド専用のTシャツ代金) <br>
-                  募集は市の広報にて行います。<br>
-                {% endblocktrans %}
-              </p>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-custom-2 btn-sm">{% trans '戻る' %}</button>
-            </div>
+  </div>
+    
+  <!-- INFO 2 -->
+  <div class="modal fade" id="info2" tabindex="-1" role="dialog" aria-labelledby="info2-label" aria-hidden="true">
+    <div class="vertical-alignment-helper">
+      <div class="modal-dialog vertical-align-center" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="info2-label">{% trans '酒蔵通り案内' %}</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p>
+              {% blocktrans %}
+                毎年6月から8月に開催、全5回の講座です。<br>
+                対象は小学校4、5、6年生 <br>
+                参加費 500円 (子供ガイド専用のTシャツ代金) <br>
+                募集は市の広報にて行います。<br>
+              {% endblocktrans %}
+            </p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-custom-2 btn-sm">{% trans '戻る' %}</button>
           </div>
         </div>
       </div>
     </div>
-
   </div>
-
-  <div class="contact-info pt-2">
-    <div class="contact-message">
-      <h5 class="display-4 text-muted">{% trans 'お問い' %}<span class="theme-green">{% trans '合わせ' %}</span></h5>
-    </div>
-    <div class="contact-channels pb-2 my-2">
-      <span class="text-muted">{% trans '西条酒蔵通り案内所' %}</span> <br>
-      <span class="text-muted">{% trans '〒739-0011 広島県東広島市西条本町17-1' %}</span> <br>
-      <span class="text-muted">Tel / Fax 082-421-2311</span> <br>
-    </div>
-  </div>
+</main>
 {% endblock %}
+
