@@ -1,15 +1,20 @@
 @media (max-width: 768px) {
     .mob-only {
-        display: block;
+        display: none;
     }
 
     .full-only {
-        display: none;
+        display: block;
     }
 
     /* Nav is vertical appropriate height */
     #content > aside > nav {
-        height: 100px;
-        min-height: 0;
+        height: auto;
+        min-height: 150px;
+    }
+
+    #collapse > ul {
+        flex-direction: column;
+        align-items: flex-start;
     }
 }

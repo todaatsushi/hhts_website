@@ -40,9 +40,15 @@ body {
     overflow-y: scroll;
 }
 
+
 /* Nav */
 
 /* Nav contents */
+/* Layout */
+#collapse > ul {
+    flex-direction: row;
+}
+
 /* Logo */
 .logo {
     display: flex;
@@ -52,8 +58,10 @@ body {
     padding: 0.4rem;
 }
 
+
+/* Logo / Home link */
 .logo > a {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     border-bottom: 2px solid black;
     padding-bottom: 0.2rem;
 }
@@ -79,8 +87,9 @@ body {
     display: flex;
     justify-content: space-around;
     align-items: center;
+    font-size: 0.6rem;
 }
 
 #language-choice > a {
-    font-size: 0.75rem;
+    font-size: 0.6rem;
 }

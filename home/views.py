@@ -41,24 +41,29 @@ def change_language(request, language):
             detail_page.append(True)
         except ValueError:
             detail_page.append(False)
-    
-    if url_components[0] == 'users':
-        # If the url is users, add the username as the slug
-        slug = {'username': url_components[2]}
-    elif any(detail_page):
-        # Else if there is an int, add that as the slug
-        slug = {'pk': url_components[detail_page.index(True)]}
-    else:
-        # Otherwise there is no slug e.g. list view
-        slug = None
 
-    # make sure language is available
-    valid = False
-    for l in settings.LANGUAGES:
-        if l[0] == language:
-            valid = True
-    if not valid:
-        raise Http404(_('選択した言語は利用できません'))
+    try:
+        # Home page will raise an index error
+        if url_components[0] == 'users':
+            # If the url is users, add the username as the slug
+            slug = {'username': url_components[2]}
+        elif any(detail_page):
+            # Else if there is an int, add that as the slug
+            slug = {'pk': url_components[detail_page.index(True)]}
+        else:
+            # Otherwise there is no slug e.g. list view
+            slug = None
+
+        # make sure language is available
+        valid = False
+        for l in settings.LANGUAGES:
+            if l[0] == language:
+                valid = True
+        if not valid:
+            raise Http404(_('選択した言語は利用できません'))
+
+    except IndexError:
+        slug = None
 
     # Make language the setting for the session
     translation.activate(language)
