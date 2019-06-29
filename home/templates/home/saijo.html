@@ -3,7 +3,7 @@
 {% load static %}
 
 {% block styling %}
-  <link rel="stylesheet" type="text/css" href="{% static 'home/css/saijo.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'home/desktop/css/saijo.css' %}">
 {% endblock %}
 
 {% block title %}
@@ -14,7 +14,9 @@
   <div class="container guide-main">
     <h1 class="mt-3 mb-5 display-4 text-center">{% trans '西条の' %}<span class="theme-green">{% trans '観光' %}</span></h1>
 
-    <div class="row">
+    <div class="jumbotron my-3"></div>
+
+    <div class="row my-5">
       <div class="card card-about col-sm">
         <div class="card-img-top about-img abt-first"></div>
         <div class="card-body">
@@ -52,7 +54,7 @@
       </div>
     </div>
 
-    <section class="footer pb-3 mb-5">
+    <section class="footer pb-3 my-5">
       <h5 class="text-center">
         <a href="https://www.hh-kanko.ne.jp/event/index.html" class="saijo-link">
           {% trans 'その他、東広島の観光については東広島観光協会のホームページをごらんください。' %}

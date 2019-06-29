@@ -3,7 +3,8 @@
 {% load static %}
 
 {% block styling %}
-  <link rel="stylesheet" type="text/css" href="{% static 'home/css/guide.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'home/desktop/css/guide.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'home/mobile/css/guide-mob.css' %}">
 {% endblock %}
 
 {% block title %}
@@ -11,14 +12,12 @@
 {% endblock %}
 
 {% block main %}
-  <div class="container guide-main">
+  <section class="container-fluid mb-5">
 
     <h1 class="text-center display-4 mb-4">{% trans 'ガイド' %}<span class="theme-green">{% trans '派遣' %}</span></h1>
     <p class="lead text-center mx-4"><h5>{% trans '酒蔵通りのガイドをご希望の方は申込書に記入の上、FAXにてお申し込みください。' %}</h5></p>
 
-    <div class="jumbotron guide-jumbo my-3">
-
-    </div>
+    <div class="jumbotron guide-jumbo my-3"></div>
 
     <section class="guide-prices">
       <ul class="list-group mx-4">
@@ -30,11 +29,11 @@
       <a href="/media/pdf/book_form.pdf" download class="btn btn-custom-4 mt-3 py-3" style="font-size: 1.3em;">{% trans 'ガイド派遣の申し込み書はこちら。' %}</a>
     </section>
     <hr class="my-4">
-    <section class="guide-footer">
+    <section class="">
       <h5 class="my-2">
         {% trans '酒蔵通り以外のガイドをご希望の方は案内所まで電話でお問い合わせください。' %}
       </h5>
     </section>
 
-  </div>
+  </section>
 {% endblock %}

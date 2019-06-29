@@ -1,12 +1,36 @@
 {% extends 'home/layout.html' %}
+{% load i18n static %}
+
+{% block styling %}
+  <link rel="stylesheet" type="text/css" href="{% static 'home/desktop/css/error.css' %}">
+{% endblock %}
 
 {% block title %}
   {% trans 'エラー' %}：#{% block error_number %}{% endblock %}
 {% endblock %}
 
 {% block main %}
-    {% block error_content %}
-    {% endblock %}
+  <section class="main error-main">
+    <h1 class="site-title text-center">
+      {% trans 'エラー' %} 🛑 
+    </h1>
 
-    <h2><a href="{% url 'home' %}">{% trans '他のページを使ってください。' %}</a></h2>
+    <div class="jumbotron">
+        <h2 class="site-title">
+            #{% block error_number_2 %}{% endblock %}
+        </h2>
+    </div>
+
+    <p class="site-text">
+        {% block error_content %}
+        {% endblock %}
+    </p>
+
+    <hr class="hh-divider">
+
+    <section class="next my-5">
+        <a href="{% url 'home' %}" class="btn btn-info">{% trans '他のページを使ってください。またわこのリンクでトップページに戻る。' %}</a>
+        <a href="{% url 'home' %}" class="btn btn-primary">{% trans '連絡先はこちら。' %}</a>
+    </section>
+  </section>
 {% endblock %}

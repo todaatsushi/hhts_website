@@ -5,6 +5,11 @@ from django.http import Http404, HttpResponse
 from django.utils.translation import gettext_lazy as _
 from django.utils import translation
 from django.template.loader import render_to_string
+from django.views.generic.edit import FormView
+
+
+class ContactView(FormView):
+    pass
 
 
 def home(request):
