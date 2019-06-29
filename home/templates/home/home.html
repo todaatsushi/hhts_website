@@ -42,35 +42,54 @@
             <a href="{% url 'home' %}">{% trans 'ニュース' %}</a>
           </dt>
           <dd class="col-sm-9">
-            {% trans 'スタッフから最新の情報、お知らせとニュースはこちらです。' %}
+            <p class="site-text">
+              {% trans 'スタッフから最新の情報、お知らせとニュースはこちらです。' %}
+            </p>
           </dd>
 
           <dt class="col-sm-3">
             <a href="{% url 'about' %}" class="nav-link pl-0 text-nowrap">{% trans '活動紹介' %}</a>
           </dt>
           <dd class="col-sm-9">
-            {% trans '東広島ボランティアガイドグループの活動についての情報はこちら。' %}
+            <p class="site-text">
+              {% trans '東広島ボランティアガイドグループの活動についての情報はこちら。' %}
+            </p>
           </dd>
 
           <dt class="col-sm-3">
             <a href="{% url 'guide' %}" class="nav-link pl-0 text-nowrap">{% trans 'ガイド派遣' %}</a>
           </dt>
           <dd class="col-sm-9">
-            {% trans 'ボランティアを目指している物のための情報はこちら。' %}
+            <p class="site-text">
+              {% trans 'ボランティアを目指している物のための情報はこちら。' %}
+            </p>
           </dd>
 
           <dt class="col-sm-3">
             <a href="{% url 'saijo' %}" class="nav-link pl-0 text-nowrap">{% trans '西条の観光' %}</a>
           </dt>
           <dd class="col-sm-9">
-            {% trans '東広島ボランティアガイドは西条と周辺地域のガイドをやっています。それについての情報はこちら。' %}
+            <p class="site-text">
+              {% trans '東広島ボランティアガイドは西条と周辺地域のガイドをやっています。それについての情報はこちら。' %}
+            </p>
           </dd>
 
           <dt class="col-sm-3">
             <a href="{% url 'team' %}" class="nav-link pl-0 text-nowrap">{% trans 'スタフ' %}</a>
           </dt>
           <dd class="col-sm-9">
-            {% trans '東広島ボランティアガイドのメンバーとスタフについてまたは連絡先はこちら。' %}
+            <p class="site-text">
+              {% trans '東広島ボランティアガイドのメンバーとスタフについてまたは連絡先はこちら。' %}
+            </p>
+          </dd>
+
+          <dt class="col-sm-3">
+            <a href="{% url 'contact' %}" class="nav-link pl-0 text-nowrap">{% trans '連絡' %}</a>
+          </dt>
+          <dd class="col-sm-9">
+            <p class="site-text">
+              {% trans '質問、問い合わせ、または連絡先についてはこちら。' %}
+            </p>
           </dd>
         </dl>
       </p>

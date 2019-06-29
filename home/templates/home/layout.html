@@ -88,6 +88,11 @@
                                 <a href="{% url 'team' %}" class="nav-link pl-0 text-nowrap">{% trans 'スタフ' %}</a>
                               </div>
                             </li>
+                            <li class="nav-item public mt-1 ml-1">
+                              <div class="nav-choice">
+                                <a href="{% url 'contact' %}" class="nav-link pl-0 text-nowrap">{% trans '連絡' %}</a>
+                              </div>
+                            </li>
 
                             {% if user.is_authenticated %}
                               <!-- Admin options -->

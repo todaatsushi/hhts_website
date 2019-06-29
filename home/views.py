@@ -6,10 +6,43 @@ from django.utils.translation import gettext_lazy as _
 from django.utils import translation
 from django.template.loader import render_to_string
 from django.views.generic.edit import FormView
+from django.contrib.messages.views import SuccessMessageMixin
+from django.core.mail import send_mail
+
+import os
+
+from home.models import Feedback
+from home.forms import ContactForm
 
 
-class ContactView(FormView):
-    pass
+class ContactView(SuccessMessageMixin, FormView):
+    form_class = ContactForm
+    template_name = 'home/contact.html'
+    success_url = '/contact/'
+    success_message = _('連絡のメールが送られました。て着るだけ早く返事を送ります。')
+
+    def form_valid(self, form):
+        """
+        Use valid form data to send an email to the admin.
+        """
+        if form.is_valid():
+            feedback = Feedback(
+                name=form.cleaned_data.get('name'),
+                email=form.cleaned_data.get('email'),
+                message=form.cleaned_data.get('message'),
+            )
+
+            feedback.save()
+            admin_email = os.environ.get('EMAIL_ADDRESS')
+            send_mail(
+                _(f'{feedback.name}からのメール：({feedback.email})'),
+                feedback.message,
+                admin_email,
+                [admin_email],
+                fail_silently=False
+            )
+
+        return super().form_valid(form)
 
 
 def home(request):
