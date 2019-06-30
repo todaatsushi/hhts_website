@@ -5,6 +5,10 @@
   {% trans 'メールの更新' %}
 {% endblock %}
 
+{% block form_func %}
+  {% trans 'メールを更新' %}
+{% endblock %}
+
 {% block back %}
   <a href="{% url 'email-index' %}" class="btn btn-sm btn-block btn-custom-2">{% trans '戻る' %}</a>
 {% endblock %}
