@@ -2,13 +2,12 @@
 {% load crispy_forms_tags static i18n %}
 
 {% block styling %}
-  <link rel="stylesheet" type="text/css" href="{% static 'blog/css/blog-list.css' %}">
-  <link rel="stylesheet" type="text/css" href="{% static 'blog/css/blog-delete.css' %}">
+  <link rel="stylesheet" href="{% static 'home/desktop/css/form-utils.css' %}">
 {% endblock %}
 
 {% block main %}
-  <div class="container">
-    <form method="post">
+  <div class="container-fluid form-main">
+    <form method="post" class="form-main">
       {% csrf_token %}
       <fieldset class="form-group my-4">
         <legend class="display-4 text-center">{% block form_func %}{% endblock %}</legend>
@@ -17,7 +16,7 @@
 
       {% block extra_options %}
       {% endblock %}
-      <fieldset class="form-group">
+      <fieldset class="form-buttons">
         <button type="submit" class="btn btn-sm btn-custom-3 btn-block">{% block button_text %}{% endblock %}</button>
         {% block back %}
         {% endblock %}

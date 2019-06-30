@@ -6,7 +6,15 @@
 {% endblock %}
 
 {% block header %}
-  <h1 class="display-4 text-center my-4 blog-header">{% trans 'ブロッグ' %}</h1>
+  <h1 class="display-4 text-center my-4 blog-header">{% trans 'ニュース' %}</h1>
+
+  <div class="jumbotron"></div>
+  <section class="intro my-5">
+    <p class="site-text">
+      {% trans 'このページは東広島ボランティアガイドのニュースページです。グループからの発表、または大事な情報はここに出て来ます。それいがのことについては”連絡”ページを使って直接連絡してください。' %}
+    </p>
+  </section>
+  <hr class="hh-divider">
 {% endblock %}
 
 {% block select_posts %}

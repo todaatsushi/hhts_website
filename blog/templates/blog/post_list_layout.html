@@ -13,7 +13,7 @@
   {% for post in posts %}
     {% if not user.is_authenticated and post.admin_post %}
     {% else %}
-      <div class="container">
+      <div class="container-fluid">
 
         <h2><a href="{% url 'post-detail' post.id %}" class="blog-title">{{ post.title }}</a>
           {% if post.pinned %} <i class="fas fa-thumbtack ml-3 post-icon"></i> {% endif %}{% if post.admin_post %} <i class="fas fa-users ml-3 post-icon"></i> {% endif %}</h2>
@@ -21,9 +21,9 @@
         <p class="blog-content">{{ post.content | linebreaks }}</p>
         
         {% if post.author %}
-          <p><small>{% trans '名前' %} <a href="{% url 'user-about' post.author.username %}" class="blog-author">{{ post.author.profile.name }}</a></small></p>
+          <p><small>{% trans '名前' %}: <a href="{% url 'user-about' post.author.username %}" class="blog-author">{{ post.author.profile.name }}</a></small></p>
         {% else %}
-          <p><small>{% trans '名前' %} <a href="#" class="blog-author">{% trans '無し' %}</a></small></p>
+          <p><small>{% trans '名前' %}: <span class="blog-author">{% trans '無し' %}</span></small></p>
         {% endif %}
 
         <p><small>{% trans '投稿時間' %}: {{ post.posted_at|date:"G:i - d M, Y"}}</small><br>
@@ -57,7 +57,7 @@
                 <div class="my-2 comment">
                   {{ comment.comment }} {% if comment.by_admin %}<i class="fas fa-check" style="color: #4d783e;"></i>{% endif %}
                   <br>
-                  <small>{% trans '名前' %} <strong>{{ comment.commenter }}</strong>, {{ comment.posted_at|date:"G:i, d/m/y" }}</small>
+                  <small>{% trans '名前' %}： <strong>{{ comment.commenter }}</strong>, {{ comment.posted_at|date:"G:i, d/m/y" }}</small>
                   {% if comment.posted_at|date:"G:i, d/m/y" != comment.last_updated_at|date:"G:i, d/m/y" %}
                     <small>{% trans '更新時間' %}: {{ comment.last_updated_at|date:"G:i, d/m/y" }}</small>
                   {% endif %}
@@ -80,7 +80,7 @@
                 <div class="my-2 comment">
                   {{ comment.comment }} {% if comment.by_admin %}<i class="fas fa-check" style="color: #4d783e;"></i>{% endif %}
                   <br>
-                  <small>{% trans '名前' %} <strong>{{ comment.commenter }}</strong>, {{ comment.posted_at|date:"G:i, d/m/y" }}</small>
+                  <small>{% trans '名前' %}： <strong>{{ comment.commenter }}</strong>, {{ comment.posted_at|date:"G:i, d/m/y" }}</small>
                   {% if comment.posted_at|date:"G:i, d/m/y" != comment.last_updated_at|date:"G:i, d/m/y" %}
                     <small>{% trans '更新時間' %}: {{ comment.last_updated_at|date:"G:i, d/m/y" }}</small>
                   {% endif %}

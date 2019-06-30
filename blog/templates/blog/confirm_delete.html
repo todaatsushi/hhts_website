@@ -1,26 +1,30 @@
 {% extends "home/layout.html" %}
 {% load static i18n %}
 
+{% block styling %}
+  <link rel="stylesheet" href="{% static 'home/desktop/css/form-utils.css' %}">
+{% endblock %}
+
 {% block title %}
   {% trans 'ポスト削除' %}
 {% endblock %}
 
 {% block main %}
-  <div class="container delete-form">
-    <form method="post">
+  <section class="container form-main">
+    <form method="post" class="form-main">
       {% csrf_token %}
       <fieldset class="form-group del-fg">
-        <legend class="text-center"><h1>{% trans 'ポスト削除' %}</h1></legend>
+        <legend class="text-center my-5"><h1>{% trans 'ポスト削除' %}</h1></legend>
         <p class="lead text-center">
           {% blocktrans with title=object.title %}
             "{{ title }}"を削除しますけどよろしいですか？
           {% endblocktrans %}
         </p>
       </fieldset>
-      <div class="form-group del-fg">
+      <div class="form-group del-fg form-buttons">
         <input type="submit" value="{% trans '確認' %}" class="btn btn-custom-danger submit-btn">
         <a href="{% url 'post-detail' object.id %}" class="btn btn-custom-1 submit-btn">{% trans '戻る' %}</a>
       </div>
     </form>
-  </div>
+  </section>
 {% endblock %}
