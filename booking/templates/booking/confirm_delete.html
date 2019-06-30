@@ -1,16 +1,12 @@
 {% extends 'home/layout.html' %}
 {% load crispy_forms_tags static i18n %}
 
-{% block styling %}
-  <link rel="stylesheet" type="text/css" href="{% static 'booking/css/booking-all.css' %}">
-{% endblock %}
-
 {% block title %}
   {% trans 'ツアのカンセル' %}
 {% endblock %}
 
 {% block main %}
-  <div class="container delete-form">
+  <section class="container-fluid delete-form">
     <form method="post">
       {% csrf_token %}
       <fieldset class="form-group del-fg">
@@ -22,5 +18,5 @@
         <a href="{% url 'post-detail' object.id %}" class="btn btn-info submit-btn">{% trans '戻る' %}</a>
       </div>
     </form>
-  </div>
+  </section>
 {% endblock %}

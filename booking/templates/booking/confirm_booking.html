@@ -1,0 +1,22 @@
+{% extends 'home/layout.html' %}
+{% load crispy_forms_tags static i18n %}
+
+{% block title %}
+  {% trans 'ツアの確認' %}
+{% endblock %}
+
+{% block main %}
+  <section class="container-fluid">
+    <form method="post">
+      {% csrf_token %}
+      <fieldset class="form-group">
+        <legend class="text-center"><h1>{% trans 'ツアの確認' %}</h1></legend>
+        <p class="lead text-center">{% trans 'ブッキング確認のメールを送っていいですか？' %}</p>
+      </fieldset>
+      <div class="form-group">
+        <input type="submit" value="{% trans '確認' %}" class="btn btn-success submit-btn">
+        <a href="{% url 'booking-index'%}" class="btn btn-info submit-btn">{% trans '戻る' %}</a>
+      </div>
+    </form>
+  </section>
+{% endblock %}

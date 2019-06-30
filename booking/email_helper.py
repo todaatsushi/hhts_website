@@ -23,7 +23,7 @@ class ConfirmEmail(object):
 
             Thank you for booking a tour with us. Your tour has been confirmed
             at {self.booking.scheduled_at}. We can confirm that the tour will last
-            {self.booking.duration}.
+            {self.booking.duration} minutes.
 
             Please confirm the rest of the details below:
 

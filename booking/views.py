@@ -7,6 +7,8 @@ from django.urls import reverse
 from django.http import HttpResponseRedirect
 from django.contrib.auth.decorators import login_required
 from django.core.mail import EmailMessage
+from django.contrib import messages
+from django.utils.translation import gettext_lazy as _
 
 from .models import Booking
 from .forms import BookTourForm
@@ -64,9 +66,12 @@ class BookingDeleteView(LoginRequiredMixin, DeleteView):
 
 @login_required
 def booking_confirm(request, pk):
-    booking = get_object_or_404(Booking, id=pk)
-    booking.confirm()
-    return HttpResponseRedirect(reverse('booking-index'))
+    if request.method == 'POST':
+        booking = get_object_or_404(Booking, id=pk)
+        booking.confirm()
+        messages.success(request, _(f'ブッキングが確認されました。'))
+        return HttpResponseRedirect(reverse('booking-index'))
+    return render(request, 'booking/confirm_booking.html')
 
 
 @login_required
@@ -80,6 +85,7 @@ def booking_unconfirm(request, pk):
 def booking_complete(request, pk):
     booking = get_object_or_404(Booking, id=pk)
     booking.done()
+    messages.success(request, _(f'ブッキングが完成されました。'))
     return HttpResponseRedirect(reverse('booking-index'))
 
 
