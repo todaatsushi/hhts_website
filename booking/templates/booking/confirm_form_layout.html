@@ -1,0 +1,30 @@
+{% extends 'home/layout.html' %}
+{% load crispy_forms_tags static i18n %}
+
+{% block styling %}
+    <link rel="stylesheet" href="{% static 'home/desktop/css/form-utils.css' %}">
+{% endblock %}
+
+{% block title %}
+    {% block page_title %}{% endblock %}
+{% endblock %}
+
+{% block main %}
+  <section class="container-fluid form-main h-100">
+    <form method="post" class="form-main">
+      {% csrf_token %}
+      <fieldset class="form-group">
+        <legend class="text-center"><h1 class="site-title">
+            {% block form_func %}{% endblock %}
+        </h1></legend>
+        <p class="lead text-center">
+            {% block help_text %}{% endblock %}
+        </p>
+      </fieldset>
+      <div class="form-buttons py-2">
+        <input type="submit" value="{% trans '確認' %}" class="btn form-button mx-3">
+        <a href="{% block back_to_path %}{% endblock %}" class="btn mx-3 form-button">{% block back_to_text %}{% endblock %}</a>
+      </div>
+    </form>
+  </section>
+{% endblock %}
