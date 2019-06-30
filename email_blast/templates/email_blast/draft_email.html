@@ -1,12 +1,12 @@
 {% extends "blog/post_form_layout.html"%}
 {% load static i18n %}
 
-{% block styling %}
-  <link rel="stylesheet" type="text/css" href="{% static 'email_blast/css/emails-all.css' %}">
-{% endblock %}
-
 {% block title %}
   {% trans 'メールを書く' %}
+{% endblock %}
+
+{% block form_func %}
+  {% trans 'メールをドラフト' %}
 {% endblock %}
 
 {% block button_text %}

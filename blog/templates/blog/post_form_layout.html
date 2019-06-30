@@ -6,11 +6,11 @@
 {% endblock %}
 
 {% block main %}
-  <div class="container-fluid form-main">
-    <form method="post" class="form-main">
+  <section class="container-fluid form-main">
+    <form method="post" class="form-main mb-5">
       {% csrf_token %}
       <fieldset class="form-group my-4">
-        <legend class="display-4 text-center">{% block form_func %}{% endblock %}</legend>
+        <legend class="display-4 text-center mb-5">{% block form_func %}{% endblock %}</legend>
         {{ form|crispy }}
       </fieldset>
 
@@ -23,5 +23,5 @@
       </fieldset>
     </form>
 
-  </div>
+  </section>
 {% endblock %}

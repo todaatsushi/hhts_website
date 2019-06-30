@@ -4,7 +4,7 @@
 {% load static %}
 
 {% block styling %}
-  <link rel="stylesheet" type="text/css" href="{% static 'email_blast/css/emails-all.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'home/desktop/css/form-utils.css' %}">
 {% endblock %}
 
 {% block title %}
@@ -12,17 +12,17 @@
 {% endblock %}
 
 {% block main %}
-  <div class="container delete-form">
-    <form method="post">
+  <section class="container-fluid form-main h-100">
+    <form method="post" class="form-main mb-5">
       {% csrf_token %}
       <fieldset class="form-group del-fg">
         <legend class="text-center">{% trans 'メールを削除する' %}</legend>
         <p class="lead text-center">{% trans 'このメールを削除してもよろしいですか？' %}</p>
       </fieldset>
-      <div class="form-group del-fg">
+      <div class="form-buttons">
         <input type="submit" value="{% trans '削除' %}" class="btn btn-custom-danger submit-btn">
         <a href="{% url 'email-index'%}" class="btn btn-custom-2 submit-btn">{% trans '戻る' %}</a>
       </div>
     </form>
-  </div>
+  </section>
 {% endblock %}
