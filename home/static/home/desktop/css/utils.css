@@ -45,11 +45,11 @@ h2.site-title {
 }
 
 h3.site-title {
-    font-size: calc(1rem + 3vw);
+    font-size: calc(1rem + 2vw);
 }
 
 h4.site-title {
-    font-size: calc(1rem + 3vw);
+    font-size: calc(1rem + 1.5vw);
 }
 
 

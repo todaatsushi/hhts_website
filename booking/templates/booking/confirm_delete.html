@@ -1,22 +1,22 @@
-{% extends 'home/layout.html' %}
-{% load crispy_forms_tags static i18n %}
+{% extends 'booking/confirm_form_layout.html' %}
+{% load i18n %}
 
-{% block title %}
+{% block page_title %}
   {% trans 'ツアのカンセル' %}
 {% endblock %}
 
-{% block main %}
-  <section class="container-fluid delete-form">
-    <form method="post">
-      {% csrf_token %}
-      <fieldset class="form-group del-fg">
-        <legend class="text-center"><h1>{% trans 'ツアのカンセル' %}</h1></legend>
-        <p class="lead text-center">{% trans 'ブッキングを削除しますけどよろしいですか？' %}</p>
-      </fieldset>
-      <div class="form-group del-fg">
-        <input type="submit" value="{% trans '確認' %}" class="btn btn-danger submit-btn">
-        <a href="{% url 'post-detail' object.id %}" class="btn btn-info submit-btn">{% trans '戻る' %}</a>
-      </div>
-    </form>
-  </section>
+{% block form_func %}
+  {% trans 'ツアのカンセル' %}
+{% endblock %}
+
+{% block help_text %}
+  {% trans 'ブッキングを削除しますけどよろしいですか？' %}
+{% endblock %}
+
+{% block back_to_path %}
+  {% url 'booking-detail' object.id %}
+{% endblock %}
+
+{% block back_to_text %}
+  {% trans '戻る' %}
 {% endblock %}

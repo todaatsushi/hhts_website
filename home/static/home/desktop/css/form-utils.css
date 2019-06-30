@@ -9,3 +9,11 @@
     width: 100%;
     justify-content: center;
 }
+
+.form-button, input.form-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    text-align: center;
+}
