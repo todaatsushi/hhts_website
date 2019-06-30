@@ -14,15 +14,15 @@ class DraftEmailForm(forms.Form):
     """
     try:
         everyone = [(user.pk, user) for user in list(User.objects.all())]
-        staff_recipients = forms.MultipleChoiceField(choices=everyone, required=False)
+        staff_recipients = forms.MultipleChoiceField(choices=everyone, required=False, label=_('スタッフからの受取人'))
     except OperationalError:
-        staff_recipients = forms.MultipleChoiceField(choices=[(None, None)], required=False)
+        staff_recipients = forms.MultipleChoiceField(choices=[(None, None)], required=False, label=_('スタッフからの受取人'))
 
-    all_staff = forms.BooleanField(initial=False, required=False)
-    other_recipients = forms.CharField(widget=forms.Textarea(attrs={'rows':4}), required=False, validators=[validate_emails])
-    subject = forms.CharField(max_length=100)
-    content = forms.CharField(widget=forms.Textarea)
-    admin_email = forms.BooleanField(initial=False, required=False)
+    all_staff = forms.BooleanField(initial=False, required=False, label=_('全スタッフ'))
+    other_recipients = forms.CharField(widget=forms.Textarea(attrs={'rows':4}), required=False, validators=[validate_emails], label=_('他の受取人'))
+    subject = forms.CharField(max_length=100, label=_('件名'))
+    content = forms.CharField(widget=forms.Textarea, label=_('内容'))
+    admin_email = forms.BooleanField(initial=False, required=False, label=_('スタッフ専用'))
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
