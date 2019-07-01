@@ -1,11 +1,11 @@
 // Hide staff options on load
-window.onload = () => {
+window.addEventListener('load', (e) => {
     const staff_options = document.getElementsByClassName('staff');
 
     for (let i = 0; i < staff_options.length; i++){
         staff_options[i].style.display = 'none';
     }
-}
+})
 
 // If authenticted user clicks the the toggle link, display staff options
 const toggle = document.getElementById('user-toggle');

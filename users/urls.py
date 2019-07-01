@@ -8,7 +8,7 @@ urlpatterns = [
     path('', uv.index, name='user-home'),
 
      # User views
-    path('register/', uv.register, name='user-reg'),
+    path('register/', uv.register, name='user-register'),
     path('team/', uv.TeamView.as_view(), name='team'),
     path('profile/<str:username>/', uv.user_profile, name='user-about'),
     path('profile/', uv.profile, name='user-profile'),

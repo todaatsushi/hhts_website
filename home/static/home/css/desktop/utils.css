@@ -26,6 +26,17 @@
     display: block;
 }
 
+.m0 {
+    margin: 0 !important;
+}
+
+.return-buttons {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 1rem;
+}
+
 /* Typography */
 .site-title {
     margin: 1.7rem 0;

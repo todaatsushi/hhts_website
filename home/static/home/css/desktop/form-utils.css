@@ -1,3 +1,4 @@
+/* Divs */
 .form-main {
     display: flex;
     flex-direction: column;
@@ -10,6 +11,20 @@
     justify-content: center;
 }
 
+.form-input-group {
+    width : 100%;
+    display: flex;
+    justify-content: space-around;
+    padding: 1rem;
+}
+
+.form-input {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+}
+
+/* Button */
 .form-button, input.form-button {
     display: flex;
     align-items: center;

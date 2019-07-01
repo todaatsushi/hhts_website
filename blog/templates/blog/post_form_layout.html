@@ -10,16 +10,19 @@
     <form method="post" class="form-main mb-5">
       {% csrf_token %}
       <fieldset class="form-group my-4">
-        <legend class="display-4 text-center mb-5">{% block form_func %}{% endblock %}</legend>
+        <legend class="site-title text-center mb-5">
+          <h3 class="site-title m0">
+            {% block form_func %}{% endblock %}
+          </h3>
+        </legend>
         {{ form|crispy }}
       </fieldset>
 
       {% block extra_options %}
       {% endblock %}
       <fieldset class="form-buttons">
-        <button type="submit" class="btn btn-sm btn-custom-3 btn-block">{% block button_text %}{% endblock %}</button>
-        {% block back %}
-        {% endblock %}
+        <button type="submit" class="btn btn-sm">{% block button_text %}{% endblock %}</button>
+        <a href="{% block back_to_path %}{% endblock %}" class="btn mx-3 form-button">{% block back_to_text %}{% endblock %}</a>
       </fieldset>
     </form>
 

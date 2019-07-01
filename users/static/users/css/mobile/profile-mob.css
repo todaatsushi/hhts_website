@@ -1,0 +1,9 @@
+@media (max-width: 768px) {
+    #profile {
+        flex-direction: column;
+    }
+
+    #profile-pic-div {
+        flex-direction: row;
+    }
+}

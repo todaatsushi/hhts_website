@@ -2,7 +2,7 @@
 {% load static i18n %}
 
 {% block styling %}
-  <link rel="stylesheet" type="text/css" href="{% static 'users/css/users-team.css' %}">
+  <link rel="stylesheet" href="{% static 'users/css/desktop/team.css' %}">
 {% endblock %}
 
 {% block title %}
@@ -10,41 +10,52 @@
 {% endblock %}
 
 {% block main %}
-<div class="container team-div my-3">
-  {% for member in team %}
-    <div class="card member">
-      <div class="card-header">
-        <h5 class="text-center">{{ member.profile.name }}</h5>
-      </div>
-      <img class="card-img-top mx-auto my-2" src="{{ member.profile.image.url }}" alt="Member Photo: {{ member.profile.name }}" style="max-height: 200px; max-width:200px;">
-      <div class="card-body">
-        <h3 class="card-subtitle">
-          <h5 class="text-center">@<a href="{% url 'user-about' member.username%}">{{ member.username }}</a></h5>
-        </h3>
-      </div>
-      <div class="card-footer">
-        <p class="mt-2">
-          <h5 class="text-center">{{ member.profile.role }}</h5>
-        </p>
-      </div>
-    </div>
-  {% endfor %}
-  {% if is_paginated %}
-    <div>
-      {% if page_obj.has_previous %}
-        <a href="?page=1">{% trans '1ページ目' %}</a>
-        <a href="?page={{ page_obj.previous_page_number }}">{% trans '前のページ' %}</a>
-      {% endif %}
+  <section class="container-fluid main my-5">
+    <h3 class="site-title text-center">
+      {% trans '東広島ボランティアガイドメンバー紹介' %}
+    </h3>
+    <div class="jumbotron"></div>
+    <hr>
+    <section id="team">
+      {% for member in team %}
+        <div class="card col-md-4">
+          <div class="card-header">
+            <h6 class="site-title text-center">
+              {{ member.profile.name }}: @<a href="{% url 'user-about' member.username%}">{{ member.username }}</a></h5>
+            </h6>
+          </div>
+          <div class="card-body py-2 px-2">
+              <img class="card-img-top mx-auto my-2 profile-pic" src="{{ member.profile.image.url }}" alt="Member Photo: {{ member.profile.name }}">
+          </div>
+          <div class="card-footer">
+            <h5 class="site-title text-center">
+              {{ member.profile.role }}
+            </h5>
+          </div>
+        </div>
+      {% endfor %}
+    </section>
 
-      {% blocktrans with number=page_obj.number max=page_obj.paginator.num_pages %}
-        ページ #{{ number}}/{{ max }}
-      {% endblocktrans %}
+    {% if is_paginated %}
+      <div>
+        {% if page_obj.has_previous %}
+          <a href="?page=1">{% trans '1ページ目' %}</a>
+          <a href="?page={{ page_obj.previous_page_number }}">{% trans '前のページ' %}</a>
+        {% endif %}
+  
+        {% blocktrans with number=page_obj.number max=page_obj.paginator.num_pages %}
+          ページ #{{ number}}/{{ max }}
+        {% endblocktrans %}
+  
+        {% if page_obj.has_next %}
+          <a href="?page={{ page_obj.next_page_number }}">{% trans '次のページ' %}</a>
+          <a href="?page={{ page_obj.paginator.num_pages }}">{% trans '最後のページ' %}</a>
+        {% endif %}
+      </div>
+    {% endif %}
 
-      {% if page_obj.has_next %}
-        <a href="?page={{ page_obj.next_page_number }}">{% trans '次のページ' %}</a>
-        <a href="?page={{ page_obj.paginator.num_pages }}">{% trans '最後のページ' %}</a>
-      {% endif %}
+    <div class="return-buttons my-5">
+      <a href="{% url 'home' %}" class="btn">{% trans 'トップページへ' %}</a>
     </div>
-  {% endif %}
-</div>
+  </section>
 {% endblock %}

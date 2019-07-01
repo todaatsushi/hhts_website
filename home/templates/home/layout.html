@@ -122,12 +122,17 @@
                               </li>
                               <li class="nav-items staff ml-1 my-1">
                                 <div class="nav-choice">
+                                    <a class="nav-link pl-0 text-nowrap" href="{% url 'user-register' %}">{% trans 'ユーザー申し込み' %}</a>
+                                  </div>
+                              </li>
+                              <li class="nav-items staff ml-1 my-1">
+                                <div class="nav-choice">
                                     <a class="nav-link pl-0 text-nowrap" href="{% url 'user-about' user.username %}">{% trans 'プロファイル' %}</a>
                                   </div>
                               </li>
                               <li class="nav-items staff ml-1 my-1">
                                 <div class="nav-choice">
-                                    <a class="nav-link pl-0 text-nowrap" href="{% url 'user-logout' %}" class="btn btn-outline-danger">{% trans 'ロッグアウト' %}</a>
+                                    <a class="nav-link pl-0 text-nowrap" href="{% url 'user-logout' %}" class="btn">{% trans 'ロッグアウト' %}</a>
                                   </div>
                               </li>
                             {% endif %}
@@ -174,7 +179,7 @@
   </section>
   
   <!-- Extra scripts -->
-  <script src="{% static 'home/desktop/js/nav.js' %}"></script>
+  <script src="{% static 'home/js/nav.js' %}"></script>
   {% block scripts %}
   {% endblock %}
   </body>

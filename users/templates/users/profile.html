@@ -2,7 +2,8 @@
 {% load crispy_forms_tags static i18n %}
 
 {% block styling %}
-  <link rel="stylesheet" type="text/css" href="{% static 'users/css/users-profile.css' %}">
+  <link rel="stylesheet" href="{% static 'users/css/desktop/profile.css' %}">
+  <link rel="stylesheet" href="{% static 'users/css/mobile/profile-mob.css' %}">
 {% endblock %}
 
 {% block title %}
@@ -10,72 +11,116 @@
 {% endblock %}
 
 {% block main %}
-  <div class="container mt-5">
-    <div class="row align-items-center">
+  <section class="main">
+    <h3 class="site-title text-center my-5">
+      {% trans 'ユーザープロファイル' %}：{{ person.profile.name }}
+    </h3>
 
-      <div class="col-md-5">
-        <div class="card">
-          <img class="card-img-top rounded-circle img-thumbnail profile-pic mx-auto" src="{{ person.profile.image.url }}" alt="Member Photo: {{ person.profile.name }}">
-          <div class="card-body">
-            <h3 class="card-title text-center">{{ person.profile.name }} <small class="text-muted">@{{ person.username }}</small></h3>
-            <p class="card-body">
-              {% trans 'メールアドレス' %}: <span class="text-muted">{{ person.email }}</span>  <br>
-              {% trans '役割' %}: <span class="text-muted">{{ person.profile.role }}</span>
-              {% if user_form and profile_form %}
-                <hr>
-                <div class="admin-btns">
-                  <button class="btn btn-custom-1 btn-sm mx-1" id="show-profile">{% trans 'プロファイル' %}</button>
-                  <button class="btn btn-custom-1 btn-sm mx-1" id="show-update">{% trans '更新する' %}</button>
-                </div>
-              {% endif %}
+    <section class="user-buttons">
+      <button class="btn btn-sm mx-3 profile-toggle" id="show-profile">{% trans 'プロファイル' %}</button>
+      <button class="btn btn-sm mx-3 profile-toggle" id="show-info">{% trans '個人情報' %}</button>
+      <a href="{% url 'post-user' person.username %}" class="btn btn-sm mx-3 profile-toggle" >
+        {% blocktrans with name=person.profile.name %}
+          {{ name }} のポスト
+        {% endblocktrans %}
+      </a>
+      {% if user_form and profile_form %}
+        <button class="btn btn-sm mx-3 profile-toggle" id="show-update">{% trans '更新する' %}</button>
+      {% endif %}
+    </section>
+    <hr>
+
+    <section id="profile" class="profile-content mb-5">
+
+      <div id="profile-pic-div">
+        <img class="rounded-circle border" id="profile-pic-img" src="{{ person.profile.image.url }}" alt="Member Photo: {{ person.profile.name }}">
+      </div>
+
+      <div id="profile-info">
+        <dl class="row">
+          <dt class="col-sm-6">
+            {% trans '名前' %}
+          </dt>
+          <dd class="col-sm-6">
+            <p class="site-text">
+              <span class="text-muted">{{ person.profile.name }}</span>
             </p>
-          </div>
-        </div>
-      </div>
+          </dd>
+          <dt class="col-sm-6">
+              {% trans 'ユーザーネーム' %}
+            </dt>
+            <dd class="col-sm-6">
+              <p class="site-text">
+                <span class="text-muted">@{{ person.username }}</span>
+              </p>
+            </dd>          
+          <dt class="col-sm-6">
+            {% trans 'メールアドレス' %}
+          </dt>
+          <dd class="col-sm-6">
+            <p class="site-text">
+              <span class="text-muted">{{ person.email }}</span>
+            </p>
+          </dd>
 
-      <div class="col-md-7 px-5" id="profile-col">
-        <div>
-          <h3 class="text-center display-4">
-            {% blocktrans with name=person.profile.name %}
-              {{ name }}について
-            {% endblocktrans %}
-          </h3>
-          <p>{{ person.profile.about | linebreaks }}</p>
+          <dt class="col-sm-6">
+            {% trans '役割' %}
+          </dt>
+          <dd class="col-sm-6">
+            <p class="site-text">
+              <span class="text-muted">{{ person.profile.role }}</span>
+            </p>
+          </dd>
+        </dl>
+      </div>  
+    </section>
+
+    <section id="profile-about" class="profile-content mb-5">
+      <div>
+        <h3 class="text-center site-title">
+          {% blocktrans with name=person.profile.name %}
+            {{ name }}について
+          {% endblocktrans %}
+        </h3>
+      </div>
+      <div>
+        <p class="site-text">
+          {{ person.profile.about | linebreaks }}
+        </p>
+      </div>
+    </section>
+
+    {% if user_form and profile_form %}
+      <section id="profile-update" class="profile-content mb-5">
+        <form action="{% url 'user-about' person.username %}" method="post" enctype="multipart/form-data" id="update-form">
+          {% csrf_token %}
           <div class="row">
-            <div class="col-sm-6 mx-auto my-4">
-            <a href="{% url 'post-user' person.username %}" class="btn btn-custom-2 btn-block" >
-                {% blocktrans with name=person.profile.name %}
-                  {{ person.profile.name }}のポスト
-                {% endblocktrans %}
-              </a>
+            <div class="col-md-6">
+              <fieldset>
+                <legend>{% trans '個人情報の更新' %}</legend>
+                {{ user_form|crispy }}
+                <a href="{% url 'password_reset' %}" class="btn btn-sm">{% trans 'パスワードリセット' %}</a>
+              </fieldset>
+            </div>
+            <div class="col-md-6">
+              <fieldset>
+                {{ profile_form|crispy }}
+              </fieldset>
             </div>
           </div>
-        </div>
-      </div>
+          <button type="submit" class="btn btn-sm btn-block my-5">{% trans '更新する' %}</button>
+        </form>
+      </section>
+    {% endif %}
 
-      <div class="col-md-7 px-5 mb-5" id="update-col">
-        <div>
-          <form action="{% url 'user-about' person.username %}" method="post" enctype="multipart/form-data">
-            {% csrf_token %}
-            <div class="row">
-              <div class="col-md-6">
-                <fieldset>
-                  <legend>{% trans '個人情報の更新' %}</legend>
-                  {{ user_form|crispy }}
-                  <a href="{% url 'password_reset' %}" class="btn btn-sm btn-custom-3">{% trans 'パスワードリセット' %}</a>
-                </fieldset>
-              </div>
-              <div class="col-md-6">
-                <fieldset>
-                  {{ profile_form|crispy }}
-                  <button type="submit" class="btn btn-custom-1 btn-sm">{% trans '更新する' %}</button>
-                </fieldset>
-              </div>
-            </div>
-          </form>
-        </div>
-      </div>
-
+    <div class="return-buttons">
+      <a href="{% url 'home' %}" class="btn">{% trans 'トップページへ' %}</a>
+      <a href="{% url 'team' %}" class="btn">{% trans 'メンバー紹介へ' %}</a>
     </div>
-  </div>
+  </section>
+{% endblock %}
+
+
+{% block scripts %}
+  <script src="{% static 'users/js/profile.js' %}"></script>
 {% endblock %}
