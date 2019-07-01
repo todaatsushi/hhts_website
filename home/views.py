@@ -68,6 +68,9 @@ def change_language(request, language):
     url_components = request.GET.get('full_path').split('/')
     url_components = [part for part in url_components if part]
     
+    if url_components[0] == 'en':
+        url_components = url_components[1:]
+
     # List of bools indicating which url_components are numerical slugs ie. pk
     detail_page = []
 
