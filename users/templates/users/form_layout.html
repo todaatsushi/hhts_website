@@ -2,25 +2,27 @@
 {% load crispy_forms_tags static i18n %}
 
 {% block styling %}
-  <link rel="stylesheet" type="text/css" href="{% static 'users/css/users-forms.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'home/desktop/css/form-utils.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'users/desktop/css/users-forms.css' %}">
 {% endblock %}
 
 {% block main %}
 
-  <div class="container py-5">
-    {% block top %}{% endblock %}
-
-    <form method="post">
-      {% csrf_token %}
-      <fieldset>
-        <legend class="text-center">{% block legend %}{% endblock %}</legend>
-        {% block form_inputs %}{% endblock %}
-        <button type="submit" class="btn btn-custom-1 btn-block">{% block submit %}{% endblock %}</button>
-        <a href="{% url 'team' %}" class="btn btn-custom-2 btn-block">{% trans '戻る' %}</a>
-        {% block extra %}{% endblock %}
-      </fieldset>
-    </form>
-    {% block bottom %}{% endblock %}
-  </div>
-
 {% endblock %}
+
+
+<div class="container py-5">
+  {% block top %}{% endblock %}
+
+  <form method="post">
+    {% csrf_token %}
+    <fieldset>
+      <legend class="text-center">{% block legend %}{% endblock %}</legend>
+      {% block form_inputs %}{% endblock %}
+      <button type="submit" class="btn btn-custom-1 btn-block">{% block submit %}{% endblock %}</button>
+      <a href="{% url 'team' %}" class="btn btn-custom-2 btn-block">{% trans '戻る' %}</a>
+      {% block extra %}{% endblock %}
+    </fieldset>
+  </form>
+  {% block bottom %}{% endblock %}
+</div>
