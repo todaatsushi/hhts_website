@@ -2,7 +2,7 @@
 {% load crispy_forms_tags static i18n %}
 
 {% block title %}
-  {% trans 'ツア更新' %}
+  {% trans 'ツアー更新' %}
 {% endblock %}
 
 {% block main %}
@@ -23,7 +23,7 @@
     {% endif %}
     <form method="post">
       {% csrf_token %}
-      <legend class="display-4 text-center">{% trans 'ツア更新' %}</legend>
+      <legend class="display-4 text-center">{% trans 'ツアー更新' %}</legend>
       {{ form|crispy }}
 
       <button type="submit" class="btn btn-sm my-2 btn-success">{% trans '更新する' %}</button>

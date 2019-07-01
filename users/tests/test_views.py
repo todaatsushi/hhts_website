@@ -36,7 +36,7 @@ class UserViewsTestCase(TestCase):
     def test_register_view(self):
         basic_view_check(
             test_case_obj=self,
-            path=reverse('user-reg'),
+            path=reverse('user-register'),
             template='users/register.html',
             login_required=True,
             login_desired=True,
@@ -49,7 +49,7 @@ class UserViewsTestCase(TestCase):
         with self.english_setting():
             basic_view_check(
                 test_case_obj=self,
-                path=reverse('user-reg'),
+                path=reverse('user-register'),
                 template='users/register.html',
                 login_required=True,
                 login_desired=True,

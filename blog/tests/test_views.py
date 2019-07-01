@@ -125,7 +125,7 @@ class BlogViewsTestCase(TestCase):
             True,
             True,
             [
-                'スタフ専用',
+                'スタッフ専用',
                 'Admin test post'
             ]
         )
@@ -139,7 +139,7 @@ class BlogViewsTestCase(TestCase):
                 True,
                 True,
                 [
-                    'Staff only posts',
+                    'Staff only',
                     'Admin test post'
                 ]
             )

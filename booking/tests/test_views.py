@@ -106,7 +106,7 @@ class BookingViewsTestCase(TestCase):
             True,
             True,
             [
-                'ツア更新',
+                'ツアー更新',
                 '予定時間' # Subtitle
             ]
         )
@@ -133,7 +133,7 @@ class BookingViewsTestCase(TestCase):
             True,
             True,
             [
-                'ツアのカンセル',
+                'ツアーのカンセル',
                 '確認' # Confirm button text
             ]
         )
