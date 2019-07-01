@@ -30,44 +30,26 @@
           <button class="btn" type="button" data-toggle="modal" data-target="#info1" >
             {% trans 'さらに読む' %}
           </button>
-
         </div>
       </div>
 
-      <!-- Card 2 - Sake brewery tours -->
+      <!-- Card 3 - Exploration Course -->
       <div class="card card-about col-sm">
-        <div class="card-img-top about-img abt-1"></div>
+        <div class="card-img-top about-img abt-2"></div>
         <div class="card-body site-text">
-
           <h5 class="card-title text-center">
-            {% trans '酒蔵通り案内' %}
+            {% trans '東広島探訪講座' %}
           </h5>
           <p class="card-body site-text">
-            {% trans 'JR西条駅前に広がる酒蔵通りのご案内をいたします。' %}
+            {% blocktrans %}
+              東広島市内の興味深い歴史と場所、東広島ゆかりの人物などを学びましょう。
+              毎年実施しています。その都度市の広報等で募集します。
+            {% endblocktrans %}
           </p>
-          <button class="btn" type="button" data-toggle="modal" data-target="#info1" >
-            {% trans 'さらに読む' %}
-          </button>
-
         </div>
       </div>
   </section>
   <section class="row">
-    <!-- Card 3 - Exploration Course -->
-    <div class="card card-about col-sm">
-      <div class="card-img-top about-img abt-2"></div>
-      <div class="card-body site-text">
-        <h5 class="card-title text-center">
-          {% trans '東広島探訪講座' %}
-        </h5>
-        <p class="card-body site-text">
-          {% blocktrans %}
-            東広島市内の興味深い歴史と場所、東広島ゆかりの人物などを学びましょう。
-            毎年実施しています。その都度市の広報等で募集します。
-          {% endblocktrans %}
-        </p>
-      </div>
-    </div>
 
     <!-- Card 4 - Children guides -->
     <div class="card card-about col-sm">
@@ -87,9 +69,6 @@
         </button>
       </div>
     </div>
-  </section>
-
-  <section class="row">
     <!-- Card 5 - Walk the area -->
     <div class="card card-about col-sm">
       <div class="card-img-top about-img abt-4"></div>
@@ -105,7 +84,9 @@
         </p>
       </div>
     </div>
+  </section>
 
+  <section class="row">
     <!-- Card 6 - Festival -->
     <div class="card card-about col-sm">
       <div class="card-img-top about-img abt-5"></div>
@@ -122,9 +103,6 @@
         </p>
       </div>
     </div>
-  </section>
-
-  <section class="row">
     <!-- Card 7 - Other -->
     <div class="card card-about col-sm">
       <div class="card-img-top about-img abt-6"></div>
@@ -136,20 +114,22 @@
             が町めぐり」としてマイクロバスによる市内名所めぐりをしています。
           {% endblocktrans %}
         </p>
-
-        <!-- Contact Info -->
-        <section id="contact-div">
-          <div class="contact-message">
-            <h5 class="display-4 text-muted">{% trans 'お問い' %}<span class="theme-green">{% trans '合わせ' %}</span></h5>
-          </div>
-          <div class="contact-channels pb-2 my-2">
-            <span class="text-muted">{% trans '西条酒蔵通り案内所' %}</span> <br>
-            <span class="text-muted">{% trans '〒739-0011 広島県東広島市西条本町17-1' %}</span> <br>
-            <span class="text-muted">Tel / Fax 082-421-2311</span> <br>
-          </div>
-        </section>
       </div>
     </div>
+  </section>
+
+  <section class="row my-5">
+      <!-- Contact Info -->
+      <section id="contact-div">
+        <div class="contact-message">
+          <h5 class="display-4 text-muted">{% trans 'お問い' %}<span class="theme-green">{% trans '合わせ' %}</span></h5>
+        </div>
+        <div class="contact-channels pb-2 my-2">
+          <span class="text-muted">{% trans '西条酒蔵通り案内所' %}</span> <br>
+          <span class="text-muted">{% trans '〒739-0011 広島県東広島市西条本町17-1' %}</span> <br>
+          <span class="text-muted">Tel / Fax 082-421-2311</span> <br>
+        </div>
+      </section>
   </section>
 
 
