@@ -13,13 +13,13 @@
 {% block main %}
   <section class="main">
     <h3 class="site-title text-center my-5">
-      {% trans 'ユーザープロファイル' %}：{{ person.profile.name }}
+      {% trans 'ユーザープロファイル' %}：<span class="green1">{{ person.profile.name }}</span>
     </h3>
 
     <section class="user-buttons">
-      <button class="btn btn-sm mx-3 profile-toggle" id="show-profile">{% trans 'プロファイル' %}</button>
-      <button class="btn btn-sm mx-3 profile-toggle" id="show-info">{% trans '個人情報' %}</button>
-      <a href="{% url 'post-user' person.username %}" class="btn btn-sm mx-3 profile-toggle" >
+      <button class="btn btn-sm btn-confirm mx-3 profile-toggle" id="show-profile">{% trans 'プロファイル' %}</button>
+      <button class="btn btn-sm btn-update mx-3 profile-toggle" id="show-info">{% trans '個人情報' %}</button>
+      <a href="{% url 'post-user' person.username %}" class="btn btn-sm btn-3 mx-3 profile-toggle" >
         {% blocktrans with name=person.profile.name %}
           {{ name }} のポスト
         {% endblocktrans %}
@@ -114,8 +114,8 @@
     {% endif %}
 
     <div class="return-buttons">
-      <a href="{% url 'home' %}" class="btn">{% trans 'トップページへ' %}</a>
-      <a href="{% url 'team' %}" class="btn">{% trans 'メンバー紹介へ' %}</a>
+      <a href="{% url 'home' %}" class="btn btn-1">{% trans 'トップページへ' %}</a>
+      <a href="{% url 'team' %}" class="btn btn-2">{% trans 'メンバー紹介へ' %}</a>
     </div>
   </section>
 {% endblock %}

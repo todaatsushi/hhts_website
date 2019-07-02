@@ -11,10 +11,14 @@
 
 {% block main %}
   <section class="container-fluid main my-5">
-    <h3 class="site-title text-center">
-      {% trans '東広島ボランティアガイドメンバー紹介' %}
-    </h3>
-    <div class="jumbotron"></div>
+    <div class="jumbotron">
+      <h3 class="site-title text-center page-title">
+        {% trans '東広島ボランティアガイドメンバー紹介' %}
+      </h3>
+    </div>
+    <p class="site-text">
+      {% trans '' %}
+    </p>
     <hr>
     <section id="team">
       {% for member in team %}
@@ -54,8 +58,10 @@
       </div>
     {% endif %}
 
+    <hr>
+
     <div class="return-buttons my-5">
-      <a href="{% url 'home' %}" class="btn">{% trans 'トップページへ' %}</a>
+      <a href="{% url 'home' %}" class="btn btn-3">{% trans 'トップページへ' %}</a>
     </div>
   </section>
 {% endblock %}

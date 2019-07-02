@@ -25,7 +25,7 @@
         <div class="form-input">
           {{ form.username.errors }}
           <h5 class="site-title">
-            <label for="{{ form.username.username_label }}" class="login-label">
+            <label for="{{ form.username.username_label }}" class="m0">
               {% trans 'ユーザーネーム' %}
             </label>
           </h5>
@@ -34,7 +34,7 @@
         <div class="form-input">
           {{ form.username.errors }}
           <h5 class="site-title">
-            <label for="{{ form.username.password_label }}" class="login-label">
+            <label for="{{ form.username.password_label }}" class="m0">
               {% trans 'パスワード' %}
             </label>
           </h5>
@@ -44,9 +44,9 @@
 
       <section class="form-input-group">
         <div class="form-buttons">
-          <button type="submit" class="btn mx-4">{% trans 'ロッグイン' %}</button>
-          <a href="{% url 'home' %}" class="btn mx-4">{% trans '戻る' %}</a>
-          <a href="{% url 'password_reset' %}" class="btn mx-4">{% trans 'パスワード忘れた' %}</a>
+          <button type="submit" class="btn btn-confirm mx-4">{% trans 'ロッグイン' %}</button>
+          <a href="{% url 'home' %}" class="btn btn-3 mx-4">{% trans '戻る' %}</a>
+          <a href="{% url 'password_reset' %}" class="btn btn-delete mx-4">{% trans 'パスワード忘れた' %}</a>
         </div>
       </section>
 
