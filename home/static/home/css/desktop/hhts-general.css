@@ -29,6 +29,56 @@ body {
 
 
 /* Nav */
+#main-nav {
+
+}
+
+/* Home link */
+#user-toggle:link, #user-toggle:visited {
+    color: #4d783e;
+}
+
+#user-toggle:hover, #user-toggle:active {
+    color: #ba274a;
+    text-decoration: none;
+}
+
+/* Admin links - color by app function */
+.blog-link:link, .blog-link:visited {
+    color: #d38b5d;
+}
+
+.blog-link:hover, .blog-link:active {
+    color: #99621e;
+    text-decoration: none;
+}
+
+.booking-link:link, .booking-link:visited {
+    color: #70163c;
+}
+
+.booking-link:hover, .booking-link:active {
+    color: #2e0f15;
+    text-decoration: none;
+}
+
+.mail-link:link, .mail-link:visited {
+    color: #52aa8a;
+}
+
+.mail-link:hover, .mail-link:active {
+    color: #52aa5e;
+    text-decoration: none;
+}
+
+.user-link:link, .user-link:visited {
+    color: #a28497;
+}
+
+.user-link:hover, .user-link:active {
+    color: #69385c;
+    text-decoration: none;
+}
 
 /* Nav contents */
 /* Layout */
@@ -41,7 +91,7 @@ body {
 }
 
 /* Logo */
-.logo {
+#logo > a {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -49,15 +99,22 @@ body {
     padding: 0.4rem;
 }
 
+#logo > a > span {
+    color: #000;
+}
+
+#logo > a:hover {
+    text-decoration: none;
+}
 
 /* Logo / Home link */
-.logo > a {
+#topline {
     font-size: 1.3rem;
     border-bottom: 2px solid black;
     padding-bottom: 0.2rem;
 }
 
-.subline {
+#subline {
     color: #5b6c5d;
     font-size: 0.9em;
     padding-top: 3px;

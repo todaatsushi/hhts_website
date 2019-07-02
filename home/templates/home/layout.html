@@ -18,7 +18,9 @@
     <!-- LAYOUT STYLING -->
     <link rel="stylesheet" type="text/css" href="{% static 'home/css/desktop/hhts-general.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'home/css/mobile/hhts-general-mob.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'home/css/desktop/utils.css' %}">
+
+    <!-- Utility & typography -->
+    <link rel="stylesheet" type="text/css" href="{% static 'home/css/desktop/utils-typography.css' %}">
     {% block styling %}
     {% endblock %}
 
@@ -43,13 +45,15 @@
         <div class="row" id="content">
             <aside class="col-12 col-md-3 p-0" id="side">
                 <nav class="navbar navbar-expand-md flex-md-column py-2" id="main-nav">
-                    <div class="logo mt-5">
+                    <div class="mt-5" id="logo">
                       <a href="{% url 'home' %}">
-                        東広島<span style="color: #4d783e;">ボランティアガイド</span>
+                        <span id="topline">
+                          東広島<span style="color: #4d783e;">ボランティアガイド</span>
+                        </span>
+                        <span id="subline">
+                          <p>ツア・案内・ボランティア</p>
+                        </span>
                       </a>
-                      <span class="subline">
-                        <p>ツア・案内・ボランティア</p>
-                      </span>
                     </div>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapse" aria-controls="collapse" aria-expanded="false" aria-label="Toggle navigation">
                       <i class="fas fa-ellipsis-v"></i>
@@ -59,37 +63,37 @@
                           <!-- Public options -->
                             <li class="nav-item public my-1 ml-1">
                               <div class="nav-choice">
-                                  <a href="{% url 'home' %}" class="nav-link pl-0 text-nowrap">{% trans 'トップページ' %}</a>
+                                  <a href="{% url 'home' %}" class="nav-link pl-0 text-nowrap link1">{% trans 'トップページ' %}</a>
                               </div>
                             </li>
                             <li class="nav-item public my-1 ml-1">
                               <div class="nav-choice">
-                                <a href="{% url 'blog-home' %}" class="nav-link pl-0 text-nowrap">{% trans 'ニュース' %}</a>
+                                <a href="{% url 'blog-home' %}" class="nav-link pl-0 text-nowrap link1">{% trans 'ニュース' %}</a>
                               </div>
                             </li>
                             <li class="nav-item public my-1 ml-1">
                               <div class="nav-choice">
-                                <a href="{% url 'about' %}" class="nav-link pl-0 text-nowrap">{% trans '活動紹介' %}</a>
+                                <a href="{% url 'about' %}" class="nav-link pl-0 text-nowrap link1">{% trans '活動紹介' %}</a>
                               </div>
                             </li>
                             <li class="nav-item public my-1 ml-1">
                               <div class="nav-choice">
-                                <a href="{% url 'guide' %}" class="nav-link pl-0 text-nowrap">{% trans 'ガイド派遣' %}</a>
+                                <a href="{% url 'guide' %}" class="nav-link pl-0 text-nowrap link1">{% trans 'ガイド派遣' %}</a>
                               </div>
                             </li>
                             <li class="nav-item public my-1 ml-1">
                               <div class="nav-choice">
-                                <a href="{% url 'saijo' %}" class="nav-link pl-0 text-nowrap">{% trans '西条の観光' %}</a>
+                                <a href="{% url 'saijo' %}" class="nav-link pl-0 text-nowrap link1">{% trans '西条の観光' %}</a>
                               </div>
                             </li>
                             <li class="nav-item public mt-1 ml-1">
                               <div class="nav-choice">
-                                <a href="{% url 'team' %}" class="nav-link pl-0 text-nowrap">{% trans 'スタッフ' %}</a>
+                                <a href="{% url 'team' %}" class="nav-link pl-0 text-nowrap link1">{% trans 'スタッフ' %}</a>
                               </div>
                             </li>
                             <li class="nav-item public mt-1 ml-1">
                               <div class="nav-choice">
-                                <a href="{% url 'contact' %}" class="nav-link pl-0 text-nowrap">{% trans '連絡' %}</a>
+                                <a href="{% url 'contact' %}" class="nav-link pl-0 text-nowrap link1">{% trans '連絡' %}</a>
                               </div>
                             </li>
 
@@ -97,42 +101,42 @@
                               <!-- Admin options -->
                               <li class="nav-items staff ml-1 my-1">
                                 <div class="nav-choice">
-                                    <a class="nav-link pl-0 text-nowrap" href="{% url 'booking-index' %}">{% trans 'ブッキングシステム' %}</a>
+                                    <a class="nav-link pl-0 text-nowrap booking-link" href="{% url 'booking-index' %}">{% trans 'ブッキングシステム' %}</a>
                                   </div>
                               </li>
                               <li class="nav-items staff ml-1 my-1">
                                 <div class="nav-choice">
-                                    <a class="nav-link pl-0 text-nowrap" href="{% url 'post-new' %}">{% trans '新しいポスト' %}</a>
+                                    <a class="nav-link pl-0 text-nowrap blog-link" href="{% url 'post-new' %}">{% trans '新しいポスト' %}</a>
                                   </div>
                               </li>
                               <li class="nav-items staff ml-1 my-1">
                                 <div class="nav-choice">
-                                    <a class="nav-link pl-0 text-nowrap" href="{% url 'post-admin' %}">{% trans 'スタッフ専用ポスト' %}</a>
+                                    <a class="nav-link pl-0 text-nowrap blog-link" href="{% url 'post-admin' %}">{% trans 'スタッフ専用ポスト' %}</a>
                                     </div>
                               </li>
                               <li class="nav-items staff ml-1 my-1">
                                 <div class="nav-choice">
-                                    <a class="nav-link pl-0 text-nowrap" href="{% url 'post-all' %}">{% trans '全てのポスト' %}</a>
+                                    <a class="nav-link pl-0 text-nowrap blog-link" href="{% url 'post-all' %}">{% trans '全てのポスト' %}</a>
                                   </div>
                               </li>
                               <li class="nav-items staff ml-1 my-1">
                                 <div class="nav-choice">
-                                    <a class="nav-link pl-0 text-nowrap" href="{% url 'email-index' %}">{% trans 'メールシステム' %}</a>
+                                    <a class="nav-link pl-0 text-nowrap mail-link" href="{% url 'email-index' %}">{% trans 'メールシステム' %}</a>
                                   </div>
                               </li>
                               <li class="nav-items staff ml-1 my-1">
                                 <div class="nav-choice">
-                                    <a class="nav-link pl-0 text-nowrap" href="{% url 'user-register' %}">{% trans 'ユーザー申し込み' %}</a>
+                                    <a class="nav-link pl-0 text-nowrap user-link" href="{% url 'user-register' %}">{% trans 'ユーザー申し込み' %}</a>
                                   </div>
                               </li>
                               <li class="nav-items staff ml-1 my-1">
                                 <div class="nav-choice">
-                                    <a class="nav-link pl-0 text-nowrap" href="{% url 'user-about' user.username %}">{% trans 'プロファイル' %}</a>
+                                    <a class="nav-link pl-0 text-nowrap user-link" href="{% url 'user-about' user.username %}">{% trans 'プロファイル' %}</a>
                                   </div>
                               </li>
                               <li class="nav-items staff ml-1 my-1">
                                 <div class="nav-choice">
-                                    <a class="nav-link pl-0 text-nowrap" href="{% url 'user-logout' %}" class="btn">{% trans 'ロッグアウト' %}</a>
+                                    <a class="nav-link pl-0 text-nowrap btn btn-red" href="{% url 'user-logout' %}" class="btn">{% trans 'ロッグアウト' %}</a>
                                   </div>
                               </li>
                             {% endif %}
@@ -152,9 +156,9 @@
 
                             <!-- Language options -->
                             <li class="nav-item mt-5" id="language-choice">
-                                <span class="lang-choice mr-3">{% trans '言語の選択' %}:</span>
-                                <a href="{% url 'language' 'en' %}?url_name={{ request.resolver_match.url_name }}&full_path={{ request.path }}" class="lang-choice btn mr-1 btn-primary">English</a>
-                                <a href="{% url 'language' 'ja' %}?url_name={{ request.resolver_match.url_name }}&full_path={{ request.path }}" class="lang-choice btn btn-info">日本語</a>
+                                <span class="lang-choice mr-3 green1">{% trans '言語の選択' %}:</span>
+                                <a href="{% url 'language' 'en' %}?url_name={{ request.resolver_match.url_name }}&full_path={{ request.path }}" class="lang-choice btn btn-1 mr-1">English</a>
+                                <a href="{% url 'language' 'ja' %}?url_name={{ request.resolver_match.url_name }}&full_path={{ request.path }}" class="lang-choice btn btn-red">日本語</a>
                             </li>
                         </ul>
                     </div>

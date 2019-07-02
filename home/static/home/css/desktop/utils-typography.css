@@ -1,0 +1,171 @@
+/* Utility classes & typography */
+/* Japanese font */
+@font-face {
+    font-family: AM;
+    src: url('./fonts/AppliMincho.otf');
+}
+
+/* Dev */
+.border1 {
+    border: 2px solid purple;
+}
+
+.border2 {
+    border: 2px solid gold;
+}
+
+.border3 {
+    border: 2px solid hotpink;
+}
+
+.mob-only {
+    display: none;
+}
+
+.full-only {
+    display: block;
+}
+
+.m0 {
+    margin: 0 !important;
+}
+
+.return-buttons {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 1rem;
+}
+
+/* Typography */
+.site-title {
+    margin: 1.7rem 0;
+}
+
+.site-text {
+    font-size: 1.2rem;
+    text-align: justify;
+}
+
+h1.site-title {
+    font-size: calc(2rem + 3vw);
+}
+
+h2.site-title {
+    font-size: calc(1.5rem + 3vw);
+}
+
+h3.site-title {
+    font-size: calc(1rem + 2vw);
+}
+
+h4.site-title {
+    font-size: calc(1rem + 1.5vw);
+}
+
+/* Highlights */
+.green1 {
+    color: #4d783e;
+}
+
+.green2 {
+    color: #729b79;
+}
+
+.green3 {
+    color: #bacdb0;
+}
+
+.white {
+    color: #fcfafb;
+}
+
+.black {
+    color: #2e2c2f;
+}
+
+.red {
+    color: #ba274a;
+}
+
+
+/* Links & buttons */
+/* Links */
+.link1:link, .link1:visited {
+    color: #729b79;
+}
+
+.link1:hover, .link1:visited {
+    color: #4d783e;
+}
+
+/* Buttons */
+.btn-1 {
+    background-color: #4d783e;
+    border: 2px solid #4d783e;
+    color: #fcfafb;
+}
+
+.btn-1:hover {
+    border: 2px solid #4d783e;
+    background-color: #fcfafb;
+    color: #4d783e;
+}
+.btn-red {
+    background-color: #ba274a;
+    border: 2px solid #ba274a;
+    color: #fcfafb;
+}
+
+.btn-red:hover {
+    border: 2px solid #ba274a;
+    background-color: #fcfafb;
+    color: #ba274a;
+}
+
+/* Forms */
+/* Divs */
+.form-main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.form-buttons {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+.form-input-group {
+    width : 100%;
+    display: flex;
+    justify-content: space-around;
+    padding: 1rem;
+}
+
+.form-input {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+}
+
+/* Button */
+.form-button, input.form-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    text-align: center;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .mob-only {
+        display: block;
+    }
+
+    .full-only {
+        display: none;
+    }
+}
