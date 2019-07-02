@@ -8,13 +8,13 @@
 
 {% block main %}
   <div class="container-fluid my-4">
-    <h1 class="text-center display-4">{% trans 'メールを確認してください' %}:</h1>
+    <h1 class="text-center site-title">{% trans 'メールを確認してください' %}:</h1>
 
     <div class="my-3 py-1">
-      <h2>{{ email.subject }}</h2>
+      <h2 class="site-title">{{ email.subject }}</h2>
       <p>
-        <ul class="list-group blast-list">
-          <li class="list-group-item active disabled"><h6>{% trans '受取人' %}:</h6></li>
+        <ul class="list-group">
+          <li class="list-group-item green1-bg"><h6>{% trans '受取人' %}:</h6></li>
           {% for address in email.recipients|to_list %}
             <li class="list-group-item">{{ address }}</li>
           {% endfor %}
@@ -23,9 +23,9 @@
       <p class="lead">{{ email.content|linebreaks }}</p>
     </div>
     <div>
-      <a href="{% url 'email-send' email.pk %}" class="btn btn-sm btn-custom-3">{% trans '送る' %}</a>
-      <a href="{% url 'email-update' email.pk%}" class="btn btn-sm btn-custom-2">{% trans '更新' %}</a>
-      <a href="{% url 'email-index' %}" class="btn btn-sm btn-custom-danger">{% trans '戻る' %}</a>
+      <a href="{% url 'email-send' email.pk %}" class="btn btn-sm btn-confirm">{% trans '送る' %}</a>
+      <a href="{% url 'email-update' email.pk%}" class="btn btn-sm btn-delete">{% trans '更新' %}</a>
+      <a href="{% url 'email-index' %}" class="btn btn-sm btn-2">{% trans '戻る' %}</a>
     </div>
   </div>
 {% endblock %}

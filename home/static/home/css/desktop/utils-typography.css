@@ -136,8 +136,6 @@ h4.site-title {
     background-color: #4d783e;
     border: 2px solid #4d783e;
     color: #fcfafb;
-    display: flex;
-    justify-content: center;
 }
 
 .btn-1:hover {
@@ -150,8 +148,6 @@ h4.site-title {
     background-color: #6d9f71;
     border: 2px solid #6d9f71;
     color: #fcfafb;
-    display: flex;
-    justify-content: center;
 }
 
 .btn-2:hover {
@@ -164,8 +160,6 @@ h4.site-title {
     background-color: #fcfafb;
     border: 2px solid #6d9f71;
     color: #6d9f71;
-    display: flex;
-    justify-content: center;
 }
 
 .btn-o2:hover {

@@ -16,12 +16,14 @@
     <form method="post" class="form-main mb-5">
       {% csrf_token %}
       <fieldset class="form-group del-fg">
-        <legend class="text-center">{% trans 'メールを削除する' %}</legend>
-        <p class="lead text-center">{% trans 'このメールを削除してもよろしいですか？' %}</p>
+        <legend class="text-center">
+          <h1 class="site-title text-center">{% trans 'メールを削除する' %}</h1>
+        </legend>
+        <p class="site-text text-center">{% trans 'このメールを削除してもよろしいですか？' %}</p>
       </fieldset>
       <div class="form-buttons">
-        <input type="submit" value="{% trans '削除' %}" class="btn btn-custom-danger submit-btn">
-        <a href="{% url 'email-index'%}" class="btn btn-custom-2 submit-btn">{% trans '戻る' %}</a>
+        <input type="submit" value="{% trans '削除' %}" class="btn btn-bdelete">
+        <a href="{% url 'email-index'%}" class="btn btn-bconfirm">{% trans '戻る' %}</a>
       </div>
     </form>
   </section>

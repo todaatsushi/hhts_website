@@ -7,13 +7,13 @@
 
 {% block main %}
   <div class="container">
-    <h1 class="display-4 text-center blast-title">{% trans '全てのメール' %}</h1>
-    <a href="{% url 'email-draft' %}" class="btn btn-custom-3 btn-block my-2">{% trans '下書きのメールを書く' %}<i class="fas fa-mail-bulk"></i></a>
+    <h1 class="site-title text-center">{% trans '全ての<span class="green2">メール</span>' %}</h1>
+    <a href="{% url 'email-draft' %}" class="btn btn-2 btn-block my-5">{% trans '下書きのメールを書く' %}<i class="fas fa-mail-bulk"></i></a>
     <hr>
 
     {% for email in emails %}
-      <div>
-        <h2 class="blast-title">
+      <div class="mb-5">
+        <h2 class="my-3">
           {{ email.subject }}
           {% if email.is_admin %}
             <small><i class="fas fa-users post-icon"></i></small>
@@ -23,13 +23,13 @@
           {% endif %}
         </h2>
         {% if not email.sent %}
-          <a href="{% url 'email-update' email.pk %}" class="btn btn-sm btn-custom-2">{% trans '更新' %}</a>
-          <a href="{% url 'email-view' email.pk %}" class="btn btn-sm btn-custom-3">{% trans '確認する / 送る' %}</a>
-          <a href="{% url 'email-delete' email.pk %}" class="btn btn-sm btn-custom-danger">{% trans '削除する' %}</a>
+          <a href="{% url 'email-update' email.pk %}" class="btn btn-sm btn-update">{% trans '更新' %}</a>
+          <a href="{% url 'email-view' email.pk %}" class="btn btn-sm btn-confirm">{% trans '確認する / 送る' %}</a>
+          <a href="{% url 'email-delete' email.pk %}" class="btn btn-sm btn-delete">{% trans '削除する' %}</a>
         {% endif %}
-        <h5 class="my-2">
+        <h5 class="my-5">
           <ul class="list-group blast-list my-3">
-            <li class="list-group-item active disabled">
+            <li class="list-group-item green2-bg">
               {% if email.sender %}
                 {% blocktrans with sender=email.sender.profile.name %}
                   {{ sender }}から、受取人：
@@ -66,7 +66,7 @@
     {% endfor %}
 
     {% if is_paginated %}
-      <div>
+      <div class="mb-5">
         {% if page_obj.has_previous %}
           <a href="?page=1">{% trans '1ページ目' %}</a>
           <a href="?page={{ page_obj.previous_page_number }}">{% trans '前のページ' %}</a>
