@@ -25,7 +25,7 @@ class BookingViewsTestCase(TestCase):
             login_required=True,
             login_desired=True,
             text_on_page=[
-                '全てのブッキング', # Japanese text
+                '全て', # Japanese text
                 'Me', # Booking itself
             ]
         )
@@ -39,7 +39,7 @@ class BookingViewsTestCase(TestCase):
                 True,
                 True,
                 [
-                    'All bookings', # Japanese text
+                    'All', # Japanese text
                     'Me', # Booking itself
                 ]
             )
@@ -158,7 +158,7 @@ class BookingViewsTestCase(TestCase):
         ):
             self.client.force_login(self.user)
             self.assertFalse(self.booking.confirmed)
-            response = self.client.get(reverse('booking-confirm', kwargs={'pk': self.booking.pk}))
+            response = self.client.post(reverse('booking-confirm', kwargs={'pk': self.booking.pk}))
             self.assertEqual(response.status_code, 302) # Check terminal for email sent confirmation.
 
             # Check actual booking

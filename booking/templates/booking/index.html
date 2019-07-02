@@ -22,10 +22,10 @@
           <a href="{% url 'booking-detail' booking.id %}" class="link2">{{ booking.contact_name }}: {{ booking.scheduled_at }}</a>
         </h4>
         <h5>
-          {% trans '確認：' %}{% if booking.confirmed %}<i class="fas fa-check" style="color: #4d783e;"></i>{% else %}<i class="fas fa-times" style="color: #af2e1e;"></i>{% endif %}
+          {% trans '確認：' %}{% if booking.confirmed %}<i class="fas fa-check ml-2" style="color: #4d783e;"></i>{% else %}<i class="fas fa-times ml-2" style="color: #af2e1e;"></i>{% endif %}
         </h5>
         <h5 class="mb-3">
-          {% trans '完成：' %}{% if booking.complete %}<i class="fas fa-check" style="color: #4d783e;"></i>{% else %}<i class="fas fa-times" style="color: #af2e1e;"></i>{% endif %}
+          {% trans '完成：' %}{% if booking.complete %}<i class="fas fa-check ml-2" style="color: #4d783e;"></i>{% else %}<i class="fas fa-times ml-2" style="color: #af2e1e;"></i>{% endif %}
         </h5>
         <a href="{% url 'booking-update' booking.id %}" class="btn btn-update">{% trans '更新' %}</a>
         <a href="{% url 'booking-delete' booking.id %}" class="btn btn-delete">{% trans '削除' %}</a>

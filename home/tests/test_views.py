@@ -22,7 +22,7 @@ class HomeViewsTestCase(TestCase):
         self.assertTemplateUsed(response, 'home/home.html')
 
         # Right text (Japanese)
-        self.assertContains(response, 'ようこそ西条へ')
+        self.assertContains(response, 'ようこそ')
 
 
     def test_about_view_is_served(self):
