@@ -9,11 +9,11 @@
 
 {% block header %}
   <h1 class="site-title text-center my-4 blog-header">
-    <a href="{% url 'user-about' user.username %}" class="blog-title">{{ user.profile.name }}</a> {% trans 'のポスト' %} <span class="text-muted">({{ page_obj.paginator.count }})
+    <a href="{% url 'user-about' user.username %}" class="link1">{{ user.profile.name }}</a> {% trans 'のポスト' %} <span class="text-muted">({{ page_obj.paginator.count }})
     </span>
   </h1>
 {% endblock %}
 
 {% block select_posts %}
-  <a href="{% url 'blog-home' %}" class="btn btn-sm btn-custom-1 my-1">{% trans '全ポスト' %}</a>
+  <a href="{% url 'blog-home' %}" class="btn btn-sm btn-3 my-1">{% trans '全ポスト' %}</a>
 {% endblock %}

@@ -9,12 +9,14 @@
   {% trans 'ポストの更新' %}
 {% endblock %}
 
-{% block back %}
-  <a href="{% url 'post-detail' object.id %}" class="btn btn-sm btn-custom-2 btn-block">
-    {% trans '戻る' %}
-  </a>
-{% endblock %}
-
 {% block button_text %}
   {% trans '更新' %}
+{% endblock %}
+
+{% block back_to_path %}
+  {% url 'post-detail' object.id %}
+{% endblock %}
+
+{% block back_to_text %}
+  {% trans '戻る' %}
 {% endblock %}

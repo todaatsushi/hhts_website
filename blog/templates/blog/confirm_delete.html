@@ -1,30 +1,24 @@
-{% extends "home/layout.html" %}
-{% load static i18n %}
+{% extends 'booking/confirm_form_layout.html' %}
+{% load i18n %}
 
-{% block styling %}
-  <link rel="stylesheet" href="{% static 'home/css/desktop/form-utils.css' %}">
-{% endblock %}
-
-{% block title %}
+{% block page_title %}
   {% trans 'ポスト削除' %}
 {% endblock %}
 
-{% block main %}
-  <section class="container form-main">
-    <form method="post" class="form-main">
-      {% csrf_token %}
-      <fieldset class="form-group del-fg">
-        <legend class="text-center my-5"><h1>{% trans 'ポスト削除' %}</h1></legend>
-        <p class="lead text-center">
-          {% blocktrans with title=object.title %}
-            "{{ title }}"を削除しますけどよろしいですか？
-          {% endblocktrans %}
-        </p>
-      </fieldset>
-      <div class="form-group del-fg form-buttons">
-        <input type="submit" value="{% trans '確認' %}" class="btn btn-custom-danger submit-btn">
-        <a href="{% url 'post-detail' object.id %}" class="btn btn-custom-1 submit-btn">{% trans '戻る' %}</a>
-      </div>
-    </form>
-  </section>
+{% block form_func %}
+  {% trans 'ポスト削除' %}
+{% endblock %}
+
+{% block help_text %}
+  {% blocktrans with title=object.title %}
+    "{{ title }}"を削除しますけどよろしいですか？
+  {% endblocktrans %}
+{% endblock %}
+
+{% block back_to_path %}
+  {% url 'post-detail' object.id %}
+{% endblock %}
+
+{% block back_to_text %}
+  {% trans '戻る' %}
 {% endblock %}

@@ -9,10 +9,14 @@
   {% trans 'ポストを新しく作る' %}
 {% endblock %}
 
-{% block back %}
-  <a href="{% url 'blog-home' %}" class="btn btn-sm btn-custom-1 btn-block">{% trans '戻る' %}</a>
+{% block back_to_path %}
+  {% url 'blog-home' %}
+{% endblock %}
+
+{% block back_to_text %}
+  {% trans '戻る' %}
 {% endblock %}
 
 {% block button_text %}
-  {% trans '投稿' %}
+  {% trans 'ポストを投稿' %}
 {% endblock %}

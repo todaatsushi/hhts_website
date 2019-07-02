@@ -7,34 +7,34 @@
 
 {% block main %}
   <div class="container-fluid">
-    <h2 class="display-4 text-center mt-4 mb-4">{{ post.title }}</h2>
-    <p class="lead">{{ post.content | linebreaks }}</p>
+    <h2 class="site-title text-center mt-4 mb-4">{{ post.title }}</h2>
+    <p class="site-text">{{ post.content | linebreaks }}</p>
 
     {% if post.author %}
-      <p><small>{% trans '名前'　%}： <a href="{% url 'user-about' post.author.username %}" class="blog-author">{{ post.author.profile.name }}</a></small></p>
+      <p><small>{% trans '名前'　%}： <a href="{% url 'user-about' post.author.username %}" class="link2">{{ post.author.profile.name }}</a></small></p>
     {% else %}
-      <p><small>{% trans '名前' %}： <span class="blog-author">{% trans '無し' %}</span></small></p>
+      <p><small>{% trans '名前' %}： <span class="link2">{% trans '無し' %}</span></small></p>
     {% endif %}
     <p><small>
       {% trans '投稿時間' %}: {{ post.posted_at|date:"G:i - d M, Y" }}
     <small>
       {% trans '更新時間' %}: {{ post.updated_at|date:"G:i - d M, Y" }}
     </small></p>
-    <a href="{% url 'post-comment' post.id %}" class="btn btn-sm btn-custom-2">{% trans 'コメントする' %}</a>
-    <a href="{% url 'blog-home' %}" class="btn btn-sm btn-custom-2">{% trans '戻る' %}</a>
+    <a href="{% url 'post-comment' post.id %}" class="btn btn-sm btn-3">{% trans 'コメントする' %}</a>
+    <a href="{% url 'blog-home' %}" class="btn btn-sm btn-2">{% trans '戻る' %}</a>
     {% if post.author == user %}
-      <a href="{% url 'post-update' post.id %}" class="btn btn-sm btn-custom-3">{% trans '更新' %}</a>
-      <a href="{% url 'post-delete' post.id %}" class="btn btn-sm btn-custom-danger">{% trans '削除する' %}</a>
+      <a href="{% url 'post-update' post.id %}" class="btn btn-sm btn-update">{% trans '更新' %}</a>
+      <a href="{% url 'post-delete' post.id %}" class="btn btn-sm btn-delete">{% trans '削除する' %}</a>
     {% endif %}
     {% if post.pinned %}
-      <a href="{% url 'post-unpin' post.id %}" class="btn btn-sm btn-custom-1 my-1"><i class="fas fa-times"></i> <i class="fas fa-thumbtack"></i></a>
+      <a href="{% url 'post-unpin' post.id %}" class="btn btn-sm btn-1 my-1"><i class="fas fa-times"></i> <i class="fas fa-thumbtack"></i></a>
     {% else %}
-      <a href="{% url 'post-pin' post.id %}" class="btn btn-sm btn-custom-1 my-1"><i class="fas fa-thumbtack"></i></a>
+      <a href="{% url 'post-pin' post.id %}" class="btn btn-sm btn-1 my-1"><i class="fas fa-thumbtack"></i></a>
     {% endif %}
     {% if post.admin_post %}
-      <a href="{% url 'post-unadmin' post.id %}" class="btn btn-sm btn-custom-1 my-1"><i class="fas fa-times"></i> <i class="fas fa-users"></i></a>
+      <a href="{% url 'post-unadmin' post.id %}" class="btn btn-sm btn-2 my-1"><i class="fas fa-times"></i> <i class="fas fa-users"></i></a>
     {% else %}
-      <a href="{% url 'post-admin' post.id %}" class="btn btn-sm btn-custom-1 my-1"><i class="fas fa-users"></i></a>
+      <a href="{% url 'post-admin' post.id %}" class="btn btn-sm btn-2 my-1"><i class="fas fa-users"></i></a>
     {% endif %}
     <hr>
   </div>
@@ -51,11 +51,11 @@
           </small>
           <br class="mb-2">
           {% if user.is_authenticated %}
-            <a href="{% url 'post-comment_delete' pk=post.pk pkc=comment.pk %}" class="btn btn-sm btn-custom-danger mt-1">{% trans '削除する' %}</a>
+            <a href="{% url 'post-comment_delete' pk=post.pk pkc=comment.pk %}" class="btn btn-sm btn-delete mt-1">{% trans '削除する' %}</a>
             {% if comment.by_admin %}
-              <a href="{% url 'post-comment_unadmin' pk=post.pk pkc=comment.pk %}" class="btn btn-sm btn-custom-1 mt-1"><i class="fas fa-times"></i> <i class="fas fa-users"></i></a>
+              <a href="{% url 'post-comment_unadmin' pk=post.pk pkc=comment.pk %}" class="btn btn-sm btn-1 mt-1"><i class="fas fa-times"></i> <i class="fas fa-users"></i></a>
             {% else %}
-              <a href="{% url 'post-comment_admin' pk=post.pk pkc=comment.pk %}"class="btn btn-sm btn-custom-1 mt-1"><i class="fas fa-users"></i></a>
+              <a href="{% url 'post-comment_admin' pk=post.pk pkc=comment.pk %}"class="btn btn-sm btn-2 mt-1"><i class="fas fa-users"></i></a>
             {% endif %}
           {% endif %}
         </div>

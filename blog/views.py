@@ -10,7 +10,7 @@ from django.contrib.auth.decorators import login_required
 from django.http import HttpResponseRedirect
 
 from .models import Post, Comment
-from .forms import CommentPostForm, CommentDeleteForm
+from .forms import CommentPostForm
 
 
 class PublicPostView(ListView):
@@ -175,14 +175,10 @@ def comment_delete(request, pk, pkc):
     comment = get_object_or_404(Comment, pk=pkc)
 
     if request.method == 'POST':
-        form = CommentDeleteForm(request.POST)
         comment.delete()
         return HttpResponseRedirect(reverse('post-detail', kwargs={'pk': pk}))
-    else:
-        form = CommentDeleteForm()
 
     context = {
-        'form': form,
         'post': comment.post
     }
 

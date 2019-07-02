@@ -11,7 +11,7 @@
 
 {% block select_posts %}
   {% if post.author %}
-    <a href="{% url 'post-user' post.author.username %}" class="btn btn-sm btn-outline-primary">
+    <a href="{% url 'post-user' post.author.username %}" class="btn btn-sm btn-1">
       {% blocktrans with author=post.author.profile.name %}
         {{ author }}のポストを全て見る
       {% endblocktrans %}

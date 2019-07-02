@@ -9,10 +9,12 @@
   {% trans 'コメントを残す' %}
 {% endblock %}
 
-{% block back %}
-  <a href="{% url 'post-detail' post.id %}" class="btn btn-sm btn-block btn-custom-2">
-    {% trans '戻る' %}
-  </a>
+{% block back_to_text %}
+  {% trans '戻る' %}
+{% endblock %}
+
+{% block back_to_path %}
+  {% url 'post-detail' post.id %}
 {% endblock %}
 
 {% block button_text %}

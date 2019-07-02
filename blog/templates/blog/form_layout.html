@@ -1,10 +1,6 @@
 {% extends "home/layout.html" %}
 {% load crispy_forms_tags static i18n %}
 
-{% block styling %}
-  <link rel="stylesheet" href="{% static 'home/css/desktop/form-utils.css' %}">
-{% endblock %}
-
 {% block main %}
   <section class="container-fluid form-main">
     <form method="post" class="form-main mb-5">
@@ -21,8 +17,8 @@
       {% block extra_options %}
       {% endblock %}
       <fieldset class="form-buttons">
-        <button type="submit" class="btn btn-sm">{% block button_text %}{% endblock %}</button>
-        <a href="{% block back_to_path %}{% endblock %}" class="btn mx-3 form-button">{% block back_to_text %}{% endblock %}</a>
+        <button type="submit" class="btn btn-sm btn-bconfirm">{% block button_text %}{% endblock %}</button>
+        <a href="{% block back_to_path %}{% endblock %}" class="btn btn-sm btn-3 mx-3 form-button">{% block back_to_text %}{% endblock %}</a>
       </fieldset>
     </form>
 

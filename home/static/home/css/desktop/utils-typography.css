@@ -156,6 +156,18 @@ h4.site-title {
     color: #6d9f71;
 }
 
+.btn-3 {
+    border: 2px solid #899e8b;
+    background-color: #fcfafb;
+    color: #899e8b;
+}
+
+.btn-3:hover {
+    background-color: #899e8b;
+    border: 2px solid #899e8b;
+    color: #fcfafb;
+}
+
 .btn-o2 {
     background-color: #fcfafb;
     border: 2px solid #6d9f71;

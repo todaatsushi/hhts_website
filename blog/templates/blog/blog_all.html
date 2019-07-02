@@ -6,12 +6,12 @@
 {% endblock %}
 
 {% block header %}
-  <h1 class="site-title text-center my-4 blog-header">{% trans 'ブロッグ' %}：<span class="text-muted">{% trans '全ポスト' %}</span></h1>
+  <h1 class="site-title text-center my-4">{% trans 'ブロッグ' %}：<span class="text-muted">{% trans '全ポスト' %}</span></h1>
 {% endblock %}
 
 {% block select_posts %}
   {% if post.author %}
-    <a href="{% url 'post-user' post.author.username %}" class="btn btn-sm btn-custom-1">
+    <a href="{% url 'post-user' post.author.username %}" class="btn btn-sm btn-1">
       {% blocktrans with author=post.author.profile.name %}
         {{ author }}のポストを全て見る
       {% endblocktrans %}

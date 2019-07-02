@@ -1,7 +1,7 @@
-{% extends "blog/form_layout.html" %}
+{% extends 'booking/confirm_form_layout.html' %}
 {% load i18n %}
 
-{% block title %}
+{% block page_title %}
   {% trans 'コメントの削除' %}
 {% endblock %}
 
@@ -9,10 +9,11 @@
   {% trans 'コメントの削除' %}
 {% endblock %}
 
-{% block back %}
-  <a href="{% url 'post-detail' post.id %}" class="btn btn-block mt-2 btn-custom-1">{% trans '戻る' %}</a>
+{% block back_to_path %}
+  {% url 'post-detail' post.id %}
 {% endblock %}
 
-{% block button_text %}
-  {% trans '削除' %}
+{% block back_to_text %}
+  {% trans '戻る' %}
 {% endblock %}
+

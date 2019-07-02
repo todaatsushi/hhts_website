@@ -6,22 +6,22 @@
 {% endblock %}
 
 {% block header %}
-  <h1 class="display-4 text-center my-4 blog-header">{% trans 'ニュース' %}</h1>
-
-  <div class="jumbotron"></div>
+  <div class="jumbotron">
+    <h1 class="site-title text-center my-4 page-title">{% trans 'ニュース' %}</h1>
+  </div>
   <section class="intro my-5">
     <p class="site-text">
       {% trans 'このページは東広島ボランティアガイドのニュースページです。グループからの発表、または大事な情報はここに出て来ます。それいがのことについては”連絡”ページを使って直接連絡してください。' %}
     </p>
   </section>
-  <hr class="hh-divider">
+  <hr>
 {% endblock %}
 
 {% block select_posts %}
   {% if post.author %}
-    <a href="{% url 'post-user' post.author.username %}" class="btn btn-sm btn-custom-1">
+    <a href="{% url 'post-user' post.author.username %}" class="btn btn-sm btn-1">
       {% blocktrans with author=post.author.profile.name %}
-        {{ post.author.profile.name }}のポッストを見る</a>
+        {{ author }}のポッストを見る</a>
       {% endblocktrans %}
     {% endif %}
 {% endblock %}
