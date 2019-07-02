@@ -13,23 +13,31 @@
 
 {% block main %}
   <section class="container-fluid mb-5">
+    <div class="jumbotron guide-jumbo my-3">
+      <h1 class="site-title text-center page-title">
+        {% trans 'ガイド' %}<span class="green3">{% trans '派遣' %}</span>
+      </h1>
+    </div>
 
-    <h1 class="site-title text-center mb-4">{% trans 'ガイド' %}<span class="theme-green">{% trans '派遣' %}</span></h1>
-    <p class="lead text-center mx-4"><h5>{% trans '酒蔵通りのガイドをご希望の方は申込書に記入の上、FAXにてお申し込みください。' %}</h5></p>
+    <p class="text-center mx-4">
+      <h5 class="site-title">
+        {% trans '酒蔵通りのガイドをご希望の方は申込書に記入の上、FAXにてお申し込みください。' %}
+      </h5>
+    </p>
 
-    <div class="jumbotron guide-jumbo my-3"></div>
-
-    <section class="guide-prices">
+    <section class="my-5">
       <ul class="list-group mx-4">
-        <li class="list-group-item activate guide-top">{% trans '所要時間 ご案内する酒蔵の数により1時間から2時間かかります' %}</li>
+        <li class="list-group-item guide-top">{% trans '所要時間 ご案内する酒蔵の数により1時間から2時間かかります' %}</li>
         <li class="list-group-item">{% trans 'ガイド料 5名まで1000円' %}</li>
         <li class="list-group-item">{% trans '6名以上20名まで2000円' %}</li>
         <li class="list-group-item">{% trans '20名以上の場合は複数のガイドがご案内致します。' %}</li>
       </ul>
-      <a href="/media/pdf/book_form.pdf" download class="btn btn-custom-4 mt-3 py-3" style="font-size: 1.3em;">{% trans 'ガイド派遣の申し込み書はこちら。' %}</a>
     </section>
     <hr class="my-4">
-    <section class="">
+    <section>
+      <div class="form-buttons">
+        <a href="/media/pdf/book_form.pdf" download class="btn btn-2 btn-block btn-sm my-4 py-3" style="font-size: 1.3em;">{% trans 'ガイド派遣の申し込み書はこちら。' %}</a>
+      </div>
       <h5 class="my-2">
         {% trans '酒蔵通り以外のガイドをご希望の方は案内所まで電話でお問い合わせください。' %}
       </h5>

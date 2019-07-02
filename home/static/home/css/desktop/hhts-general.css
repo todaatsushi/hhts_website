@@ -29,10 +29,6 @@ body {
 
 
 /* Nav */
-#main-nav {
-
-}
-
 /* Home link */
 #user-toggle:link, #user-toggle:visited {
     color: #4d783e;
@@ -43,41 +39,8 @@ body {
     text-decoration: none;
 }
 
-/* Admin links - color by app function */
-.blog-link:link, .blog-link:visited {
-    color: #d38b5d;
-}
-
-.blog-link:hover, .blog-link:active {
-    color: #99621e;
-    text-decoration: none;
-}
-
-.booking-link:link, .booking-link:visited {
-    color: #70163c;
-}
-
-.booking-link:hover, .booking-link:active {
-    color: #2e0f15;
-    text-decoration: none;
-}
-
-.mail-link:link, .mail-link:visited {
-    color: #52aa8a;
-}
-
-.mail-link:hover, .mail-link:active {
-    color: #52aa5e;
-    text-decoration: none;
-}
-
-.user-link:link, .user-link:visited {
-    color: #a28497;
-}
-
-.user-link:hover, .user-link:active {
-    color: #69385c;
-    text-decoration: none;
+.nav-item {
+    margin: 0.5rem 0;
 }
 
 /* Nav contents */

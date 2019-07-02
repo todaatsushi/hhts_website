@@ -13,11 +13,11 @@
 
 {% block main %}
     <section class="container-fluid">
-        <h1 class="site-title text-center">{% trans '連絡フォーム' %}</h1>
+        <h1 class="site-title text-center">{% trans '連絡' %}</h1>
         <form action="{% url 'contact' %}" method="post">
             {% csrf_token %}
             {{ form|crispy }}
-            <input type="submit" value="{% trans '送る' %}" class="my-5 btn btn-primary btn-block">
+            <input type="submit" value="{% trans '送る' %}" class="my-5 btn btn-1 btn-block">
         </form>
     </section>
 
@@ -25,12 +25,12 @@
     <!-- Contact Info -->
     <section id="contact-div" class="mb-5">
       <div class="contact-message">
-        <h5 class="display-4 text-muted">{% trans 'お問い' %}<span class="theme-green">{% trans '合わせ' %}</span></h5>
+        <h5 class="display-4 text-muted">{% trans 'お問い' %}<span class="green1">{% trans '合わせ' %}</span></h5>
       </div>
       <div class="contact-channels pb-2 my-2">
-        <span class="text-muted">{% trans '西条酒蔵通り案内所' %}</span> <br>
-        <span class="text-muted">{% trans '〒739-0011 広島県東広島市西条本町17-1' %}</span> <br>
-        <span class="text-muted">Tel / Fax 082-421-2311</span> <br>
+        <span class="text-muted">{% trans '<span class="green2">西条</span>酒蔵通り案内所' %}</span> <br>
+        <span class="text-muted">{% trans '<span class="green2">〒739-0011</span> 広島県東広島市西条本町17-1' %}</span> <br>
+        <span class="text-muted"><span class="green2">Tel / Fax</span> 082-421-2311</span> <br>
       </div>
     </section>
 

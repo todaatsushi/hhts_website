@@ -13,23 +13,27 @@
 
 {% block main %}
 <main class="main container-fluid">
-  <h1 class="site-title" id="about-title">{% trans '活動紹介' %}</h1>
-
+  <div class="jumbotron">
+    <h1 class="site-title page-title text-center">{% trans '活動<span class="green2">紹介</span>' %}</h1>
+  </div>
+  <hr>
   <section class="row">
       <!-- Card 1 - JR info -->
       <div class="card card-about col-sm">
         <div class="card-img-top about-img abt-1"></div>
         <div class="card-body site-text">
 
-          <h5 class="card-title text-center">
+          <h4 class="card-title text-center">
             {% trans '酒蔵通り案内' %}
-          </h5>
+          </h4>
           <p class="card-body site-text">
             {% trans 'JR西条駅前に広がる酒蔵通りのご案内をいたします。' %}
           </p>
-          <button class="btn" type="button" data-toggle="modal" data-target="#info1" >
-            {% trans 'さらに読む' %}
-          </button>
+          <div class="form-buttons">
+            <button class="btn btn-o2" type="button" data-toggle="modal" data-target="#info1" >
+              {% trans 'さらに読む' %}
+            </button>
+          </div>
         </div>
       </div>
 
@@ -37,9 +41,9 @@
       <div class="card card-about col-sm">
         <div class="card-img-top about-img abt-2"></div>
         <div class="card-body site-text">
-          <h5 class="card-title text-center">
+          <h4 class="card-title text-center">
             {% trans '東広島探訪講座' %}
-          </h5>
+          </h4>
           <p class="card-body site-text">
             {% blocktrans %}
               東広島市内の興味深い歴史と場所、東広島ゆかりの人物などを学びましょう。
@@ -55,27 +59,29 @@
     <div class="card card-about col-sm">
       <div class="card-img-top about-img abt-3"></div>
       <div class="card-body site-text">
-        <h5 class="card-title text-center">
+        <h4 class="card-title text-center">
           {% trans '子供ガイド養成講座' %}
-        </h5>
+        </h4>
         <p class="card-body site-text">
           {% blocktrans %}
             自分の住む街を知り魅力を発見してもらいます。ガイドになってお客さんのご案内
             をしま せんか?
           {% endblocktrans %}
         </p>
-        <button class="btn" type="button" data-toggle="modal" data-target="#info2" >
-          {% trans 'さらに読む' %}
-        </button>
+        <div class="form-buttons">
+          <button class="btn btn-o2" type="button" data-toggle="modal" data-target="#info2" >
+            {% trans 'さらに読む' %}
+          </button>
+        </div>
       </div>
     </div>
     <!-- Card 5 - Walk the area -->
     <div class="card card-about col-sm">
       <div class="card-img-top about-img abt-4"></div>
       <div class="card-body site-text">
-        <h5 class="card-title text-center">
+        <h4 class="card-title text-center">
           {% trans '東広島を歩く' %}
-        </h5>
+        </h4>
         <p class="card-body site-text">
           {% blocktrans %}
             東広島市内の名所旧跡を巡る歴史散策ウォークです。
@@ -91,9 +97,9 @@
     <div class="card card-about col-sm">
       <div class="card-img-top about-img abt-5"></div>
       <div class="card-body site-text">
-        <h5 class="card-title text-center">
+        <h4 class="card-title text-center">
           {% trans '春の西条・醸華町まつり' %}
-        </h5>
+        </h4>
         <p class="card-body site-text">
           {% blocktrans %}
             毎年3月の第一土曜日に西条酒蔵通りにて開催しています。年々来場者が増え、春
@@ -107,7 +113,7 @@
     <div class="card card-about col-sm">
       <div class="card-img-top about-img abt-6"></div>
       <div class="card-body site-text">
-        <h5 class="card-title text-center">{% trans 'その他' %}</h5>
+        <h4 class="card-title text-center">{% trans 'その他' %}</h4>
         <p class="card-body site-text">
           {% blocktrans %}
             様々な大学講座秋や西条酒まつりに協力しています。特に熟年大学では「探検・我
@@ -117,17 +123,19 @@
       </div>
     </div>
   </section>
-
+  <hr>
   <section class="row my-5">
       <!-- Contact Info -->
       <section id="contact-div">
         <div class="contact-message">
-          <h5 class="display-4 text-muted">{% trans 'お問い' %}<span class="theme-green">{% trans '合わせ' %}</span></h5>
+          <h5 class="display-4 text-muted">
+            {% trans 'お問い' %}<span class="green1">{% trans '合わせ' %}</span>
+          </h5>
         </div>
-        <div class="contact-channels pb-2 my-2">
-          <span class="text-muted">{% trans '西条酒蔵通り案内所' %}</span> <br>
-          <span class="text-muted">{% trans '〒739-0011 広島県東広島市西条本町17-1' %}</span> <br>
-          <span class="text-muted">Tel / Fax 082-421-2311</span> <br>
+        <div class="pb-2 my-2" id="contact-info">
+          <span class="text-muted">{% trans '<span class="green2">西条</span>酒蔵通り案内所' %}</span> <br>
+          <span class="text-muted">{% trans '<span class="green2">〒739-0011</span> 広島県東広島市西条本町17-1' %}</span> <br>
+          <span class="text-muted"><span class="green2">Tel / Fax</span>: 082-421-2311</span> <br>
         </div>
       </section>
   </section>
@@ -137,52 +145,80 @@
   <!-- INFO 1 -->
   <div class="modal fade" id="info1" tabindex="-1" role="dialog" aria-labelledby="info1-label" aria-hidden="true">
       <div class="vertical-alignment-helper">
-        <div class="modal-dialog vertical-align-center" role="document">
+        <div class="modal-dialog vertical-align-center modal-lg" role="document">
           <div class="modal-content">
 
-            <div class="modal-header">
-
-              <h5 class="modal-title" id="info1-label">
-              {% trans '酒蔵通り案内' %}
-              </h5>
+            <div class="modal-header green1-bg">
+              <h3 class="modal-title site-title m0" id="info1-label">
+                {% trans '酒蔵通り案内' %}
+              </h3>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
+                <i class="fas fa-times white" aria-hidden="true"></i>
               </button>
             </div>
 
             <div class="modal-body">
-              <h5>{% trans 'てくてくガイド' %}</h5>
-              <p>
-                {% blocktrans %}
-                  毎月10日 <br>
-                  受付・出発 10:00-11:00am 随時 <br>
-                  集合 駅2F観光案内所 <br>
-                  所要時間 約1時間半 <br>
-                  参加費 無料 <br>
-                {% endblocktrans %}
-              </p>
-              <h5>{% trans 'JRハイキング' %}</h5>
-              <p>
-                {% blocktrans %}
-                  毎週日曜 <br>
-                  受付・出発 10:30am <br>
-                  集合 駅2F観光案内所 <br>
-                  所要時間 約1時間半 <br>
-                  参加費 無料 <br>
-                {% endblocktrans %}
-              </p>
-              <h5>{% trans 'ガイド派遣' %}</h5>
-              <p>
-                {% blocktrans %}
-                  東広島観光協会を通してガイド派遣を受け付けています。<br>
-                  参加費 5名様まで1000円 6-20名 2000円 <br>
-                  20名以上の場合はガイド1人につき2000円 <br>
-                  詳しくはガイド派遣のページをご覧ください <br>
-                {% endblocktrans %}
-              </p>
+              <ul class="list-group list-group-flush mb-5">
+                <li class="list-group-item green2-bg">
+                  <h5 class="site-title underline m0">{% trans 'てくてくガイド' %}</h4>
+                </li>
+                <li class="list-group-item">
+                  {% trans '毎月10日' %}
+                </li>
+                <li class="list-group-item">
+                  {% trans '受付・出発 10:00-11:00am 随時 ' %}
+                </li>
+                <li class="list-group-item">
+                  {% trans '集合 駅2F観光案内所' %}
+                </li>
+                <li class="list-group-item">
+                  {% trans '所要時間 約1時間半' %}
+                </li>
+                <li class="list-group-item">
+                  {% trans '参加費 無料' %}
+                </li>
+              </ul>
+
+              <ul class="list-group list-group-flush mb-5">
+                <li class="list-group-item green2-bg">
+                  <h5 class="site-title underline m0">{% trans 'JRハイキング' %}</h4>
+                </li>
+                <li class="list-group-item">
+                  {% trans '毎週日曜' %}
+                </li>
+                <li class="list-group-item">
+                  {% trans '受付・出発 10:30am' %}
+                </li>
+                <li class="list-group-item">
+                  {% trans '集合 駅2F観光案内所' %}
+                </li>
+                <li class="list-group-item">
+                  {% trans '所要時間 約1時間半' %}
+                </li>
+                <li class="list-group-item">
+                    {% trans '参加費 無料' %}
+                </li>
+              </ul>
+
+              <ul class="list-group list-group-flush mb-5">
+                <li class="list-group-item green2-bg">
+                  <h5 class="site-title underline m0">{% trans 'ガイド派遣' %}</h5>
+                </li>
+                <li class="list-group-item">
+                  {% trans '東広島観光協会を通してガイド派遣を受け付けています。' %}
+                </li>
+                <li class="list-group-item">
+                  {% trans '参加費 5名様まで1000円 6-20名 2000円' %}
+                </li>
+                <li class="list-group-item">
+                  {% trans '20名以上の場合はガイド1人につき2000円' %}
+                </li>
+                <li class="list-group-item">
+                  {% trans '詳しくはガイド派遣のページをご覧ください' %}
+                </li>
+              </ul>
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-custom-2 btn-sm">{% trans '戻る' %}</button>
             </div>
           </div>
         </div>
@@ -194,24 +230,29 @@
     <div class="vertical-alignment-helper">
       <div class="modal-dialog vertical-align-center" role="document">
         <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="info2-label">{% trans '酒蔵通り案内' %}</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
+
+          <div class="modal-header green1-bg">
+            <h5 class="modal-title site-title m0" id="info2-label">{% trans '酒蔵通り案内' %}</h4>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <i class="fas fa-times white" aria-hidden="true"></i>
+              </button>
           </div>
+
           <div class="modal-body">
-            <p>
-              {% blocktrans %}
-                毎年6月から8月に開催、全5回の講座です。<br>
-                対象は小学校4、5、6年生 <br>
-                参加費 500円 (子供ガイド専用のTシャツ代金) <br>
-                募集は市の広報にて行います。<br>
-              {% endblocktrans %}
-            </p>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-custom-2 btn-sm">{% trans '戻る' %}</button>
+            <ul class="list-group list-group-flush mb-5">
+              <li class="list-group-item">
+                {% trans '毎年6月から8月に開催、全5回の講座です。' %}
+              </li>
+              <li class="list-group-item">
+                {% trans '対象は小学校4、5、6年生' %}
+              </li>
+              <li class="list-group-item">
+                {% trans '参加費 500円 (子供ガイド専用のTシャツ代金)' %}
+              </li>
+              <li class="list-group-item">
+                {% trans '募集は市の広報にて行います。' %}
+              </li>
+            </ul>
           </div>
         </div>
       </div>

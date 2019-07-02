@@ -4,6 +4,7 @@
 
 {% block styling %}
   <link rel="stylesheet" type="text/css" href="{% static 'home/css/desktop/saijo.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'home/css/desktop/about.css' %}">
 {% endblock %}
 
 {% block title %}
@@ -11,14 +12,15 @@
 {% endblock %}
 
 {% block main %}
-  <div class="container guide-main">
-    <h1 class="mt-3 mb-5 text-center site-title">{% trans '西条の' %}<span class="theme-green">{% trans '観光' %}</span></h1>
+  <section class="container-fluid">
 
-    <div class="jumbotron my-3"></div>
-
-    <div class="row my-5">
+    <div class="jumbotron my-3 saijo-jumbo">
+      <h1 class="page-title site-title"><span class="green1">{% trans '西条の' %}</span>{% trans '観光' %}</h1>
+    </div>
+    <hr>
+    <section class="row">
       <div class="card card-about col-sm">
-        <div class="card-img-top about-img abt-first"></div>
+        <div class="card-img-top about-img"></div>
         <div class="card-body">
           <h5 class="card-title text-center">{% trans '三ツ城古墳' %}</h5>
           <p class="card-body">
@@ -28,7 +30,7 @@
       </div>
 
       <div class="card card-about col-sm">
-        <div class="card-img-top about-img abt-first"></div>
+        <div class="card-img-top about-img"></div>
         <div class="card-body">
           <h5 class="card-title text-center">{% trans '鏡山城' %}</h5>
           <p class="card-body">
@@ -39,9 +41,10 @@
           </p>
         </div>
       </div>
-
+    </section>
+    <section class="mb-5 row">
       <div class="card card-about col-sm">
-        <div class="card-img-top about-img abt-first"></div>
+        <div class="card-img-top about-img"></div>
         <div class="card-body">
           <h5 class="card-title text-center">{% trans '安芸国分寺歴史公園(国史跡)' %}</h5>
           <p class="card-body">
@@ -52,16 +55,14 @@
           </p>
         </div>
       </div>
-    </div>
+    </section>
 
     <section class="footer pb-3 my-5">
       <h5 class="text-center">
-        <a href="https://www.hh-kanko.ne.jp/event/index.html" class="saijo-link">
+        <a href="https://www.hh-kanko.ne.jp/event/index.html" class="link1">
           {% trans 'その他、東広島の観光については東広島観光協会のホームページをごらんください。' %}
         </a>
       </h5>
     </section>
-
-
-  </div>
+  </section>
 {% endblock %}
