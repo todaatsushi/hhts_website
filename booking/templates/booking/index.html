@@ -10,28 +10,34 @@
 
 {% block main %}
   <section class="container-fluid my-3">
-    <h1 class="site-title text-center mb-3">{% trans '全てのブッキング' %}</h1>
-    <a href="{% url 'booking-book' %}" class="btn btn-block btn-custom-2 mb-5">{% trans 'ツアーの申し込み' %}</a>
-    <p class="site-text text-center">
+    <h1 class="site-title text-center mb-3">{% trans '全ての<span class="green1">ブッキング</span>' %}</h1>
+    <a href="{% url 'booking-book' %}" class="btn btn-block btn-2 my-5">{% trans 'ツアーの申し込み' %}</a>
+    <p class="site-text text-center mb-5">
       <strong>{% trans '”確認”のボタンを押すとそのブッキング内容に入っているメールに確認メールが送られます。気をつけてください。' %}</strong>
     </p>
     <hr>
     {% for booking in bookings %}
       <div class="container　myー５">
-        <h4><a href="{% url 'booking-detail' booking.id %}">{{ booking.contact_name }}: {{ booking.scheduled_at }}</a></h4>
-        <h5>{% trans '確認：' %}{% if booking.confirmed %}<i class="fas fa-check" style="color: #4d783e;"></i>{% else %}<i class="fas fa-times" style="color: #af2e1e;"></i>{% endif %}</h5>
-        <h5>{% trans '完成：' %}{% if booking.complete %}<i class="fas fa-check" style="color: #4d783e;"></i>{% else %}<i class="fas fa-times" style="color: #af2e1e;"></i>{% endif %}</h5>
-        <a href="{% url 'booking-update' booking.id %}" class="btn">{% trans '更新' %}</a>
-        <a href="{% url 'booking-delete' booking.id %}" class="btn btn-custom-danger">{% trans '削除' %}</a>
+        <h4 class="site-title">
+          <a href="{% url 'booking-detail' booking.id %}" class="link2">{{ booking.contact_name }}: {{ booking.scheduled_at }}</a>
+        </h4>
+        <h5>
+          {% trans '確認：' %}{% if booking.confirmed %}<i class="fas fa-check" style="color: #4d783e;"></i>{% else %}<i class="fas fa-times" style="color: #af2e1e;"></i>{% endif %}
+        </h5>
+        <h5 class="mb-3">
+          {% trans '完成：' %}{% if booking.complete %}<i class="fas fa-check" style="color: #4d783e;"></i>{% else %}<i class="fas fa-times" style="color: #af2e1e;"></i>{% endif %}
+        </h5>
+        <a href="{% url 'booking-update' booking.id %}" class="btn btn-update">{% trans '更新' %}</a>
+        <a href="{% url 'booking-delete' booking.id %}" class="btn btn-delete">{% trans '削除' %}</a>
         {% if booking.confirmed %}
-          <a href="{% url 'booking-unconfirm' booking.id %}" class="btn">{% trans '未確認' %}</a>
+          <a href="{% url 'booking-unconfirm' booking.id %}" class="btn btn-bconfirm">{% trans '未確認' %}</a>
         {% else %}
-          <a href="{% url 'booking-confirm' booking.id %}" class="btn">{% trans '確認' %}</a>
+          <a href="{% url 'booking-confirm' booking.id %}" class="btn btn-confirm">{% trans '確認' %}</a>
         {% endif %}
         {% if booking.complete %}
-          <a href="{% url 'booking-incomplete' booking.id %}" class="btn">{% trans '不完全' %}</a>
+          <a href="{% url 'booking-incomplete' booking.id %}" class="btn btn-bcomplete">{% trans '不完全' %}</a>
         {% else %}
-          <a href="{% url 'booking-complete' booking.id %}" class="btn">{% trans '完成' %}</a>
+          <a href="{% url 'booking-complete' booking.id %}" class="btn btn-complete">{% trans '完成' %}</a>
         {% endif %}
       </div>
       <hr class="my-4">

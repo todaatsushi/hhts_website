@@ -17,13 +17,13 @@
         <legend class="text-center"><h1 class="site-title">
             {% block form_func %}{% endblock %}
         </h1></legend>
-        <p class="lead text-center">
+        <p class="site-text text-center">
             {% block help_text %}{% endblock %}
         </p>
       </fieldset>
       <div class="form-buttons py-2">
-        <input type="submit" value="{% trans '確認' %}" class="btn form-button mx-3">
-        <a href="{% block back_to_path %}{% endblock %}" class="btn mx-3 form-button">{% block back_to_text %}{% endblock %}</a>
+        <input type="submit" value="{% trans '確認' %}" class="btn btn-bdelete form-button mx-3">
+        <a href="{% block back_to_path %}{% endblock %}" class="btn btn-confirm mx-3 form-button">{% block back_to_text %}{% endblock %}</a>
       </div>
     </form>
   </section>

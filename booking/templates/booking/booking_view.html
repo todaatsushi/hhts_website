@@ -1,12 +1,6 @@
 {% extends 'home/layout.html' %}
 {% load static i18n %}
 
-
-{% block styling %}
-  <link rel="stylesheet" type="text/css" href="{% static 'home/css/desktop/form-utils.css' %}">
-{% endblock %}
-
-
 {% block title %}
   {% trans 'ブッキング情報' %}
 {% endblock %}
@@ -15,13 +9,13 @@
 {% block main %}
   <section class="main">
     <h1 class="site-title text-center">
-      {{ booking.contact_name }}: <small class="ml-3">{{ booking.scheduled_at }}</small>
+      <span class="green1">{{ booking.contact_name }}</span>: <small class="ml-3">{{ booking.scheduled_at }}</small>
     </h1>
-
+    <hr>
     <section id="booking-info" class="row px-5 mb-5">
         <div class="col-md-6 my-3">
           <ul class="list-group">
-            <li class="list-group-item active">
+            <li class="list-group-item green1-bg">
               <h4>{% trans '連絡先' %}</h4>
             </li>
             <li class="list-group-item">{% trans '名前：' %}{{ booking.contact_name }}</li>
@@ -32,7 +26,7 @@
         </div>
         <div class="col-md-6 my-3">
           <ul class="list-group">
-            <li class="list-group-item active">
+            <li class="list-group-item green1-bg">
               <h4>{% trans 'グループの情報' %}</h4>
             </li>
             <li class="list-group-item">{% trans 'グループ予約：' %}{% if booking.is_group %}<i class="fas fa-check"></i>{% else %}<i class="fas fa-times"></i>{% endif %}</li>
@@ -44,7 +38,7 @@
 
       <div class="col-md-6 my-3">
         <ul class="list-group">
-          <li class="list-group-item active">
+          <li class="list-group-item green1-bg">
             <h4>{% trans '基本情報' %}</h4>
           </li>
           <li class="list-group-item">{% trans '予定時間：' %}{{ booking.scheduled_at }}</li>
@@ -55,7 +49,7 @@
       </div>
       <div class="col-md-6 my-3">
         <ul class="list-group">
-          <li class="list-group-item active">
+          <li class="list-group-item green1-bg">
             <h4>{% trans '他に伝えたい情報' %}</h4>
           </li>
           <li class="list-group-item">
@@ -73,19 +67,19 @@
       </div>
 
       <div class="col-md-12 my-3 form-buttons">
-        <a href="{% url 'booking-update' booking.id %}" class="btn">{% trans '更新' %}</a>
-        <a href="{% url 'booking-delete' booking.id %}" class="btn">{% trans '削除' %}</a>
+        <a href="{% url 'booking-update' booking.id %}" class="btn btn-update">{% trans '更新' %}</a>
+        <a href="{% url 'booking-delete' booking.id %}" class="btn btn-delete">{% trans '削除' %}</a>
         {% if booking.confirmed %}
-          <a href="{% url 'booking-unconfirm' booking.id %}" class="btn">{% trans '未確認' %}</a>
+          <a href="{% url 'booking-unconfirm' booking.id %}" class="btn btn-bconfirm">{% trans '未確認' %}</a>
         {% else %}
-          <a href="{% url 'booking-confirm' booking.id %}" class="btn">{% trans '確認する' %}</a>
+          <a href="{% url 'booking-confirm' booking.id %}" class="btn btn-confirm">{% trans '確認する' %}</a>
         {% endif %}
         {% if booking.complete %}
-          <a href="{% url 'booking-uncomplete' booking.id %}" class="btn">{% trans '不完全' %}</a>
+          <a href="{% url 'booking-incomplete' booking.id %}" class="btn btn-bcomplete">{% trans '不完全' %}</a>
         {% else %}
-          <a href="{% url 'booking-complete' booking.id %}" class="btn">{% trans '終わり' %}</a>
+          <a href="{% url 'booking-complete' booking.id %}" class="btn btn-complete">{% trans '終わり' %}</a>
         {% endif %}
-        <a href="{% url 'booking-index' %}" class="btn">{% trans '戻る' %}</a>
+        <a href="{% url 'booking-index' %}" class="btn btn-1">{% trans '戻る' %}</a>
       </div>
     </section>
   </section>

@@ -127,6 +127,11 @@ h4.site-title {
 }
 
 /* Buttons */
+.btn {
+    font-size: 1rem;
+    margin: 0 7px;
+}
+
 .btn-1 {
     background-color: #4d783e;
     border: 2px solid #4d783e;
@@ -173,14 +178,96 @@ h4.site-title {
     background-color: #ba274a;
     border: 2px solid #ba274a;
     color: #fcfafb;
-    display: flex;
-    justify-content: center;
 }
 
 .btn-red:hover {
     border: 2px solid #ba274a;
     background-color: #fcfafb;
     color: #ba274a;
+}
+
+.btn-update {
+    background-color: #fcfafb;
+    border: 2px solid #53afad;
+    color: #53afad;
+}
+
+.btn-update:hover {
+    border: 2px solid #53afad;
+    background-color: #53afad;
+    color: #fcfafb;
+}
+
+.btn-delete {
+    background-color: #fcfafb;
+    border: 2px solid #ba274a;
+    color: #ba274a;
+}
+
+.btn-delete:hover {
+    border: 2px solid #ba274a;
+    background-color: #ba274a;
+    color: #fcfafb;
+}
+
+.btn-bdelete {
+    border: 2px solid #ba274a;
+    background-color: #ba274a;
+    color: #fcfafb;
+}
+
+.btn-bdelete:hover {
+    background-color: #fcfafb;
+    border: 2px solid #ba274a;
+    color: #ba274a;
+}
+
+.btn-confirm {
+    background-color: #fcfafb;
+    border: 2px solid #519872;
+    color: #519872;
+}
+
+.btn-confirm:hover {
+    border: 2px solid #519872;
+    background-color: #519872;
+    color: #fcfafb;
+}
+
+.btn-bconfirm {
+    background-color: #519872;
+    border: 2px solid #519872;
+    color: #fcfafb;
+}
+
+.btn-bconfirm:hover {
+    border: 2px solid #519872;
+    background-color: #fcfafb;
+    color: #519872;
+}
+
+.btn-complete {
+    background-color: #fcfafb;
+    border: 2px solid #c4b264;
+    color: #c4b264;
+}
+
+.btn-complete:hover {
+    border: 2px solid #c4b264;
+    background-color: #c4b264;
+    color: #fcfafb;
+}
+
+.btn-bcomplete {
+    background-color: #c4b264;
+    border: 2px solid #c4b264;
+    color: #fcfafb;
+}
+
+.btn-bcomplete:hover {
+    border: 2px solid #efdd8d;
+    background-color: #fcfafb;
+    color: #efdd8d;
 }
 
 /* Admin links - color by app function */
