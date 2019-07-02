@@ -36,11 +36,11 @@ class ConfirmEmail(object):
 
         if self.booking.is_group:
             body += f"""
-                Group Information:
-                    - Group name: {self.booking.group_name}
-                    - Group #: {self.booking.group_number}
-                    - Age range: {self.booking.age_group}
-                    - Transportation: {self.booking.transportation}
+            Group Information:
+                - Group name: {self.booking.group_name}
+                - Group #: {self.booking.group_number}
+                - Age range: {self.booking.age_group}
+                - Transportation: {self.booking.transportation}
             """
 
         body += f"""

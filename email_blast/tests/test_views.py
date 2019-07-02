@@ -25,7 +25,7 @@ class EmailBlastViewsTestCase(TestCase):
             login_required=True,
             login_desired=True,
             text_on_page=[
-                '全てのメール',
+                '全て',
                 'Test email'
             ]
         )
@@ -39,7 +39,7 @@ class EmailBlastViewsTestCase(TestCase):
                 True,
                 True,
                 [
-                    'All emails',
+                    'All',
                     'Test email'
                 ]
             )
