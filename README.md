@@ -29,7 +29,11 @@ Put them in a .env file and set with:
 ```
 set -a; source .env; set +a;
 ```
-
+## Making a user
+You will want to make a user to see and use the management systems:
+```
+python manage.py createsuperuser
+```
 
 ## Deployment
 ```
