@@ -16,7 +16,7 @@
     </h1>
 
     <div class="jumbotron">
-        <h2 class="site-title">
+        <h2 class="site-title page-title">
             #{% block error_number_2 %}{% endblock %}
         </h2>
     </div>
@@ -29,8 +29,9 @@
     <hr>
 
     <section class="next my-5">
-        <a href="{% url 'home' %}" class="btn btn-info">{% trans '他のページを使ってください。またわこのリンクでトップページに戻る。' %}</a>
-        <a href="{% url 'home' %}" class="btn btn-primary">{% trans '連絡先はこちら。' %}</a>
+        <span class="green2">{% trans '他のページを使ってください。' %}</span>
+        <a href="{% url 'home' %}" class="btn btn-1">{% trans 'またわこのリンクでトップページに戻る。' %}</a>
+        <a href="{% url 'contact' %}" class="btn btn-3">{% trans '連絡先はこちら。' %}</a>
     </section>
   </section>
 {% endblock %}

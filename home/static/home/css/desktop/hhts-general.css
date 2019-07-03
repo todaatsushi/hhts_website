@@ -18,7 +18,7 @@ body {
 
 /* Nav is full page height */
 #content > aside > nav, #content > main {
-    height: 99vh;
+    height: 100vh;
     min-height: 600px;
 }
 
@@ -51,6 +51,7 @@ body {
 
 #collapse > ul {
     flex-direction: row;
+    height: 80%;
 }
 
 /* Logo */
