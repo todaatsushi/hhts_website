@@ -14,7 +14,7 @@ pip install -r requirements.txt
 ```
 
 ### .env variables
-RR expects:
+This project expects:
 * SECRET_KEY - Django secret key
 * DEBUG - True or False
 * LOCAL_HOST - Local host name (loading settings)
