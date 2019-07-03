@@ -154,8 +154,6 @@ STATICFILES_FINDERS = [
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(SITE_ROOT, 'static')
 
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-
 # DATE FORMAT
 DATETIME_FORMAT = '%d/%m/%y %H:%M'
 
