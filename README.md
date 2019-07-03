@@ -1,6 +1,10 @@
 # Higashi Hiroshima Volunteer Guide Group Website
 THe prototype website for the Higashi Hiroshima Volunteer Guide group.
 
+## Project links
+* [Website](https://saijosakaguradouri.pythonanywhere.com) - link to the site
+* [Project page](https://www.atsushi.dev/work/higashi-hiroshima-volunteer-guide/) on atsushi.dev - link to more information on the project page on my site
+
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine.
