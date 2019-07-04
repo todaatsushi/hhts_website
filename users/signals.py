@@ -30,7 +30,7 @@ def save_profile(sender, instance, **kwargs):
 def delete_unused_image_files(sender, instance, **kwargs):
     # All images currently in use
     in_use = [
-            profile.image.url.replace('/media/', f'{settings.MEDIA_ROOT}/') for profile in Profile.objects.all()
+        profile.image.url.replace('/media/', f'{settings.MEDIA_ROOT}/') for profile in Profile.objects.all()
     ]
 
     # Image locations
