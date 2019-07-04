@@ -166,7 +166,7 @@
                             <!-- Language options -->
                             <li class="nav-item mt-5" id="language-choice">
                                 <span class="lang-choice mr-3 green1">{% trans '言語の選択' %}:</span>
-                                <a href="{% url 'language' 'en' %}?url_name={{ request.resolver_match.url_name }}&full_path={{ request.path }}" class="lang-choice btn btn-1 mr-1">English</a>
+                                <a href="{% url 'language' 'en-us' %}?url_name={{ request.resolver_match.url_name }}&full_path={{ request.path }}" class="lang-choice btn btn-1 mr-1">English</a>
                                 <a href="{% url 'language' 'ja' %}?url_name={{ request.resolver_match.url_name }}&full_path={{ request.path }}" class="lang-choice btn btn-red">日本語</a>
                             </li>
                         </ul>

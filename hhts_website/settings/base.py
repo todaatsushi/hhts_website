@@ -110,7 +110,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 # All langs
 LANGUAGES = (
-    ('en', _('English')),
+    ('en-us', _('English')),
     ('ja', _('Japanese')),
 )
 
