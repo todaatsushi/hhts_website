@@ -6,7 +6,8 @@ from django.utils.translation import gettext_lazy as _
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-SITE_ROOT = os.path.dirname(os.path.realpath(__name__))
+# SITE_ROOT = os.path.dirname(os.path.realpath(__name__))
+SITE_ROOT = '/'.join(BASE_DIR.split('/')[:-1])
 
 # Env Variables
 # project_folder = os.path.expanduser(os.path.join(BASE_DIR, 'hhts_website'))
