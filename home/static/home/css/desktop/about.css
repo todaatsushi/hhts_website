@@ -20,6 +20,11 @@
 }
 
 /* BACKGROUND IMAGES */
+
+.about-jumbo {
+    background-image: url('/media/img/hh6.jpg');
+}
+
 .abt-1 {
     background-image: url("/media/img/hh1.jpg");
 }
@@ -41,7 +46,7 @@
 }
 
 .abt-6 {
-    background-image: url("/media/img/hh5.jpg");
+    background-image: url("/media/img/hh7.jpg");
 }
 
 /* Contact Info */
