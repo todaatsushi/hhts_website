@@ -47,7 +47,7 @@ python manage.py collectstatic
 
 ## Authors
 
-* **Me, Atsushi Toda** - [GitHub](https://github.com/todaatsushi) [Personal website](https://www.atsushi.dev)
+* **Me, Atsushi Toda** - [GitHub](https://github.com/todaatsushi) - [Personal website](https://www.atsushi.dev)
 
 ## License
 
