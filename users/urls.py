@@ -4,6 +4,7 @@ from django.urls import path
 
 from users import views as uv
 
+
 urlpatterns = [   
     path('', uv.index, name='user-home'),
 
