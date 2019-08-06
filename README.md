@@ -1,5 +1,5 @@
 # Higashi Hiroshima Volunteer Guide Group Website
-THe prototype website for the Higashi Hiroshima Volunteer Guide group.
+The prototype website for the Higashi Hiroshima Volunteer Guide group.
 
 ## Project links
 * [Website](https://saijosakaguradouri.pythonanywhere.com) - link to the site
