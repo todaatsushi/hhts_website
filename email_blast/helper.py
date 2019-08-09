@@ -3,6 +3,7 @@ from django.core.exceptions import ValidationError
 
 from .models import EmailBlast
 
+
 def generate_email(request, cleaned_data):
     """
     Given django form cleaned_data (dict), returns EmailBlast object with processed attributes.

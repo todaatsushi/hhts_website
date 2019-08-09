@@ -4,6 +4,7 @@ upon a booking being marked confirmed.
 """
 from django.core.mail import EmailMessage
 
+
 class ConfirmEmail(object):
     """
     Needs a related Booking model with the booker's details.

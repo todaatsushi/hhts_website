@@ -29,7 +29,6 @@ class BookTourView(LoginRequiredMixin, CreateView):
 
     def form_valid(self, form):
         form.instance.booked_at = timezone.now()
-        print(form.data)
         return super().form_valid(form)
 
 

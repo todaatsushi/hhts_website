@@ -38,12 +38,14 @@ def register(request):
 
 
 def user_profile(request, username):
+    # Get the relevant user
     try:
         user = User.objects.get(username=username)
     except User.DoesNotExist:
         messages.error(request, _(f'{username}のアカウントは存在位していません。'))
         return HttpResponseRedirect(reverse('blog-home'))
 
+    # Update user info if post
     if request.method == 'POST':
         user_form = UserUpdateForm(request.POST, instance=request.user)
         profile_form = ProfileUpdateForm(request.POST, request.FILES, instance=request.user.profile)
@@ -55,6 +57,7 @@ def user_profile(request, username):
             messages.success(request, _(f'{username}のアカウントが更新されました。'))
             return HttpResponseRedirect(reverse('user-about', kwargs={'username': user.username}))
 
+    # Only let user update own info
     if request.user == user:
         user_form = UserUpdateForm(instance=request.user)
         profile_form = ProfileUpdateForm(instance=request.user.profile)

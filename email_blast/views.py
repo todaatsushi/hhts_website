@@ -47,6 +47,7 @@ class UpdateMailView(LoginRequiredMixin, UpdateView):
         validate_emails(to)
         to = to.split(',')
 
+        # Make sure emails only go to admin emails if is_admin
         if email.is_admin:
             admins = User.objects.all()
             admin_emails = map(lambda user: user.email, admins)
