@@ -97,7 +97,7 @@ class BookTourForm(forms.ModelForm):
                             '<a href="{% url ' + '"home"' + ' %}" class="btn btn-sm btn-block btn-custom-1 my-3">' + f"{_('戻る')}</a>"
                         ),
                         cf.ButtonHolder(
-                            cf.Submit('submit', _('送る'), css_class='btn btn-sm btn-block btn-success my-3')
+                            cf.Submit('submit', _('申し込む'), css_class='btn btn-sm btn-block btn-success my-3')
                         ),
                         css_class='col-md-4 offset-1'
                     ),
