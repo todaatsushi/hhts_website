@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-07-03 13:33+0100\n"
-"PO-Revision-Date: 2019-07-03 13:33+0100\n"
+"PO-Revision-Date: 2019-08-12 17:44+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en\n"
@@ -661,7 +661,7 @@ msgstr "Email management"
 
 #: email_blast/templates/email_blast/index.html:10
 msgid "全ての<span class=\"green2\">メール</span>"
-msgstr "All <span class=“green1”>bookings</span>"
+msgstr "All <span class=“green1”>emails</span>"
 
 #: email_blast/templates/email_blast/index.html:11
 msgid "下書きのメールを書く"
